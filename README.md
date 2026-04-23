@@ -7,3 +7,4 @@
 
 **Integrantes do grupo:**
 - Arthur Bertolini Moura
+- Bernardo de Sousa Vieira
