@@ -8,6 +8,7 @@
 **Integrantes do grupo:**
 - Arthur Bertolini Moura
 - Bernardo de Sousa Vieira
+- Heitor Augusto Oliveira Costa de Amorim
 
 ---
 
