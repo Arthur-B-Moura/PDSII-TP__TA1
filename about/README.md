@@ -12,4 +12,6 @@
 
 <h3>Map Generator</h3>
 
+![Cartão CRC Map Generator](./CartoesCRC/MapGenerator.png)
+
 <h3>Pathfinder</h3>
