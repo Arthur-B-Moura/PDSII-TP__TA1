@@ -24,3 +24,4 @@ O sistema apresentado conta com a implementação de um mecanismo _pathfinder_ p
 -Como usuário, eu quero informar ao sistema quais passos da rota foram dados, para que o sistema possa saber onde estou.
 -Como usuário, eu quero cancelar ou recalcular uma rota, para que eu possa adaptar minha viagem caso meu destino mude.
 -Como usuário, eu quero que o sistema estime o tempo de viagem, para que eu possa planejar melhor meu trajeto.
+-Como usuário, eu quero salvar locais favoritos, para que eu possa acessá-los rapidamente no futuro.
