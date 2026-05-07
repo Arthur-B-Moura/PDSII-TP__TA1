@@ -5,14 +5,17 @@
 ###
 <h1 align="center">Repositório para TP de PDSII - 2026/1</h1>
 
-**Integrantes do grupo:**
+<h3>Integrantes do grupo:</h3>
 - Arthur Bertolini Moura
 - Bernardo de Sousa Vieira
 - Heitor Augusto Oliveira Costa de Amorim
 
----
 
-**Descrição do tema:**
-
+<h3>Descrição do tema:</h3>
 O sistema apresentado conta com a implementação de um mecanismo _pathfinder_ para navegação, inspirado por _Google Maps_. Com esse fim, o projeto inclui uma seção responsável por gerir os mapas providos, traduzindo-os para um formato inteligível pelo algoritmo _patfinder_ A*, implementado na segunda seção. O programa, então, retorna uma série de instruções, contruindo um caminho do ponto demarcado como "início" até o "fim".
 
+---
+
+<h2>Seções da Documentação:</h2>
+
+- [Detalhamento de Classes e User Stories](./about/README.md)
