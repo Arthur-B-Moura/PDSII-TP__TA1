@@ -6,6 +6,7 @@
 <h1 align="center">Repositório para TP de PDSII - 2026/1</h1>
 
 <h3>Integrantes do grupo:</h3>
+
 - Arthur Bertolini Moura
 - Bernardo de Sousa Vieira
 - Heitor Augusto Oliveira Costa de Amorim
