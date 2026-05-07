@@ -11,7 +11,7 @@ struct Edge {
 };
 
 class Grafo {
-private:
+protected:
     std::unordered_map<long long, MapNode> nodes_;
     std::unordered_map<long long, std::vector<Edge>> adjacency_;
     int edge_count_;

@@ -16,7 +16,7 @@ private:
     std::vector<long long> vizinhos_;
 
 public:
-    MapNode();
+    MapNode(const long long int id);
     ~MapNode();
     const long long int id();
     void add_vizinho();
