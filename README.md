@@ -13,6 +13,7 @@
 
 
 <h3>Descrição do tema:</h3>
+
 O sistema apresentado conta com a implementação de um mecanismo _pathfinder_ para navegação, inspirado por _Google Maps_. Com esse fim, o projeto inclui uma seção responsável por gerir os mapas providos, traduzindo-os para um formato inteligível pelo algoritmo _patfinder_ A*, implementado na segunda seção. O programa, então, retorna uma série de instruções, contruindo um caminho do ponto demarcado como "início" até o "fim".
 
 ---
