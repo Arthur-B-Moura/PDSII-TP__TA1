@@ -1,5 +1,13 @@
 <h1>User Stories</h1>
 
+- Como usuário, eu quero pesquisar um destino, para que eu possa encontrar o lugar para onde quero ir.
+- Como usuário, eu quero selecionar um ponto de partida e um destino, para que eu possa traçar uma rota.
+- Como usuário, eu quero seguir instruções de navegação passo a passo, para que eu não me perca durante a viagem.
+- Como usuário, eu quero informar ao sistema quais passos da rota foram dados, para que o sistema possa saber onde estou.
+- Como usuário, eu quero cancelar ou recalcular uma rota, para que eu possa adaptar minha viagem caso meu destino mude.
+- Como usuário, eu quero que o sistema estime o tempo de viagem, para que eu possa planejar melhor meu trajeto.
+- Como usuário, eu quero salvar locais favoritos, para que eu possa acessá-los rapidamente no futuro.
+
 ---
 
 <h1>Detalhamento de Classes</h1>
