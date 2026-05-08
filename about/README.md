@@ -14,6 +14,12 @@
 
 <h3>Grafo</h3>
 
+Implementação da estrutura de dados "grafo".
+
+<p align="center">
+  <img src="https://github.com/Arthur-B-Moura/PDSII-TP__TA1/blob/9b767d382a8a3b55caa72e6e2d94a4398e6e9577/about/CartoesCRC/Grafo.png" width="500" alt="Cartão CRC Grafo">
+</p>
+
 <h3>Map Node</h3>
 
 Essa classe é responsável por gerir os nós das "intersecções", isso é, dos cruzamentos, que compõe o grafo e o layout da cidade. Ela inclui estimativas de latitude e longitude que podem ser utilizadas para calcular distância em termos globais, além de auxiliar numa possível representação gráfica modular do mapa.
@@ -40,3 +46,9 @@ Essa classe é responsável por converter descrições de mapa de arquivos .csv 
 </p>
 
 <h3>Pathfinder</h3>
+
+Implementação do algoritmo pathfinder A* dentro do contexto de grafo desenvolvido. O algoritmo irá navegar de um ponto origem a um ponto destino, e deverá ser capaz de retornar uma lista de nós intermediários que constituam o caminho traçado. 
+
+<p align="center">
+  <img src="https://github.com/Arthur-B-Moura/PDSII-TP__TA1/blob/9b767d382a8a3b55caa72e6e2d94a4398e6e9577/about/CartoesCRC/Pathfinder.png" width="500" alt="Cartão CRC Pathfinder">
+</p>
