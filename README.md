@@ -21,3 +21,4 @@ O sistema apresentado conta com a implementação de um mecanismo _pathfinder_ p
 <h2>Seções da Documentação:</h2>
 
 - [Detalhamento de Classes e User Stories](./about/README.md)
+
