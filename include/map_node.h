@@ -29,7 +29,7 @@ public:
 
     std::optional<Coordenada> posicao();
     
-    const long long int id();
+    long long int id();
     
     void add_vizinho(const long long int id);
 

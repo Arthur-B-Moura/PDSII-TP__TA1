@@ -19,7 +19,7 @@ std::optional<Coordenada> MapNode::posicao() {
     return this->posicao_;    
 }
 
-const long long int MapNode::id() {
+long long int MapNode::id() {
     return this->id_;
 }
 
