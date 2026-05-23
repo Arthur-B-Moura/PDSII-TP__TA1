@@ -13,7 +13,7 @@ private:
     // Objeto mapa construído a partir da leitura do arquivo
     Map mapa_;
 
-    Map build_from_csv();
+    Map build_from_osm();
 
     Map build_from_json();
 public:
@@ -21,7 +21,7 @@ public:
     
     ~MapGenerator();
 
-    Map map();
+    Map mapa();
 
     const std::string filename();
 };
