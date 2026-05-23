@@ -1,4 +1,10 @@
+/* 
+sudo apt update
+sudo apt install libxml++2.6-dev 
+*/
+
 #include "map_generator.h"
+#include <libxml++/libxml++.h>
 
 
 MapGenerator::MapGenerator(std::string path_to_file) {
