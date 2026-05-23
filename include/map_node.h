@@ -3,7 +3,6 @@
 
 #include <string>
 #include <vector>
-#include <optional>
 
 struct Coordenada {
     double latitude_;
@@ -13,7 +12,7 @@ struct Coordenada {
 class MapNode {
 private:
     long long int id_;
-    std::optional<Coordenada> posicao_;
+    Coordenada posicao_;
     std::vector<long long int> vizinhos_;
 
 public:
@@ -27,7 +26,7 @@ public:
     
     ~MapNode();
 
-    std::optional<Coordenada> posicao();
+    Coordenada posicao();
     
     long long int id();
     
@@ -35,6 +34,8 @@ public:
 
     void add_vizinho(std::vector<long long int>ids);
     
+    void remove_vizinho(const long long int id);
+
     bool eh_vizinho(const long long int id);
 };
 
