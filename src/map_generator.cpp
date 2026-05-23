@@ -6,6 +6,20 @@ sudo apt install libxml++2.6-dev
 #include "map_generator.h"
 #include <libxml++/libxml++.h> //TODO: update libxml++ library version to more recent one (5.0 likely). Current is 2.6
 #include <iostream>
+#include <locale>
+#include <clocale>
+
+/* Configura locale global versus default UTF-8 usado com libxml++-2.6 para permitir
+leitura de valores com acentos (´,`,~,^) sem ocasionar em uma falha fatal de execução */
+struct GlobalLocaleSetter {
+    GlobalLocaleSetter() {
+        // Set locale global c++ para default do sistema
+        std::locale::global(std::locale(""));
+    }
+};
+
+// Inicialização global de locale
+static GlobalLocaleSetter global_locale_init; 
 
 
 class MapGenSaxParser : public xmlpp::SaxParser {
@@ -29,6 +43,14 @@ class MapGenSaxParser : public xmlpp::SaxParser {
         // Triggered at the end of an element (e.g., </tag>)
         void on_end_element(const Glib::ustring& name) override {
             std::cout << "End element: " << name << std::endl;
+        }
+
+        void on_error(const Glib::ustring& message) override {
+            std::cerr << "Error: " << message << std::endl;
+        }
+
+        void on_warning(const Glib::ustring& message) override {
+            std::cerr << "Warning: " << message << std::endl;
         }
 };
 
