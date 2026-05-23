@@ -1,6 +1,6 @@
 CXX = c++ # Especificação de compilador
 CXXFLAGS = -Wall -Wextra
-LDFLAGS = -L/usr/lib -lCatch2WithMain $(shell pkg-config --cflags --libs libxml++-2.6) #-lCatch2 # Link bibliotecas Catch2
+LDFLAGS = -L/usr/lib -lCatch2WithMain $(shell pkg-config --cflags --libs libxml++-2.6) #-lCatch2 # Link bibliotecas Catch2, link bibliotecas libxml++
 
 
 test_map_generator : build/map_generator.o

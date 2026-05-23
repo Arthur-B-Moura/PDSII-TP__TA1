@@ -4,7 +4,7 @@ sudo apt install libxml++2.6-dev
 */
 
 #include "map_generator.h"
-#include <libxml++/libxml++.h>
+#include <libxml++/libxml++.h> //TODO: update libxml++ library version to more recent one (5.0 likely). Current is 2.6
 #include <iostream>
 
 
