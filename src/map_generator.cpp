@@ -3,6 +3,10 @@ sudo apt update
 sudo apt install libxml++2.6-dev 
 */
 
+#define STATE_IDLE 0
+#define STATE_WAY 1
+#define STATE_NODE 2
+
 #include "map_generator.h"
 #include <libxml++/libxml++.h> //TODO: update libxml++ library version to more recent one (5.0 likely). Current is 2.6
 #include <iostream>
@@ -23,6 +27,31 @@ static GlobalLocaleSetter global_locale_init;
 
 
 class MapGenSaxParser : public xmlpp::SaxParser {
+    private:
+        int state_ = STATE_IDLE;
+
+        bool useful_attribute(const Glib::ustring name) {
+            return true;
+            if (name == "id" || 
+                name == "lat" ||
+                name == "lon") 
+                return true;
+            return false;
+        }
+
+        void update_state(const Glib::ustring& name) {
+            if (name == "way") {
+                state_ = STATE_WAY;
+            }
+            else if (name == "node") {
+                state_ = STATE_NODE;
+            }
+            else {
+                if (state_ != STATE_WAY)
+                    state_ = STATE_IDLE;
+            }
+        }
+
     public:
         MapGenSaxParser() : xmlpp::SaxParser() {}
         virtual ~MapGenSaxParser() {}
@@ -30,21 +59,24 @@ class MapGenSaxParser : public xmlpp::SaxParser {
     protected:
         void on_start_element(const Glib::ustring& name, 
                               const AttributeList& attributes) override {
+
+            update_state(name);
+            if (state_ != STATE_WAY) return;
+
             std::cout << "Start element: " << name << std::endl;
             for (const auto& attr : attributes) {
-                std::cout << "  Attribute: " << attr.name << " = " << attr.value << std::endl;
+                if (useful_attribute(attr.name)) {
+                    std::cout << "  Attribute: " << attr.name << " = " << attr.value << std::endl;
+                }
             }
         }
-        // Triggered for text inside an element
-        void on_characters(const Glib::ustring& text) override {
-            std::cout << "  Characters: " << text << std::endl;
-        }
 
-        // Triggered at the end of an element (e.g., </tag>)
         void on_end_element(const Glib::ustring& name) override {
-            std::cout << "End element: " << name << std::endl;
+            if (name == "way" && state_ == STATE_WAY) {
+                update_state("idle");
+            }
         }
-
+        
         void on_error(const Glib::ustring& message) override {
             std::cerr << "Error: " << message << std::endl;
         }
