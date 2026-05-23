@@ -5,3 +5,8 @@
 
 #include "catch2/catch.hpp"
 #include "map_generator.h"
+
+
+TEST_CASE("Basic intialization") {
+    MapGenerator m("./maps/map.osm");
+};

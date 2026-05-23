@@ -3,7 +3,7 @@
 
 #include <string>
 #include <fstream>
-#include "map.h"
+// #include "map.h"
 
 class MapGenerator {
 private:
@@ -11,17 +11,17 @@ private:
     std::string filename_;
 
     // Objeto mapa construído a partir da leitura do arquivo
-    Map mapa_;
+    // Map mapa_;
 
-    Map build_from_osm();
+    // Map build_from_osm();
 
-    Map build_from_json();
+    // Map build_from_json();
 public:
     MapGenerator(std::string path_to_file);
     
     ~MapGenerator();
 
-    Map mapa();
+    // Map mapa();
 
     const std::string filename();
 };

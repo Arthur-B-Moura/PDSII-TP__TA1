@@ -18,7 +18,7 @@ private:
 public:
     MapNode(const long long int id);
     ~MapNode();
-    const long long int id();
+    long long int id();
     void add_vizinho();
 };
 
