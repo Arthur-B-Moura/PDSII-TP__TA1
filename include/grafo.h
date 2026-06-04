@@ -8,6 +8,10 @@
 struct Edge {
     long long toNodeId;
     double distance;
+
+    bool operator==(Edge b) {
+        return ((this->toNodeId == b.toNodeId) && (this->distance == b.distance));
+    }
 };
 
 class Grafo {
@@ -17,6 +21,7 @@ protected:
     int edge_count_;
 
     double haversine_distance(const MapNode& a, const MapNode& b) const;
+    bool edge_exists(std::vector<Edge> haystack, Edge needle) const;
 
 public:
     Grafo();
