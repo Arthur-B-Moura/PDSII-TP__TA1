@@ -19,17 +19,21 @@ private:
     std::string descricao_;
     std::unordered_map<long long, LugarMap> dict_estruturas_;
 public:
-    Map();
-
-    Map(Grafo grafo);
-
-    Map(Grafo grafo, std::unordered_map<long long, LugarMap> lugares);
+    Map(std::string nome);
+    
+    Map(std::string nome, Grafo grafo);
+    
+    Map(std::string nome, Grafo grafo, std::unordered_map<long long, LugarMap> lugares);
 
     ~Map();
 
     void insere_lugar(long long id, LugarMap lugar);
 
     void remove_lugar(long long id);
+
+    void adiciona_descricao(std::string descricao);
+
+    void altera_nome(std::string nome);
 
     std::string nome();
 

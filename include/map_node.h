@@ -13,13 +13,21 @@ class MapNode {
 private:
     long long int id_;
     Coordenada posicao_;
-    std::vector<long long> vizinhos_;
-
+    
 public:
+    // TO-DO: Adicionar construtor que inclua vizinhos
+
+    // Pré-condição: assume id válido
     MapNode(const long long int id);
+
+    // Pré-condição: assume id válido
+    MapNode(const long long int id, Coordenada pos);
+    
     ~MapNode();
-    const long long int id();
-    void add_vizinho();
+
+    Coordenada posicao() const;
+    
+    long long int id() const;
 };
 
 #endif

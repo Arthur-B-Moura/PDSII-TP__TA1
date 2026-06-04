@@ -1,0 +1,15 @@
+CXX = c++ # Especificação de compilador
+CXXFLAGS = -Wall -Wextra
+LDFLAGS = -L/usr/lib -lCatch2WithMain #-lCatch2 # Link bibliotecas Catch2
+
+test_grafo : build/grafo.o build/map_node.o
+	$(CXX) $(CXXFLAGS) -g test/test_grafo.cpp build/grafo.o build/map_node.o $(LDFLAGS) -I include/ -o diagnosis.exe
+
+test_map_node : build/map_node.o
+	$(CXX) $(CXXFLAGS) -g test/test_map_node.cpp build/map_node.o $(LDFLAGS) -I include/ -o diagnosis.exe
+
+build/grafo.o : src/grafo.cpp 
+	$(CXX) $(CXXFLAGS) -c src/grafo.cpp -o build/grafo.o -I include/
+
+build/map_node.o : src/map_node.cpp
+	$(CXX) $(CXXFLAGS) -c src/map_node.cpp -o build/map_node.o -I include/

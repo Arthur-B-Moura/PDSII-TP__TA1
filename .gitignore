@@ -1,1 +1,4 @@
 *.exe
+.vscode/
+exit.txt
+build/*
