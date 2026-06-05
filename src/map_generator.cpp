@@ -29,6 +29,8 @@ static GlobalLocaleSetter global_locale_init;
 class MapGenSaxParser : public xmlpp::SaxParser {
     private:
         int state_ = STATE_IDLE;
+        // Mapeia nós conectados entre si por um osn::way, permitindo posterior mapeamento em edges
+        std::vector<long long int> connected_nodes_ = {};
 
         bool useful_attribute(const Glib::ustring name) {
             return true;
@@ -41,11 +43,9 @@ class MapGenSaxParser : public xmlpp::SaxParser {
 
         void update_state(const Glib::ustring& name) {
             if (name == "way") {
-                state_ = STATE_WAY;
-            }
+                state_ = STATE_WAY; }
             else if (name == "node") {
-                state_ = STATE_NODE;
-            }
+                state_ = STATE_NODE; }
             else {
                 if (state_ != STATE_WAY)
                     state_ = STATE_IDLE;
@@ -64,15 +64,31 @@ class MapGenSaxParser : public xmlpp::SaxParser {
             MapNode node(id_, coord_);
             this->mapa_.add_node(node);
         }   
+
+        void parse_edge_nodes(const AttributeList& attributes) {
+            for (const auto& attr : attributes) {
+                if (attr.name == "ref") {
+                    this->connected_nodes_.push_back(std::stoll(attr.value.c_str()));
+                    return;
+                } 
+            }
+        }
+
+        // TODO: remove conexão ao próprio vetor (sempre está sendo criada agora)
+        // TODO: adicona outros atributos de edge (ex: tipo de rua, sentido, etc)
+        void store_edge() {
+            for (const auto& id : this->connected_nodes_) {
+                this->mapa_.add_edge(id, this->connected_nodes_);
+            }
+
+            this->connected_nodes_.clear();
+        }
     
     protected:
         void on_start_element(const Glib::ustring& name, const AttributeList& attributes) override {
-            
             update_state(name);
-            if (this->state_ == STATE_NODE) { 
-                store_node(attributes); 
-                // std::cout << this->mapa_.node_count() << " nodes parsed." << std::endl;
-            }
+            if (this->state_ == STATE_NODE) store_node(attributes);
+            if (this->state_ == STATE_WAY)  parse_edge_nodes(attributes);
             // std::cout << "Start element: " << name << std::endl;
         }
 
@@ -80,6 +96,7 @@ class MapGenSaxParser : public xmlpp::SaxParser {
         void on_end_element(const Glib::ustring& name) override {
             if (name == "way" && state_ == STATE_WAY) {
                 update_state("idle");
+                store_edge();
             }
         }
         
@@ -100,7 +117,7 @@ class MapGenSaxParser : public xmlpp::SaxParser {
 };
 
 ///////////////////////////////////////////////////////////////////////////
-
+///////////////////////////////////////////////////////////////////////////
 
 /// @brief 
 /// @param path_to_file 

@@ -13,9 +13,30 @@ TEST_CASE("Basic intialization") {
 };
 
 TEST_CASE("Test map generation from OSM file") {
-    MapGenerator m("./maps/map.osm");
+    MapGenerator m("./maps/map_liberdade.osm");
     Map mapa = m.get_mapa();
-    REQUIRE(mapa.node_count() > 0);
-    std::cout << "Node count: " << mapa.node_count() << std::endl;
-    // REQUIRE(mapa.edge_count() > 0);
+
+    SECTION("Nodes corretamente contados") {
+        REQUIRE(mapa.node_count() > 0);
+        std::cout << "Node count: " << mapa.node_count() << std::endl;
+    };
+
+    SECTION("Edges corretamente contados") {
+        REQUIRE(mapa.edge_count() > 0);
+        std::cout << "Edge count: " << mapa.edge_count() << std::endl;
+    };
+
+    // Obs: usando mapa - liberdade
+    SECTION("Check distância entre nós") {
+        REQUIRE(mapa.has_node(28634767) == true);
+        REQUIRE(mapa.has_node(6380526193) == true);
+        
+        for (const auto& link : mapa.get_neighbors(28634767)) {
+            if (link.toNodeId == 6380526193) {
+                std::cout << "Distancia = " << link.distance << "km" << std::endl;
+                break;
+            }
+        }
+    };
+    
 };
