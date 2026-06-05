@@ -13,7 +13,7 @@ struct LugarMap {
     std::vector<long long> nodes_delta_ref;// Distância dos nós para posicionamento das arestas do poligono-objeto
 };
 
-class Map : Grafo {
+class Map : public Grafo {
 private:
     std::string nome_;
     std::string descricao_;

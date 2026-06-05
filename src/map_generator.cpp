@@ -25,7 +25,7 @@ struct GlobalLocaleSetter {
 // Inicialização global de locale
 static GlobalLocaleSetter global_locale_init; 
 
-
+// Sax Parser específico para leitura de arquivos osm xml, para construção de mapas
 class MapGenSaxParser : public xmlpp::SaxParser {
     private:
         int state_ = STATE_IDLE;
@@ -52,24 +52,30 @@ class MapGenSaxParser : public xmlpp::SaxParser {
             }
         }
 
-    public:
-        MapGenSaxParser() : xmlpp::SaxParser() {}
-        virtual ~MapGenSaxParser() {}
+        void store_node(const AttributeList& attributes) {
+            long long int id_;
+            Coordenada coord_;
+            
+            for (const auto& attr : attributes) {
+                if (attr.name == "id") id_ =  std::stoll(attr.value.c_str());
+                if (attr.name == "lat") coord_.latitude_ = std::stod(attr.value.c_str());
+                if (attr.name == "lon") coord_.longitude_ = std::stod(attr.value.c_str());
+            }
+            MapNode node(id_, coord_);
+            this->mapa_.add_node(node);
+        }   
     
     protected:
-        void on_start_element(const Glib::ustring& name, 
-                              const AttributeList& attributes) override {
-
+        void on_start_element(const Glib::ustring& name, const AttributeList& attributes) override {
+            
             update_state(name);
-            if (state_ != STATE_WAY) return;
-
-            std::cout << "Start element: " << name << std::endl;
-            for (const auto& attr : attributes) {
-                if (useful_attribute(attr.name)) {
-                    std::cout << "  Attribute: " << attr.name << " = " << attr.value << std::endl;
-                }
+            if (this->state_ == STATE_NODE) { 
+                store_node(attributes); 
+                // std::cout << this->mapa_.node_count() << " nodes parsed." << std::endl;
             }
+            // std::cout << "Start element: " << name << std::endl;
         }
+
 
         void on_end_element(const Glib::ustring& name) override {
             if (name == "way" && state_ == STATE_WAY) {
@@ -77,59 +83,66 @@ class MapGenSaxParser : public xmlpp::SaxParser {
             }
         }
         
+
         void on_error(const Glib::ustring& message) override {
             std::cerr << "Error: " << message << std::endl;
         }
 
+
         void on_warning(const Glib::ustring& message) override {
             std::cerr << "Warning: " << message << std::endl;
         }
+
+    public:
+        Map mapa_{"generated_map"};
+        MapGenSaxParser() : xmlpp::SaxParser() {}
+        virtual ~MapGenSaxParser() {}
 };
 
+///////////////////////////////////////////////////////////////////////////
 
 
-void temp_build_from_osm(const std::string& path) {
-    try {
-        MapGenSaxParser parser;
-        parser.parse_file(path); 
-    }
-    catch(const xmlpp::exception& ex) {
-        std::cerr << "libxml++ exception: " << ex.what() << std::endl;
-    }
-}
-
-
+/// @brief 
+/// @param path_to_file 
 MapGenerator::MapGenerator(std::string path_to_file) {
     // TODO: validar path_to_file
     this->filename_ = path_to_file;
 
     // TODO: check file type
     // TODO: add osm check
-    // this->mapa_ = this->build_from_osm();
-    temp_build_from_osm(path_to_file);
+    this->mapa_ = this->build_from_osm();
 }
 
-// Map MapGenerator::build_from_json() {
-// }
+Map MapGenerator::build_from_osm() {
+    try {
+        MapGenSaxParser parser;
+        parser.parse_file(this->filename()); 
 
-// Map MapGenerator::build_from_osm() {
-//     try {
-//         MapGenSaxParser parser;
-//         parser.parse_file(this->filename()); 
-//     }
-//     catch(const xmlpp::exception& ex) {
-//         std::cerr << "libxml++ exception: " << ex.what() << std::endl;
-//     }
-//     return Map();
-// }
+        const auto& mapa = parser.mapa_;
+        return mapa;
+        }
+    catch(const xmlpp::exception& ex) {
+        std::cerr << "libxml++ exception: " << ex.what() << std::endl;
+    }
+    catch(const std::exception& ex) {
+        std::cerr << "Standard exception: " << ex.what() << std::endl;
+    }
+    catch(...) {
+        std::cerr << "Unknown exception occurred while parsing OSM file." << std::endl;
+    }
+    return Map("empty_map");
+}
+
 
 const std::string MapGenerator::filename() {
     return this->filename_;
 }
 
-// Map MapGenerator::mapa() {
-//     return this->mapa_;
-// }
+
+Map& MapGenerator::get_mapa(){
+    return this->mapa_;
+}
+
 
 MapGenerator::~MapGenerator() {
     // TODO: make sure file is closed
