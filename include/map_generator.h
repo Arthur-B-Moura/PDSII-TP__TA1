@@ -11,17 +11,17 @@ private:
     std::string filename_;
 
     // Objeto mapa construído a partir da leitura do arquivo
-    Map mapa_;
+    Map mapa_{"temp_map"};
 
-    Map build_from_csv();
+    Map build_from_osm();
 
-    Map build_from_json();
+    // Map build_from_json();
 public:
     MapGenerator(std::string path_to_file);
     
     ~MapGenerator();
 
-    Map map();
+    Map& get_mapa();
 
     const std::string filename();
 };
