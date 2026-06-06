@@ -2,6 +2,7 @@
 sudo apt update
 sudo apt install libxml++2.6-dev 
 */
+// TODO: Study OST API
 
 #define STATE_IDLE 0
 #define STATE_WAY 1
@@ -22,6 +23,12 @@ struct GlobalLocaleSetter {
     }
 };
 
+struct Memory_RuaLugar {
+    long long int id;
+    std::string tag;
+    std::string nome;
+};
+
 // Inicialização global de locale
 static GlobalLocaleSetter global_locale_init; 
 
@@ -31,6 +38,7 @@ class MapGenSaxParser : public xmlpp::SaxParser {
         int state_ = STATE_IDLE;
         // Mapeia nós conectados entre si por um osn::way, permitindo posterior mapeamento em edges
         std::vector<long long int> connected_nodes_ = {};
+        Memory_RuaLugar temp_lugar_;
 
         bool useful_attribute(const Glib::ustring name) {
             return true;
@@ -65,6 +73,11 @@ class MapGenSaxParser : public xmlpp::SaxParser {
             this->mapa_.add_node(node);
         }   
 
+        void parse_way(const Glib::ustring& name, const AttributeList& attributes) {
+            if (name == "nd") parse_edge_nodes(attributes);
+            else if (name == "tag" || name == "way") parse_tags_lugar(attributes);
+        }
+
         void parse_edge_nodes(const AttributeList& attributes) {
             for (const auto& attr : attributes) {
                 if (attr.name == "ref") {
@@ -74,13 +87,39 @@ class MapGenSaxParser : public xmlpp::SaxParser {
             }
         }
 
+        void parse_tags_lugar(const AttributeList& attributes) {
+            if (attributes[0].name == "id") { 
+                this->temp_lugar_.id = std::stoll(attributes[0].value.c_str()); 
+                return;
+            }
+            if (attributes[0].name != "k") return;
+            if (attributes[0].value == "highway") this->temp_lugar_.tag = "Rua";
+            else if (attributes[0].value == "name") this->temp_lugar_.nome = attributes[1].value; 
+        }
+
+        void store_lugar_way() {
+            if (this->temp_lugar_.tag != "Rua") return;
+
+            // DEBUG:
+            // std::cout << "LUGAR ID: " << this->temp_lugar_.id << std::endl;
+            // std::cout << "LUGAR: " << this->temp_lugar_.nome << " - " << this->temp_lugar_.tag << std::endl;
+            //
+
+            this->mapa_.insere_lugar(this->temp_lugar_.id, 
+                                     LugarMap{this->temp_lugar_.tag,
+                                              this->temp_lugar_.nome,
+                                              this->connected_nodes_,
+                                              std::vector<long long>(this->connected_nodes_.size(), 0)});
+        
+            this->temp_lugar_ = Memory_RuaLugar();                      
+        }
+
         // TODO: remove conexão ao próprio vetor (sempre está sendo criada agora)
         // TODO: adicona outros atributos de edge (ex: tipo de rua, sentido, etc)
         void store_edge() {
             for (const auto& id : this->connected_nodes_) {
                 this->mapa_.add_edge(id, this->connected_nodes_);
             }
-
             this->connected_nodes_.clear();
         }
     
@@ -88,7 +127,8 @@ class MapGenSaxParser : public xmlpp::SaxParser {
         void on_start_element(const Glib::ustring& name, const AttributeList& attributes) override {
             update_state(name);
             if (this->state_ == STATE_NODE) store_node(attributes);
-            if (this->state_ == STATE_WAY)  parse_edge_nodes(attributes);
+            if (this->state_ == STATE_WAY)  parse_way(name, attributes);
+            // if (this->state_ == STATE_WAY)  parse_edge_nodes(attributes);
             // std::cout << "Start element: " << name << std::endl;
         }
 
@@ -96,6 +136,7 @@ class MapGenSaxParser : public xmlpp::SaxParser {
         void on_end_element(const Glib::ustring& name) override {
             if (name == "way" && state_ == STATE_WAY) {
                 update_state("idle");
+                store_lugar_way();
                 store_edge();
             }
         }
@@ -161,7 +202,4 @@ Map& MapGenerator::get_mapa(){
 }
 
 
-MapGenerator::~MapGenerator() {
-    // TODO: make sure file is closed
-    // TODO: clear memory
-}
+MapGenerator::~MapGenerator() {}
