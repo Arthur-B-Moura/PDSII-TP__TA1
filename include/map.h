@@ -8,12 +8,13 @@
 
 // Unidade-espaço lugar/contrução 
 struct LugarMap {
-    std::string tag;
+    std::string tag;  // Tipo de lugar/estrutura/rua (ex: "hospital", "rua", "parque", etc)
+    std::string nome; // Nome do lugar/estrutura/rua (ex: "Hospital Santa Casa", "Rua Liberdade", etc)
     std::vector<long long> nodes_id_ref;   // Nós (cruzamento) para poligono-objeto
     std::vector<long long> nodes_delta_ref;// Distância dos nós para posicionamento das arestas do poligono-objeto
 };
 
-class Map : Grafo {
+class Map : public Grafo {
 private:
     std::string nome_;
     std::string descricao_;
@@ -26,6 +27,8 @@ public:
     Map(std::string nome, Grafo grafo, std::unordered_map<long long, LugarMap> lugares);
 
     ~Map();
+
+    const std::unordered_map<long long, LugarMap> dict_estruturas();
 
     void insere_lugar(long long id, LugarMap lugar);
 

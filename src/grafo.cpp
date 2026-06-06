@@ -80,6 +80,14 @@ void Grafo::add_edge(long long from_id, long long to_id) {
     return;
 }
 
+void Grafo::add_edge(long long from_id, std::vector<long long> ids_connected_to) {
+    for (const auto& to_id : ids_connected_to) {
+        this->add_edge(from_id, to_id);
+    }
+}
+
+
+
 // TODO: possible error when searching for inexistent node id. 
 // Maybe deal with out_of_range_exception
 const MapNode& Grafo::get_node(long long id) const{

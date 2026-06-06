@@ -18,6 +18,11 @@ Map::Map(std::string nome, Grafo grafo, std::unordered_map<long long, LugarMap> 
 
 Map::~Map() {}
 
+const std::unordered_map<long long, LugarMap> Map::dict_estruturas() {
+    return this->dict_estruturas_;
+}
+
+
 void Map::insere_lugar(long long id, LugarMap lugar) {
     dict_estruturas_[id] = lugar;
 }
