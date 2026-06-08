@@ -1,9 +1,18 @@
+/**
+ * @file    grafo.cpp
+ * @brief   Implementação da classe Grafo
+ */
+
 #include "grafo.h"
 #include <stdexcept>
 #include <cmath>
 #include <algorithm>
 #include <iostream>
 
+
+/// ----------------------------------- ///
+/// Métodos auxiliares para uso interno ///
+/// ----------------------------------- ///
 
 double Grafo::haversine_distance(const MapNode& a, const MapNode& b) const {
     double distancia, aux, c_;
@@ -26,6 +35,7 @@ double Grafo::haversine_distance(const MapNode& a, const MapNode& b) const {
     return distancia;
 }
 
+
 bool Grafo::edge_exists(std::vector<Edge> haystack, Edge needle) const {
     if (std::find(haystack.begin(), haystack.end(), needle) != haystack.end()) {
         return true;
@@ -33,9 +43,14 @@ bool Grafo::edge_exists(std::vector<Edge> haystack, Edge needle) const {
     return false;
 }
 
+/// ---------------------- ///
+/// Construtor e destrutor ///
+/// ---------------------- /// 
+
 Grafo::Grafo() {
     this->edge_count_ = 0;
 }
+
 
 Grafo::~Grafo() {
     this->nodes_.clear();
@@ -48,12 +63,18 @@ Grafo::~Grafo() {
     this->adjacency_.rehash(0);
 }
 
+
+/// --------------------------------------- ///
+/// Mutadores - modificam o estado do grafo ///
+/// --------------------------------------- ///
+
 void Grafo::add_node(const MapNode& node) {
     if (!this->has_node(node.id())) {
         this->nodes_.insert({node.id(), node});
         this->adjacency_.insert({node.id(), std::vector<Edge>()});
     }
 }
+
 
 void Grafo::add_edge(long long from_id, long long to_id) {
     if((this->has_node(from_id) && this->has_node(to_id)) == false) {
@@ -80,6 +101,7 @@ void Grafo::add_edge(long long from_id, long long to_id) {
     return;
 }
 
+
 void Grafo::add_edge(long long from_id, std::vector<long long> ids_connected_to) {
     for (const auto& to_id : ids_connected_to) {
         this->add_edge(from_id, to_id);
@@ -87,12 +109,17 @@ void Grafo::add_edge(long long from_id, std::vector<long long> ids_connected_to)
 }
 
 
+/// --------------------------------------- ///
+/// Acessores - leitura do estado do grafo  ///
+/// --------------------------------------- ///
 
-// TODO: possible error when searching for inexistent node id. 
-// Maybe deal with out_of_range_exception
 const MapNode& Grafo::get_node(long long id) const{
+    if (!this->has_node(id)) {
+        throw std::invalid_argument("Tentativa de acessar nó não mapeado.");
+    }
     return this->nodes_.at(id);
 }
+
 
 const std::vector<Edge>& Grafo::get_neighbors(long long node_id) const {
     if (!this->has_node(node_id)) {
@@ -101,13 +128,16 @@ const std::vector<Edge>& Grafo::get_neighbors(long long node_id) const {
     return this->adjacency_.at(node_id);
 }
 
+
 bool Grafo::has_node(long long id) const {
     return this->nodes_.count(id) == 1; 
 }
 
+
 int Grafo::node_count() const {
     return this->nodes_.size();
 }
+
 
 int Grafo::edge_count() const {
     return this->edge_count_;
