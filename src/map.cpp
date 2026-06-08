@@ -39,10 +39,10 @@ void Map::altera_nome(std::string nome) {
     nome_ = nome;
 }
 
-std::string Map::nome() {
+const std::string Map::nome() {
     return nome_;
 }
 
-std::string Map::descricao() {
+const std::string Map::descricao() {
     return descricao_;
 }

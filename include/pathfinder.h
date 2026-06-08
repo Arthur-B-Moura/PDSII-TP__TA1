@@ -60,9 +60,9 @@ private:
     /// @brief Referência ao grafo sobre o qual as buscas são realizadas.
     const Grafo& grafo_;
 
-    /// ----------------------------------- ///
-    /// Métodos auxiliares para uso interno ///
-    /// ----------------------------------- ///
+    // ----------------------------------- //
+    // Métodos auxiliares para uso interno //
+    // ----------------------------------- //
     
     /**
      * @brief   Calcula a heurística de distância entre dois nós para o A*.
@@ -105,9 +105,9 @@ private:
 
 public:
 
-    /// ---------------------- ///
-    /// Construtor e destrutor ///
-    /// ---------------------- ///
+    // ---------------------- //
+    // Construtor e destrutor //
+    // ---------------------- //
 
     /**
      * @brief   Constrói um PathFinder associado a um Grafo existente.
@@ -118,9 +118,9 @@ public:
     /// @brief Destrutor padrão.
     ~PathFinder();
 
-    /// ----------------- ///
-    /// Interface Pública ///
-    /// ----------------- ///
+    // ----------------- //
+    // Interface Pública //
+    // ----------------- //
 
     /**
      * @brief   Encontra o caminho de menor custo entre dois nós usando A*.

@@ -64,9 +64,9 @@ private:
     std::unordered_map<long long, LugarMap> dict_estruturas_;
 
 public:
-    /// ------------------------- ///
-    /// Construtores e destrutor ///
-    /// ------------------------- ///
+    // ------------------------- //
+    // Construtores e destrutor  //
+    // ------------------------- //
     
     /**
      * @brief   Constrói um Map vazio com apenas um nome.
@@ -92,9 +92,9 @@ public:
     /// @brief Destrutor padrão de Mapa.
     ~Map();
 
-    /// --------------------------------------- ///
-    /// Mutadores - modificam o estado do mapa  ///
-    /// --------------------------------------- ///
+    // --------------------------------------- //
+    // Mutadores - modificam o estado do mapa  //
+    // --------------------------------------- //
     
     /**
      * @brief   Insere ou substitui uma estrutura geográfica no dicionário.
@@ -127,9 +127,9 @@ public:
      */
     void altera_nome(std::string nome);
 
-    /// --------------------------------------- ///
-    /// Acessores - leitura do estado do mapa   ///
-    /// --------------------------------------- ///
+    // --------------------------------------- //
+    // Acessores - leitura do estado do mapa   //
+    // --------------------------------------- //
 
     /**
      * @brief   Retorna o dicionário completo de estruturas geográficas.
