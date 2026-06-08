@@ -1,0 +1,379 @@
+/* ============================================================
+   Tema Escuro Moderno & Minimalista para Doxygen
+   Substitui completamente o visual padrão.
+
+   Uso no Doxyfile:
+   HTML_EXTRA_STYLESHEET = doxygen-dark-minimal.css
+   (Remova ou renomeie qualquer outro CSS extra conflitante)
+   ============================================================ */
+
+/* --- RESET AGRESSIVO & BASE --- */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #1a1a1a;
+  color: #d4d4d4;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Container principal centralizado e com largura máxima */
+div.contents {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2em 1.5em;
+  background: transparent;
+}
+
+/* Remove todos os gradientes, sombras e bordas desnecessárias */
+* {
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
+/* --- CABEÇALHO / ÁREA DO TÍTULO --- */
+#titlearea {
+  background: #1e1e1e;
+  border-bottom: 1px solid #333;
+  padding: 1.5em 2em;
+  text-align: center;
+}
+#titlearea table {
+  margin: 0 auto;
+}
+#projectname {
+  font-size: 2em;
+  font-weight: 300;
+  color: #e0e0e0;
+  letter-spacing: -0.5px;
+}
+#projectbrief {
+  font-size: 1em;
+  color: #888;
+  margin-top: 0.25em;
+}
+#projectlogo img {
+  max-height: 55px;
+  opacity: 0.9;
+}
+
+/* --- BARRA DE NAVEGAÇÃO SUPERIOR (abas) --- */
+#top {
+  background: #1e1e1e;
+  border-bottom: 1px solid #333;
+  padding: 0.2em 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+#navrow1, #navrow2, #navrow3, #navrow4 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#navrow1 li, #navrow2 li, #navrow3 li, #navrow4 li {
+  margin: 0 0.15em;
+}
+#navrow1 a, #navrow2 a, #navrow3 a, #navrow4 a {
+  display: inline-block;
+  padding: 0.4em 1em;
+  color: #aaa;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+  font-size: 0.9em;
+}
+#navrow1 a:hover, #navrow2 a:hover,
+#navrow3 a:hover, #navrow4 a:hover {
+  background: #2a2a2a;
+  color: #e0e0e0;
+}
+/* Oculta o texto "Navigation" */
+#navrow1 > .label, #navrow2 > .label {
+  display: none;
+}
+/* Aba ativa */
+#navrow1 .current a, #navrow2 .current a {
+  background: #333;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* --- BARRA LATERAL (treeview) --- */
+#nav-tree {
+  background: #1a1a1a;
+  border-right: 1px solid #333;
+  width: 260px;
+}
+#nav-tree .item {
+  font-size: 14px;
+}
+#nav-tree a {
+  color: #bbb;
+  text-decoration: none;
+}
+#nav-tree a:hover {
+  color: #fff;
+  background: #2a2a2a;
+}
+#nav-tree .selected {
+  background: #2d2d2d;
+  color: #fff;
+}
+/* Ajuste do conteúdo principal ao lado da sidebar */
+div#doc-content {
+  margin-left: 260px;
+}
+
+/* --- TÍTULOS --- */
+h1, h2, h3, h4, h5, h6 {
+  color: #ddd;
+  font-weight: 400;
+  margin-top: 1.8em;
+  margin-bottom: 0.5em;
+}
+h1 {
+  font-size: 1.8em;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.3em;
+}
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.2em; }
+h4 { font-size: 1.1em; color: #ccc; }
+
+/* --- LINKS --- */
+a {
+  color: #7aa2f7;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #9bbaff;
+}
+a:visited {
+  color: #c0a0f0;
+}
+
+/* --- BLOCOS DE CÓDIGO --- */
+div.fragment {
+  background: #252526;
+  border: 1px solid #3a3a3a;
+  border-radius: 6px;
+  margin: 1em 0;
+  overflow: auto;
+}
+pre.fragment {
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 1em;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  line-height: 1.5;
+  color: #dcdcaa;
+}
+/* Linhas de código dentro de .fragment (se aplicável) */
+.fragment .line {
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+/* Palavra-chave, tipos etc. – sobrescreve highlights do Doxygen */
+span.keyword, span.keywordtype, span.keywordflow {
+  color: #c586c0 !important;
+}
+span.comment {
+  color: #6a9955 !important;
+}
+span.stringliteral {
+  color: #ce9178 !important;
+}
+span.preprocessor {
+  color: #808080 !important;
+}
+span.type {
+  color: #4ec9b0 !important;
+}
+
+/* Código inline */
+code {
+  background: #2d2d2d;
+  color: #e0e0e0;
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-family: "SF Mono", "Fira Code", monospace;
+  font-size: 0.9em;
+}
+a code {
+  color: #7aa2f7;
+}
+
+/* --- TABELAS --- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  background: transparent;
+}
+th, td {
+  padding: 0.75em 1em;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+th {
+  background: #252525;
+  color: #ccc;
+  font-weight: 500;
+}
+tr:nth-child(even) td {
+  background: #1f1f1f;
+}
+
+/* Tabelas de diretório e classes */
+.directory {
+  border: none;
+}
+.directory tr.even {
+  background: #1f1f1f;
+}
+.directory td.entry {
+  padding: 0.5em 1em;
+}
+.directory .levels span {
+  color: #7aa2f7;
+}
+
+/* --- DOCUMENTAÇÃO DE MEMBROS --- */
+.memitem {
+  border: none;
+  border-bottom: 1px solid #333;
+  padding: 1em 0;
+  margin: 1em 0;
+  background: transparent;
+}
+.memproto, .memdoc {
+  border: none;
+  background: none;
+  padding: 0.4em 0;
+}
+.memproto {
+  font-weight: 600;
+  color: #e0e0e0;
+}
+.memdoc {
+  color: #bbb;
+}
+.memname {
+  font-family: "SF Mono", "Fira Code", monospace;
+  font-size: 0.95em;
+  color: #d4d4d4;
+}
+.memTemplParams {
+  color: #888;
+}
+
+/* Parâmetros */
+.params, .paramname {
+  font-family: inherit;
+  color: #aaa;
+}
+.paramname {
+  font-weight: 600;
+  color: #dcdcaa;
+}
+
+/* Descrições breves */
+.mdescLeft, .mdescRight {
+  padding: 0.2em 0;
+}
+.mdescLeft {
+  font-weight: 600;
+  color: #ccc;
+}
+
+/* --- SEÇÕES DE DETALHES (collapse) --- */
+.arrow {
+  color: #888;
+}
+a.el {
+  font-weight: normal;
+  color: #7aa2f7;
+}
+
+/* --- RODAPÉ --- */
+#nav-path, .footer, .address {
+  background: none;
+  border-top: 1px solid #333;
+  color: #777;
+  font-size: 0.85em;
+  padding: 0.5em 2em;
+  text-align: center;
+}
+
+/* --- PESQUISA (caixa) --- */
+#MSearchBox {
+  border: 1px solid #444;
+  background: #2d2d2d;
+  border-radius: 4px;
+  margin: 0.3em 0.5em;
+}
+#MSearchBox .left {
+  background: none;
+}
+#MSearchBox input {
+  background: transparent;
+  color: #ddd;
+  border: none;
+  outline: none;
+}
+#MSearchSelect, #MSearchField {
+  background: transparent;
+  color: #ccc;
+}
+#MSearchResultsWindow {
+  background: #252526;
+  border: 1px solid #444;
+}
+
+/* --- DIVERSOS --- */
+hr {
+  border: none;
+  border-top: 1px solid #333;
+}
+div.ingroups {
+  margin-left: 1em;
+  padding-left: 0.5em;
+  border-left: 2px solid #555;
+}
+/* Remove ícones de "pasta fechada/aberta" antigos (opcional) */
+.icon {
+  filter: invert(0.8);
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+  div.contents {
+    padding: 1em;
+  }
+  #top {
+    padding: 0.2em 0;
+  }
+  #navrow1 a {
+    padding: 0.3em 0.7em;
+    font-size: 0.85em;
+  }
+  #nav-tree {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #333;
+  }
+  div#doc-content {
+    margin-left: 0;
+  }
+}

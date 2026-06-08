@@ -3,3 +3,5 @@
 exit.txt
 build/*
 build/map_generator.o
+html/html/
+html/latex/
