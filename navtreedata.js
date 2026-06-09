@@ -27,6 +27,15 @@ var NAVTREE =
   [ "\u202ATP_PDSII - Google Maps", "index.html", [
     [ "\u202ACLASS_INFO", "md_about_CLASS_INFO.html", null ],
     [ "\u202AClasses", "annotated.html", [
+      [ "\u202AUtilização básica", "index.html#autotoc_md4", [
+        [ "\u202Aautotoc_md1", "index.html#autotoc_md1", null ],
+        [ "\u202ASistema operacional", "index.html#autotoc_md5", null ],
+        [ "\u202ADependências externas", "index.html#autotoc_md6", [
+          [ "\u202AFerramentas de compilação (g++, make):", "index.html#autotoc_md7", null ],
+          [ "\u202ABiblioteca libxml++", "index.html#autotoc_md8", null ]
+        ] ],
+        [ "\u202ADownload e compilação", "index.html#autotoc_md9", null ]
+      ] ],
       [ "\u202ALista de componentes", "annotated.html", "annotated_dup" ],
       [ "\u202AÍndice dos componentes", "classes.html", null ],
       [ "\u202AHierarquia de classes", "hierarchy.html", "hierarchy" ],

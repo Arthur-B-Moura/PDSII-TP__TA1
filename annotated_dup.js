@@ -1,6 +1,5 @@
 var annotated_dup =
 [
-    [ "\u202Aautotoc_md1", "index.html#autotoc_md1", null ],
     [ "\u202ACoordenada", "structCoordenada.html", "structCoordenada" ],
     [ "\u202AEdge", "structEdge.html", "structEdge" ],
     [ "\u202AGlobalLocaleSetter", "structGlobalLocaleSetter.html", "structGlobalLocaleSetter" ],

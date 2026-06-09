@@ -101,15 +101,59 @@ autotoc_md1</h3>
 <hr  />
 <h2 class="DocNodeLTR">Seções da Documentação:</h2>
 <ul class="DocNodeLTR">
-<li>&#x202A;Detalhamento de Classes e User Stories </li>
+<li>&#x202A;Detalhamento de Classes e User Stories</li>
 </ul>
+<hr  />
+<h2 class="DocNodeLTR"><a class="anchor" id="autotoc_md4"></a>
+Utilização básica</h2>
+<p class="DocNodeLTR">A seguinte seção direciona os passos e requerimentos necessários para a execução da solução apresentada no projeto.</p>
+<h3 class="DocNodeLTR"><a class="anchor" id="autotoc_md5"></a>
+Sistema operacional</h3>
+<p class="DocNodeLTR">A execução dos scripts descrita considera uma máquina rodando <code>Ubuntu-22.04</code> . Pode ser esta por meio de um <em>boot</em> específico, ou a partir de máquina virtual, como <em>wsl</em>.</p>
+<h3 class="DocNodeLTR"><a class="anchor" id="autotoc_md6"></a>
+Dependências externas</h3>
+<p class="DocNodeLTR">Para compilar e executar o projeto, além dos arquivos nele implementado, é necessário que tenha instalado, em sua máquina, os seguintes itens:</p>
+<ul class="DocNodeLTR">
+<li>&#x202A;Ferramentas de compilação (g++, make)</li>
+<li>&#x202A;Biblioteca libxml++</li>
+</ul>
+<p class="DocNodeLTR">A seguir, seguem as instruções para verificar tais instalações e, caso necessário, realizá-las.</p>
+<h4 class="DocNodeLTR"><a class="anchor" id="autotoc_md7"></a>
+Ferramentas de compilação (g++, make):</h4>
+<p class="DocNodeLTR">Ambas essas ferramentas podem ser instaladas pelo terminal, a partir do <em>build-essentials:</em></p>
+<div class="fragment"><div class="line">sudo apt update &amp;&amp; sudo apt install build-essentials</div>
+</div><!-- fragment --><p class="DocNodeLTR">Para verificar suas instalações, basta executar o seguinte comando:</p>
+<div class="fragment"><div class="line">g++ --version</div>
+</div><!-- fragment --><blockquote class="doxtable DocNodeLTR">
+<p class="DocNodeLTR">OBS: o projeto foi compilado em sua produção com <code>g++ 11.4.0</code> . O uso de outras versões do compilador pode acarretar em comportamento não esperado.</p>
+<p></p>
+</blockquote>
+<h4 class="DocNodeLTR"><a class="anchor" id="autotoc_md8"></a>
+Biblioteca libxml++</h4>
+<p class="DocNodeLTR">Essa biblioteca é responsável pela leitura dos arquivos de mapa em xml (por exemplo, os arquivos .osm). Sua instalação pode, também, ser feita por linha de comando:</p>
+<div class="fragment"><div class="line">sudo apt update &amp;&amp; sudo apt install libxml++2.6-dev</div>
+</div><!-- fragment --><p class="DocNodeLTR">Para verificar sua instalação, basta executar o seguinte comando, que exibe os parâmetros da versão:</p>
+<div class="fragment"><div class="line">pkg-config libxml++-2.6 --modversion</div>
+</div><!-- fragment --><blockquote class="doxtable DocNodeLTR">
+<p class="DocNodeLTR">OBS: Note que o projeto utiliza a versão 2.6 dessa biblioteca. <b>É necessário que instale exatamente esta versão</b>, uma vez que versões superiores ou inferiores podem contar com diversas diferenças, inclusive impedindo a compilação.</p>
+<p></p>
+</blockquote>
+<h3 class="DocNodeLTR"><a class="anchor" id="autotoc_md9"></a>
+Download e compilação</h3>
+<p class="DocNodeLTR">Para utilizar os arquivos do projeto, navegue a um repositório de sua escolha e execute o seguinte comando para clonar projeto diretamente de seu repositório do GitHub:</p>
+<div class="fragment"><div class="line">git clone https://github.com/Arthur-B-Moura/PDSII-TP__TA1.git</div>
+</div><!-- fragment --><p class="DocNodeLTR">Em seguida, basta navegar até o <em>root</em> do projeto…</p>
+<div class="fragment"><div class="line">cd PDSII-TP__TA1</div>
+</div><!-- fragment --><p class="DocNodeLTR">… e realizar a compilação a partir do <em>make</em>:</p>
+<div class="fragment"><div class="line">make run</div>
+</div><!-- fragment --><p class="DocNodeLTR">Isso irá gerar um executável <code>pdsii_maps.exe</code>, que conta com todas as funcionalidades do projeto. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Gerado em Terça, 9 de Junho de 2026 03:25:05 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Gerado em Terça, 9 de Junho de 2026 15:51:54 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
