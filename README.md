@@ -20,6 +20,7 @@ O sistema apresentado conta com a implementação de um mecanismo _pathfinder_ p
 
 <h2>Seções da Documentação:</h2>
 
+- [Documentação Automática feita com Doxygen](https://arthur-b-moura.github.io/PDSII-TP__TA1/index.html)
 - [Detalhamento de Classes e User Stories](./about/README.md)
 
 
