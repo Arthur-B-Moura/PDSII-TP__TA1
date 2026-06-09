@@ -72,6 +72,7 @@ var menudata={children:[
 {text:"\u202ALista de ficheiros",url:"files.html"},
 {text:"\u202AMembros dos Ficheiros",url:"globals.html",children:[
 {text:"\u202ATudo",url:"globals.html"},
+{text:"\u202AFunções",url:"globals_func.html"},
 {text:"\u202AVariáveis",url:"globals_vars.html"},
 {text:"\u202AEnumerações",url:"globals_enum.html"},
 {text:"\u202AMacros",url:"globals_defs.html"}]}]}]}
