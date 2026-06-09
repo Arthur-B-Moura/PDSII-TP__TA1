@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>&#x202A;TP_PDSII - Google Maps: &#x202A;Código-Fonte de include/pathfinder.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">&#x202A;TP_PDSII - Google Maps
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">&#x202A;Sistema de navegação a partir de mapa (osm) inspirado pelo Google Maps</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('pathfinder_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">pathfinder.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="pathfinder_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifndef PATHFINDER_H__</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define PATHFINDER_H__</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="grafo_8h.html">grafo.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// ============================================================================= //</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//                                    PathResult                                 //</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// ============================================================================= //</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structPathResult.html">   31</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structPathResult.html">PathResult</a> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structPathResult.html#a48cf12e408e117c7bbd995ed1d01fb98">   33</a></span>&#160;    std::vector&lt;long long&gt; <a class="code" href="structPathResult.html#a48cf12e408e117c7bbd995ed1d01fb98">node_ids</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structPathResult.html#aae3798cc76ffaf74749a7d1b5668adf8">   36</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="structPathResult.html#aae3798cc76ffaf74749a7d1b5668adf8">total_distance</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structPathResult.html#ad95eb66be381c1f03995e6b8f4f7a152">   39</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structPathResult.html#ad95eb66be381c1f03995e6b8f4f7a152">found</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// ============================================================================= //</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//                                    PathFinder                                 //</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// ============================================================================= //</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classPathFinder.html">   58</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPathFinder.html">PathFinder</a> {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classPathFinder.html#acdac4033d7dc3e064e27f3fdefbc86ad">   61</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="classGrafo.html">Grafo</a>&amp; <a class="code" href="classPathFinder.html#acdac4033d7dc3e064e27f3fdefbc86ad">grafo_</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// ----------------------------------- //</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Métodos auxiliares para uso interno //</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// ----------------------------------- //</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classPathFinder.html#ab56ae519ebffbf4adc87f914a3555d30">   77</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classPathFinder.html#ab56ae519ebffbf4adc87f914a3555d30">heuristic</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> from_id, <span class="keywordtype">long</span> <span class="keywordtype">long</span> to_id) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classPathFinder.html#a5547e76f1fb0683e185cbf507f1e28fa">   89</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classPathFinder.html#a5547e76f1fb0683e185cbf507f1e28fa">bearing</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> from_id, <span class="keywordtype">long</span> <span class="keywordtype">long</span> to_id) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classPathFinder.html#ae93376e02e6b4a4a0fac09685845290b">  101</a></span>&#160;    std::vector&lt;long long&gt; <a class="code" href="classPathFinder.html#ae93376e02e6b4a4a0fac09685845290b">reconstruct_path</a>(</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keyword">const</span> std::unordered_map&lt;long long, long long&gt;&amp; came_from,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">long</span> end_id</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// ---------------------- //</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// Construtor e destrutor //</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// ---------------------- //</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classPathFinder.html#a25cc4169909be855deda7d897822c762">  116</a></span>&#160;    <a class="code" href="classPathFinder.html#a25cc4169909be855deda7d897822c762">PathFinder</a>(<span class="keyword">const</span> <a class="code" href="classGrafo.html">Grafo</a>&amp; grafo);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classPathFinder.html#acc04bc8bcddfda54da6a2905b256cf90">  119</a></span>&#160;    <a class="code" href="classPathFinder.html#acc04bc8bcddfda54da6a2905b256cf90">~PathFinder</a>();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="comment">// ----------------- //</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// Interface Pública //</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// ----------------- //</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classPathFinder.html#a20a1698de557281dd44fade77243c2fd">  136</a></span>&#160;    <a class="code" href="structPathResult.html">PathResult</a> <a class="code" href="classPathFinder.html#a20a1698de557281dd44fade77243c2fd">find_path</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> start_id, <span class="keywordtype">long</span> <span class="keywordtype">long</span> end_id) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="classPathFinder.html#a7a1463ad15729385b164ac2740fe61d7">  147</a></span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="classPathFinder.html#a7a1463ad15729385b164ac2740fe61d7">build_instructions</a>(<span class="keyword">const</span> <a class="code" href="structPathResult.html">PathResult</a>&amp; result) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;};</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// PATHFINDER_H__</span></div>
+<div class="ttc" id="aclassGrafo_html"><div class="ttname"><a href="classGrafo.html">Grafo</a></div><div class="ttdoc">Grafo ponderado de nós geográficos com lista de adjacência.</div><div class="ttdef"><b>Definition:</b> <a href="grafo_8h_source.html#l00054">grafo.h:54</a></div></div>
+<div class="ttc" id="aclassPathFinder_html"><div class="ttname"><a href="classPathFinder.html">PathFinder</a></div><div class="ttdoc">Mecanismo de busca de caminho sobre um Grafo usando o algoritmo A*.</div><div class="ttdef"><b>Definition:</b> <a href="pathfinder_8h_source.html#l00058">pathfinder.h:58</a></div></div>
+<div class="ttc" id="aclassPathFinder_html_a20a1698de557281dd44fade77243c2fd"><div class="ttname"><a href="classPathFinder.html#a20a1698de557281dd44fade77243c2fd">PathFinder::find_path</a></div><div class="ttdeci">PathResult find_path(long long start_id, long long end_id) const</div><div class="ttdoc">Encontra o caminho de menor custo entre dois nós usando A*.</div></div>
+<div class="ttc" id="aclassPathFinder_html_a25cc4169909be855deda7d897822c762"><div class="ttname"><a href="classPathFinder.html#a25cc4169909be855deda7d897822c762">PathFinder::PathFinder</a></div><div class="ttdeci">PathFinder(const Grafo &amp;grafo)</div><div class="ttdoc">Constrói um PathFinder associado a um Grafo existente.</div></div>
+<div class="ttc" id="aclassPathFinder_html_a5547e76f1fb0683e185cbf507f1e28fa"><div class="ttname"><a href="classPathFinder.html#a5547e76f1fb0683e185cbf507f1e28fa">PathFinder::bearing</a></div><div class="ttdeci">double bearing(long long from_id, long long to_id) const</div><div class="ttdoc">Calcula o ângulo de direção (bearing) entre dois nós.</div></div>
+<div class="ttc" id="aclassPathFinder_html_a7a1463ad15729385b164ac2740fe61d7"><div class="ttname"><a href="classPathFinder.html#a7a1463ad15729385b164ac2740fe61d7">PathFinder::build_instructions</a></div><div class="ttdeci">std::vector&lt; std::string &gt; build_instructions(const PathResult &amp;result) const</div><div class="ttdoc">Converte um PathResult em instruções de navegação em texto.</div></div>
+<div class="ttc" id="aclassPathFinder_html_ab56ae519ebffbf4adc87f914a3555d30"><div class="ttname"><a href="classPathFinder.html#ab56ae519ebffbf4adc87f914a3555d30">PathFinder::heuristic</a></div><div class="ttdeci">double heuristic(long long from_id, long long to_id) const</div><div class="ttdoc">Calcula a heurística de distância entre dois nós para o A*.</div></div>
+<div class="ttc" id="aclassPathFinder_html_acc04bc8bcddfda54da6a2905b256cf90"><div class="ttname"><a href="classPathFinder.html#acc04bc8bcddfda54da6a2905b256cf90">PathFinder::~PathFinder</a></div><div class="ttdeci">~PathFinder()</div><div class="ttdoc">Destrutor padrão.</div></div>
+<div class="ttc" id="aclassPathFinder_html_acdac4033d7dc3e064e27f3fdefbc86ad"><div class="ttname"><a href="classPathFinder.html#acdac4033d7dc3e064e27f3fdefbc86ad">PathFinder::grafo_</a></div><div class="ttdeci">const Grafo &amp; grafo_</div><div class="ttdoc">Referência ao grafo sobre o qual as buscas são realizadas.</div><div class="ttdef"><b>Definition:</b> <a href="pathfinder_8h_source.html#l00061">pathfinder.h:61</a></div></div>
+<div class="ttc" id="aclassPathFinder_html_ae93376e02e6b4a4a0fac09685845290b"><div class="ttname"><a href="classPathFinder.html#ae93376e02e6b4a4a0fac09685845290b">PathFinder::reconstruct_path</a></div><div class="ttdeci">std::vector&lt; long long &gt; reconstruct_path(const std::unordered_map&lt; long long, long long &gt; &amp;came_from, long long end_id) const</div><div class="ttdoc">Reconstrói o caminho percorrido a partir do mapa de predecessores.</div></div>
+<div class="ttc" id="agrafo_8h_html"><div class="ttname"><a href="grafo_8h.html">grafo.h</a></div><div class="ttdoc">Declaração das estruturas Edge e Grafo para representação de grafos de navegação.</div></div>
+<div class="ttc" id="astructPathResult_html"><div class="ttname"><a href="structPathResult.html">PathResult</a></div><div class="ttdoc">Encapsula o resultado de uma busca de caminho no grafo.</div><div class="ttdef"><b>Definition:</b> <a href="pathfinder_8h_source.html#l00031">pathfinder.h:31</a></div></div>
+<div class="ttc" id="astructPathResult_html_a48cf12e408e117c7bbd995ed1d01fb98"><div class="ttname"><a href="structPathResult.html#a48cf12e408e117c7bbd995ed1d01fb98">PathResult::node_ids</a></div><div class="ttdeci">std::vector&lt; long long &gt; node_ids</div><div class="ttdoc">Sequência ordenada de IDs de nós que compõem o caminho (origem → destino).</div><div class="ttdef"><b>Definition:</b> <a href="pathfinder_8h_source.html#l00033">pathfinder.h:33</a></div></div>
+<div class="ttc" id="astructPathResult_html_aae3798cc76ffaf74749a7d1b5668adf8"><div class="ttname"><a href="structPathResult.html#aae3798cc76ffaf74749a7d1b5668adf8">PathResult::total_distance</a></div><div class="ttdeci">double total_distance</div><div class="ttdoc">Distância total do caminho em metros. Indefinida se found for false.</div><div class="ttdef"><b>Definition:</b> <a href="pathfinder_8h_source.html#l00036">pathfinder.h:36</a></div></div>
+<div class="ttc" id="astructPathResult_html_ad95eb66be381c1f03995e6b8f4f7a152"><div class="ttname"><a href="structPathResult.html#ad95eb66be381c1f03995e6b8f4f7a152">PathResult::found</a></div><div class="ttdeci">bool found</div><div class="ttdoc">Indica se um caminho válido foi encontrado entre os nós fornecidos.</div><div class="ttdef"><b>Definition:</b> <a href="pathfinder_8h_source.html#l00039">pathfinder.h:39</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">&#x202A;include</a></li><li class="navelem"><a class="el" href="pathfinder_8h.html">&#x202A;pathfinder.h</a></li>
+    <li class="footer">Gerado em Terça, 9 de Junho de 2026 03:25:05 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+<map id="MapNode" name="MapNode">
+<area shape="rect" id="node1" title="Representa um nó do mapa, com um identificador único e uma posição geográfica." alt="" coords="13,95,97,121"/>
+<area shape="rect" id="node2" href="$structCoordenada.html" title="Representa uma coordenada geográfica, com latitude e longitude." alt="" coords="5,5,105,32"/>
+</map>

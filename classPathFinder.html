@@ -1,0 +1,455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>&#x202A;TP_PDSII - Google Maps: &#x202A;Referência à classe PathFinder</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">&#x202A;TP_PDSII - Google Maps
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">&#x202A;Sistema de navegação a partir de mapa (osm) inspirado pelo Google Maps</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classPathFinder.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Membros públicos</a> &#124;
+<a href="#pri-methods">Membros privados</a> &#124;
+<a href="#pri-attribs">Atributos Privados</a> &#124;
+<a href="classPathFinder-members.html">Mostrar lista completa dos membros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência à classe PathFinder</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>&#x202A;Mecanismo de busca de caminho sobre um <a class="el" href="classGrafo.html" title="&#x202A;Grafo ponderado de nós geográficos com lista de adjacência.">Grafo</a> usando o algoritmo A*.  
+ <a href="classPathFinder.html#details">Mais...</a></p>
+
+<p><code>#include &lt;<a class="el" href="pathfinder_8h_source.html">pathfinder.h</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Diagrama de colaboração para PathFinder:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classPathFinder__coll__graph.png" border="0" usemap="#aPathFinder_coll__map" alt="Collaboration graph"/></div>
+<map name="aPathFinder_coll__map" id="aPathFinder_coll__map">
+<area shape="rect" title="Mecanismo de busca de caminho sobre um Grafo usando o algoritmo A*." alt="" coords="945,57,1036,84"/>
+<area shape="rect" href="classGrafo.html" title="Grafo ponderado de nós geográficos com lista de adjacência." alt="" coords="793,57,852,84"/>
+<area shape="rect" title=" " alt="" coords="489,5,664,61"/>
+<area shape="rect" title=" " alt="" coords="219,20,372,47"/>
+<area shape="rect" href="structEdge.html" title="Representa uma aresta direcionada no grafo." alt="" coords="28,20,83,47"/>
+<area shape="rect" title=" " alt="" coords="485,86,668,127"/>
+<area shape="rect" href="classMapNode.html" title="Representa um nó do mapa, com um identificador único e uma posição geográfica." alt="" coords="253,93,337,120"/>
+<area shape="rect" href="structCoordenada.html" title="Representa uma coordenada geográfica, com latitude e longitude." alt="" coords="5,93,105,120"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Membros públicos</h2></td></tr>
+<tr class="memitem:a25cc4169909be855deda7d897822c762"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPathFinder.html#a25cc4169909be855deda7d897822c762">PathFinder</a> (const <a class="el" href="classGrafo.html">Grafo</a> &amp;grafo)</td></tr>
+<tr class="memdesc:a25cc4169909be855deda7d897822c762"><td class="mdescLeft">&#160;</td><td class="mdescRight">&#x202A;Constrói um <a class="el" href="classPathFinder.html" title="&#x202A;Mecanismo de busca de caminho sobre um Grafo usando o algoritmo A*.">PathFinder</a> associado a um <a class="el" href="classGrafo.html" title="&#x202A;Grafo ponderado de nós geográficos com lista de adjacência.">Grafo</a> existente.  <a href="classPathFinder.html#a25cc4169909be855deda7d897822c762">Mais...</a><br /></td></tr>
+<tr class="separator:a25cc4169909be855deda7d897822c762"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc04bc8bcddfda54da6a2905b256cf90"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPathFinder.html#acc04bc8bcddfda54da6a2905b256cf90">~PathFinder</a> ()</td></tr>
+<tr class="memdesc:acc04bc8bcddfda54da6a2905b256cf90"><td class="mdescLeft">&#160;</td><td class="mdescRight">&#x202A;Destrutor padrão.  <a href="classPathFinder.html#acc04bc8bcddfda54da6a2905b256cf90">Mais...</a><br /></td></tr>
+<tr class="separator:acc04bc8bcddfda54da6a2905b256cf90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20a1698de557281dd44fade77243c2fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPathResult.html">PathResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPathFinder.html#a20a1698de557281dd44fade77243c2fd">find_path</a> (long long start_id, long long end_id) const</td></tr>
+<tr class="memdesc:a20a1698de557281dd44fade77243c2fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">&#x202A;Encontra o caminho de menor custo entre dois nós usando A*.  <a href="classPathFinder.html#a20a1698de557281dd44fade77243c2fd">Mais...</a><br /></td></tr>
+<tr class="separator:a20a1698de557281dd44fade77243c2fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a1463ad15729385b164ac2740fe61d7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPathFinder.html#a7a1463ad15729385b164ac2740fe61d7">build_instructions</a> (const <a class="el" href="structPathResult.html">PathResult</a> &amp;result) const</td></tr>
+<tr class="memdesc:a7a1463ad15729385b164ac2740fe61d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">&#x202A;Converte um <a class="el" href="structPathResult.html" title="&#x202A;Encapsula o resultado de uma busca de caminho no grafo.">PathResult</a> em instruções de navegação em texto.  <a href="classPathFinder.html#a7a1463ad15729385b164ac2740fe61d7">Mais...</a><br /></td></tr>
+<tr class="separator:a7a1463ad15729385b164ac2740fe61d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Membros privados</h2></td></tr>
+<tr class="memitem:ab56ae519ebffbf4adc87f914a3555d30"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPathFinder.html#ab56ae519ebffbf4adc87f914a3555d30">heuristic</a> (long long from_id, long long to_id) const</td></tr>
+<tr class="memdesc:ab56ae519ebffbf4adc87f914a3555d30"><td class="mdescLeft">&#160;</td><td class="mdescRight">&#x202A;Calcula a heurística de distância entre dois nós para o A*.  <a href="classPathFinder.html#ab56ae519ebffbf4adc87f914a3555d30">Mais...</a><br /></td></tr>
+<tr class="separator:ab56ae519ebffbf4adc87f914a3555d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5547e76f1fb0683e185cbf507f1e28fa"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPathFinder.html#a5547e76f1fb0683e185cbf507f1e28fa">bearing</a> (long long from_id, long long to_id) const</td></tr>
+<tr class="memdesc:a5547e76f1fb0683e185cbf507f1e28fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">&#x202A;Calcula o ângulo de direção (bearing) entre dois nós.  <a href="classPathFinder.html#a5547e76f1fb0683e185cbf507f1e28fa">Mais...</a><br /></td></tr>
+<tr class="separator:a5547e76f1fb0683e185cbf507f1e28fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae93376e02e6b4a4a0fac09685845290b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; long long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPathFinder.html#ae93376e02e6b4a4a0fac09685845290b">reconstruct_path</a> (const std::unordered_map&lt; long long, long long &gt; &amp;came_from, long long end_id) const</td></tr>
+<tr class="memdesc:ae93376e02e6b4a4a0fac09685845290b"><td class="mdescLeft">&#160;</td><td class="mdescRight">&#x202A;Reconstrói o caminho percorrido a partir do mapa de predecessores.  <a href="classPathFinder.html#ae93376e02e6b4a4a0fac09685845290b">Mais...</a><br /></td></tr>
+<tr class="separator:ae93376e02e6b4a4a0fac09685845290b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos Privados</h2></td></tr>
+<tr class="memitem:acdac4033d7dc3e064e27f3fdefbc86ad"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classGrafo.html">Grafo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPathFinder.html#acdac4033d7dc3e064e27f3fdefbc86ad">grafo_</a></td></tr>
+<tr class="memdesc:acdac4033d7dc3e064e27f3fdefbc86ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">&#x202A;Referência ao grafo sobre o qual as buscas são realizadas.  <a href="classPathFinder.html#acdac4033d7dc3e064e27f3fdefbc86ad">Mais...</a><br /></td></tr>
+<tr class="separator:acdac4033d7dc3e064e27f3fdefbc86ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p class="DocNodeLTR">Mecanismo de busca de caminho sobre um <a class="el" href="classGrafo.html" title="&#x202A;Grafo ponderado de nós geográficos com lista de adjacência.">Grafo</a> usando o algoritmo A*. </p>
+<p class="DocNodeLTR"><a class="el" href="classPathFinder.html" title="&#x202A;Mecanismo de busca de caminho sobre um Grafo usando o algoritmo A*.">PathFinder</a> opera sobre uma referência constante a um <a class="el" href="classGrafo.html" title="&#x202A;Grafo ponderado de nós geográficos com lista de adjacência.">Grafo</a> e expõe dois serviços principais:</p>
+<ol type="1" class="DocNodeLTR">
+<li>&#x202A;<a class="el" href="classPathFinder.html#a20a1698de557281dd44fade77243c2fd" title="&#x202A;Encontra o caminho de menor custo entre dois nós usando A*.">find_path()</a> — encontra o caminho de menor custo entre dois nós.</li>
+<li>&#x202A;<a class="el" href="classPathFinder.html#a7a1463ad15729385b164ac2740fe61d7" title="&#x202A;Converte um PathResult em instruções de navegação em texto.">build_instructions()</a> — converte um <a class="el" href="structPathResult.html" title="&#x202A;Encapsula o resultado de uma busca de caminho no grafo.">PathResult</a> em instruções de navegação em linguagem natural. </li>
+</ol>
+
+<p class="definition">Definido na linha <a class="el" href="pathfinder_8h_source.html#l00058">58</a> do ficheiro <a class="el" href="pathfinder_8h_source.html">pathfinder.h</a>.</p>
+</div><h2 class="groupheader">Documentação dos Construtores &amp; Destrutor</h2>
+<a id="a25cc4169909be855deda7d897822c762"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25cc4169909be855deda7d897822c762">&#9670;&nbsp;</a></span>PathFinder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PathFinder::PathFinder </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classGrafo.html">Grafo</a> &amp;&#160;</td>
+          <td class="paramname"><em>grafo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>&#x202A;Constrói um <a class="el" href="classPathFinder.html" title="&#x202A;Mecanismo de busca de caminho sobre um Grafo usando o algoritmo A*.">PathFinder</a> associado a um <a class="el" href="classGrafo.html" title="&#x202A;Grafo ponderado de nós geográficos com lista de adjacência.">Grafo</a> existente. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grafo</td><td>&#x202A;<a class="el" href="classGrafo.html" title="&#x202A;Grafo ponderado de nós geográficos com lista de adjacência.">Grafo</a> sobre o qual as buscas serão realizadas. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acc04bc8bcddfda54da6a2905b256cf90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc04bc8bcddfda54da6a2905b256cf90">&#9670;&nbsp;</a></span>~PathFinder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PathFinder::~PathFinder </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>&#x202A;Destrutor padrão. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos métodos</h2>
+<a id="a5547e76f1fb0683e185cbf507f1e28fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5547e76f1fb0683e185cbf507f1e28fa">&#9670;&nbsp;</a></span>bearing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PathFinder::bearing </td>
+          <td>(</td>
+          <td class="paramtype">long long&#160;</td>
+          <td class="paramname"><em>from_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long long&#160;</td>
+          <td class="paramname"><em>to_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>&#x202A;Calcula o ângulo de direção (bearing) entre dois nós. </p>
+<p class="DocNodeLTR">Retorna o ângulo em graus no sentido horário a partir do norte geográfico, usado para gerar instruções de navegação (ex: "vire à direita").</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from_id</td><td>&#x202A;ID do nó de origem. </td></tr>
+    <tr><td class="paramname">to_id</td><td>&#x202A;ID do nó de destino. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>&#x202A;Bearing em graus [0.0, 360.0). </dd></dl>
+
+</div>
+</div>
+<a id="a7a1463ad15729385b164ac2740fe61d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a1463ad15729385b164ac2740fe61d7">&#9670;&nbsp;</a></span>build_instructions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; PathFinder::build_instructions </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structPathResult.html">PathResult</a> &amp;&#160;</td>
+          <td class="paramname"><em>result</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>&#x202A;Converte um <a class="el" href="structPathResult.html" title="&#x202A;Encapsula o resultado de uma busca de caminho no grafo.">PathResult</a> em instruções de navegação em texto. </p>
+<p class="DocNodeLTR">Analisa a sequência de nós do resultado e gera uma lista de instruções legíveis (ex: "Siga em frente por 200 m", "Vire à direita na Rua X").</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">result</td><td>&#x202A;Resultado de busca previamente obtido por <a class="el" href="classPathFinder.html#a20a1698de557281dd44fade77243c2fd" title="&#x202A;Encontra o caminho de menor custo entre dois nós usando A*.">find_path()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>&#x202A;Vetor de strings com as instruções de navegação em ordem. </dd></dl>
+
+</div>
+</div>
+<a id="a20a1698de557281dd44fade77243c2fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20a1698de557281dd44fade77243c2fd">&#9670;&nbsp;</a></span>find_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structPathResult.html">PathResult</a> PathFinder::find_path </td>
+          <td>(</td>
+          <td class="paramtype">long long&#160;</td>
+          <td class="paramname"><em>start_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long long&#160;</td>
+          <td class="paramname"><em>end_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>&#x202A;Encontra o caminho de menor custo entre dois nós usando A*. </p>
+<p class="DocNodeLTR">Se um caminho existir, o resultado conterá a sequência de nós e a distância total. Caso contrário, <code>found</code> será false e <code>node_ids</code> estará vazio.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start_id</td><td>&#x202A;ID do nó de origem. </td></tr>
+    <tr><td class="paramname">end_id</td><td>&#x202A;ID do nó de destino. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>&#x202A;<a class="el" href="structPathResult.html" title="&#x202A;Encapsula o resultado de uma busca de caminho no grafo.">PathResult</a> com o caminho encontrado (ou indicação de falha). </dd></dl>
+
+</div>
+</div>
+<a id="ab56ae519ebffbf4adc87f914a3555d30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab56ae519ebffbf4adc87f914a3555d30">&#9670;&nbsp;</a></span>heuristic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PathFinder::heuristic </td>
+          <td>(</td>
+          <td class="paramtype">long long&#160;</td>
+          <td class="paramname"><em>from_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long long&#160;</td>
+          <td class="paramname"><em>to_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>&#x202A;Calcula a heurística de distância entre dois nós para o A*. </p>
+<p class="DocNodeLTR">Utiliza a distância haversine entre as coordenadas dos nós como estimativa admissível (nunca superestima o custo real).</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from_id</td><td>&#x202A;ID do nó de origem. </td></tr>
+    <tr><td class="paramname">to_id</td><td>&#x202A;ID do nó de destino. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>&#x202A;Estimativa de distância em metros entre os dois nós. </dd></dl>
+
+</div>
+</div>
+<a id="ae93376e02e6b4a4a0fac09685845290b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae93376e02e6b4a4a0fac09685845290b">&#9670;&nbsp;</a></span>reconstruct_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;long long&gt; PathFinder::reconstruct_path </td>
+          <td>(</td>
+          <td class="paramtype">const std::unordered_map&lt; long long, long long &gt; &amp;&#160;</td>
+          <td class="paramname"><em>came_from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long long&#160;</td>
+          <td class="paramname"><em>end_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>&#x202A;Reconstrói o caminho percorrido a partir do mapa de predecessores. </p>
+<p class="DocNodeLTR">Percorre o mapa <code>came_from</code> de trás para frente, partindo de <code>end_id</code> até a origem, e retorna a sequência de IDs na ordem correta.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">came_from</td><td>&#x202A;Mapa que associa cada nó ao seu predecessor no caminho ótimo. </td></tr>
+    <tr><td class="paramname">end_id</td><td>&#x202A;ID do nó de destino (ponto de partida da reconstrução). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>&#x202A;Vetor de IDs de nós ordenado da origem ao destino. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos dados membro</h2>
+<a id="acdac4033d7dc3e064e27f3fdefbc86ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdac4033d7dc3e064e27f3fdefbc86ad">&#9670;&nbsp;</a></span>grafo_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classGrafo.html">Grafo</a>&amp; PathFinder::grafo_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>&#x202A;Referência ao grafo sobre o qual as buscas são realizadas. </p>
+
+<p class="definition">Definido na linha <a class="el" href="pathfinder_8h_source.html#l00061">61</a> do ficheiro <a class="el" href="pathfinder_8h_source.html">pathfinder.h</a>.</p>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir do seguinte ficheiro:<ul>
+<li>include/<a class="el" href="pathfinder_8h_source.html">pathfinder.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classPathFinder.html">&#x202A;PathFinder</a></li>
+    <li class="footer">Gerado em Terça, 9 de Junho de 2026 03:25:05 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

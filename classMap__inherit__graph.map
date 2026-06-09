@@ -1,0 +1,4 @@
+<map id="Map" name="Map">
+<area shape="rect" id="node1" title="Mapa geográfico estendido com metadados e dicionário de estruturas." alt="" coords="9,80,60,107"/>
+<area shape="rect" id="node2" href="$classGrafo.html" title="Grafo ponderado de nós geográficos com lista de adjacência." alt="" coords="5,5,64,32"/>
+</map>

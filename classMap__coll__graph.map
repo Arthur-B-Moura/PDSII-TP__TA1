@@ -1,0 +1,15 @@
+<map id="Map" name="Map">
+<area shape="rect" id="node1" title="Mapa geográfico estendido com metadados e dicionário de estruturas." alt="" coords="1245,152,1296,179"/>
+<area shape="rect" id="node2" href="$classGrafo.html" title="Grafo ponderado de nós geográficos com lista de adjacência." alt="" coords="967,92,1025,119"/>
+<area shape="rect" id="node3" title=" " alt="" coords="600,5,775,61"/>
+<area shape="rect" id="node4" title=" " alt="" coords="271,20,425,47"/>
+<area shape="rect" id="node5" href="$structEdge.html" title="Representa uma aresta direcionada no grafo." alt="" coords="47,20,102,47"/>
+<area shape="rect" id="node6" title=" " alt="" coords="596,86,779,127"/>
+<area shape="rect" id="node7" href="$classMapNode.html" title="Representa um nó do mapa, com um identificador único e uma posição geográfica." alt="" coords="306,93,390,120"/>
+<area shape="rect" id="node8" href="$structCoordenada.html" title="Representa uma coordenada geográfica, com latitude e longitude." alt="" coords="25,93,125,120"/>
+<area shape="rect" id="node9" title=" " alt="" coords="904,203,1088,245"/>
+<area shape="rect" id="node10" href="$structLugarMap.html" title="Representa uma unidade espacial do mapa (lugar, construção ou via)." alt="" coords="644,211,731,237"/>
+<area shape="rect" id="node11" title=" " alt="" coords="305,177,391,204"/>
+<area shape="rect" id="node12" title=" " alt="" coords="5,170,144,211"/>
+<area shape="rect" id="node13" title=" " alt="" coords="257,261,439,288"/>
+</map>

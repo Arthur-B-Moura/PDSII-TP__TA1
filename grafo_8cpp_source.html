@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>&#x202A;TP_PDSII - Google Maps: &#x202A;Código-Fonte de src/grafo.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">&#x202A;TP_PDSII - Google Maps
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">&#x202A;Sistema de navegação a partir de mapa (osm) inspirado pelo Google Maps</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('grafo_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">grafo.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="grafo_8cpp.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="grafo_8h.html">grafo.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// ----------------------------------- //</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// Métodos auxiliares para uso interno //</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// ----------------------------------- //</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classGrafo.html#a46af0f886107cbaf8016ed456577a97a">   17</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classGrafo.html#a46af0f886107cbaf8016ed456577a97a">Grafo::haversine_distance</a>(<span class="keyword">const</span> <a class="code" href="classMapNode.html">MapNode</a>&amp; a, <span class="keyword">const</span> <a class="code" href="classMapNode.html">MapNode</a>&amp; b)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">double</span> distancia, aux, c_;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">double</span> RAIO = 6371.009; <span class="comment">// raio da Terra em km</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// Converte valores para radianos</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">double</span> phi1 = a.<a class="code" href="classMapNode.html#a7fca2c24c26d417425d3494727e99553">posicao</a>().<a class="code" href="structCoordenada.html#a6ffd4b1ffd6a26c7a7e0b805556b964b">latitude_</a> * M_PI / 180.0;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">double</span> phi2 = b.<a class="code" href="classMapNode.html#a7fca2c24c26d417425d3494727e99553">posicao</a>().<a class="code" href="structCoordenada.html#a6ffd4b1ffd6a26c7a7e0b805556b964b">latitude_</a> * M_PI / 180.0;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">double</span> delta_phi = phi2 - phi1;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">double</span> delta_lambda = (b.<a class="code" href="classMapNode.html#a7fca2c24c26d417425d3494727e99553">posicao</a>().<a class="code" href="structCoordenada.html#aa41c97af6c7b747ad72b09f20ae556c7">longitude_</a> - </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                           a.<a class="code" href="classMapNode.html#a7fca2c24c26d417425d3494727e99553">posicao</a>().<a class="code" href="structCoordenada.html#aa41c97af6c7b747ad72b09f20ae556c7">longitude_</a>) * M_PI / 180.0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// Formula de distância Haversine</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    aux = std::pow(std::sin(delta_phi / 2),2) + std::cos(phi1) * </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;          std::cos(phi2) * std::pow(std::sin(delta_lambda / 2),2);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    c_ =  2 * std::atan2(std::sqrt(aux),std::sqrt(1-aux));</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// Distancia entre os pontos, em km</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    distancia = RAIO * c_;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> distancia;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classGrafo.html#a9c211351a255fd9b24f1b56ae5e1b70b">   39</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classGrafo.html#a9c211351a255fd9b24f1b56ae5e1b70b">Grafo::edge_exists</a>(std::vector&lt;Edge&gt; haystack, <a class="code" href="structEdge.html">Edge</a> needle)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> (std::find(haystack.begin(), haystack.end(), needle) != haystack.end()) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// ---------------------- //</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// Construtor e destrutor //</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">// ---------------------- // </span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classGrafo.html#ab810bbe26a98e9af6661ccddff66b03b">   50</a></span>&#160;<a class="code" href="classGrafo.html#ab810bbe26a98e9af6661ccddff66b03b">Grafo::Grafo</a>() {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    this-&gt;<a class="code" href="classGrafo.html#a7bcedc29188554b861c2c9054cc16162">edge_count_</a> = 0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classGrafo.html#a16f3fbba0de2667dfba3b657cb7e95ff">   55</a></span>&#160;<a class="code" href="classGrafo.html#a16f3fbba0de2667dfba3b657cb7e95ff">Grafo::~Grafo</a>() {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    this-&gt;<a class="code" href="classGrafo.html#a1a423f953109f4409a38a6772180c19e">nodes_</a>.clear();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    this-&gt;<a class="code" href="classGrafo.html#a1a423f953109f4409a38a6772180c19e">nodes_</a>.rehash(0);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; pair : this-&gt;<a class="code" href="classGrafo.html#af180cd9723e8ff448ab3ab3e9b0fd01a">adjacency_</a>) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        pair.second.clear();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    this-&gt;adjacency_.clear();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    this-&gt;adjacency_.rehash(0);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">// --------------------------------------- //</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">// Mutadores - modificam o estado do grafo //</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// --------------------------------------- //</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classGrafo.html#ad6b6ed285598aebd9228c49b426553cf">   71</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGrafo.html#ad6b6ed285598aebd9228c49b426553cf">Grafo::add_node</a>(<span class="keyword">const</span> <a class="code" href="classMapNode.html">MapNode</a>&amp; node) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (!this-&gt;<a class="code" href="classGrafo.html#accac155754052aec3bfc031fdabc0d16">has_node</a>(node.<a class="code" href="classMapNode.html#a8b4cb7edc9c447df1071e52b89d4fc7b">id</a>())) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        this-&gt;<a class="code" href="classGrafo.html#a1a423f953109f4409a38a6772180c19e">nodes_</a>.insert({node.<a class="code" href="classMapNode.html#a8b4cb7edc9c447df1071e52b89d4fc7b">id</a>(), node});</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        this-&gt;<a class="code" href="classGrafo.html#af180cd9723e8ff448ab3ab3e9b0fd01a">adjacency_</a>.insert({node.<a class="code" href="classMapNode.html#a8b4cb7edc9c447df1071e52b89d4fc7b">id</a>(), std::vector&lt;Edge&gt;()});</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classGrafo.html#a86dd65f40956f7c3f2cbe1de7bd7086d">   79</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGrafo.html#a86dd65f40956f7c3f2cbe1de7bd7086d">Grafo::add_edge</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> from_id, <span class="keywordtype">long</span> <span class="keywordtype">long</span> to_id) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span>((this-&gt;<a class="code" href="classGrafo.html#accac155754052aec3bfc031fdabc0d16">has_node</a>(from_id) &amp;&amp; this-&gt;<a class="code" href="classGrafo.html#accac155754052aec3bfc031fdabc0d16">has_node</a>(to_id)) == <span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Tentativa de adicionar edge com um ou mais nós não mapeados.&quot;</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }   </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">double</span> distance = this-&gt;<a class="code" href="classGrafo.html#a46af0f886107cbaf8016ed456577a97a">haversine_distance</a>(this-&gt;<a class="code" href="classGrafo.html#aebc0982784b491029ba9c6e8d3ecb8cc">get_node</a>(from_id),this-&gt;<a class="code" href="classGrafo.html#aebc0982784b491029ba9c6e8d3ecb8cc">get_node</a>(to_id));</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// TODO: Add distinção de sentido de ruas</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="structEdge.html">Edge</a> edge_from_to{to_id,distance};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="structEdge.html">Edge</a> edge_to_from{from_id,distance};</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    std::vector&lt;Edge&gt;&amp; edges_from = this-&gt;<a class="code" href="classGrafo.html#af180cd9723e8ff448ab3ab3e9b0fd01a">adjacency_</a>.at(from_id);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    std::vector&lt;Edge&gt;&amp; edges_to = this-&gt;<a class="code" href="classGrafo.html#af180cd9723e8ff448ab3ab3e9b0fd01a">adjacency_</a>.at(to_id);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (!this-&gt;<a class="code" href="classGrafo.html#a9c211351a255fd9b24f1b56ae5e1b70b">edge_exists</a>(edges_from,edge_from_to)) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        edges_from.push_back(edge_from_to);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        this-&gt;<a class="code" href="classGrafo.html#a7bcedc29188554b861c2c9054cc16162">edge_count_</a>++;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span>(!this-&gt;<a class="code" href="classGrafo.html#a9c211351a255fd9b24f1b56ae5e1b70b">edge_exists</a>(edges_to,edge_to_from)) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        edges_to.push_back(edge_to_from);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        this-&gt;<a class="code" href="classGrafo.html#a7bcedc29188554b861c2c9054cc16162">edge_count_</a>++;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classGrafo.html#a2264e9248db2533b7df304f8c37b8bc2">  105</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classGrafo.html#a86dd65f40956f7c3f2cbe1de7bd7086d">Grafo::add_edge</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> from_id, std::vector&lt;long long&gt; ids_connected_to) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; to_id : ids_connected_to) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        this-&gt;<a class="code" href="classGrafo.html#a86dd65f40956f7c3f2cbe1de7bd7086d">add_edge</a>(from_id, to_id);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">// --------------------------------------- //</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">// Acessores - leitura do estado do grafo  //</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">// --------------------------------------- //</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classGrafo.html#aebc0982784b491029ba9c6e8d3ecb8cc">  116</a></span>&#160;<span class="keyword">const</span> <a class="code" href="classMapNode.html">MapNode</a>&amp; <a class="code" href="classGrafo.html#aebc0982784b491029ba9c6e8d3ecb8cc">Grafo::get_node</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">id</span>)<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> (!this-&gt;<a class="code" href="classGrafo.html#accac155754052aec3bfc031fdabc0d16">has_node</a>(<span class="keywordtype">id</span>)) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Tentativa de acessar nó não mapeado.&quot;</span>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="classGrafo.html#a1a423f953109f4409a38a6772180c19e">nodes_</a>.at(<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classGrafo.html#a3378bde050226165c5d766af3c38e91d">  124</a></span>&#160;<span class="keyword">const</span> std::vector&lt;Edge&gt;&amp; <a class="code" href="classGrafo.html#a3378bde050226165c5d766af3c38e91d">Grafo::get_neighbors</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> node_id)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">if</span> (!this-&gt;<a class="code" href="classGrafo.html#accac155754052aec3bfc031fdabc0d16">has_node</a>(node_id)) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Tentativa de acessar vizinhos de nó não mapeado.&quot;</span>);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="classGrafo.html#af180cd9723e8ff448ab3ab3e9b0fd01a">adjacency_</a>.at(node_id);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classGrafo.html#accac155754052aec3bfc031fdabc0d16">  132</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classGrafo.html#accac155754052aec3bfc031fdabc0d16">Grafo::has_node</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">id</span>)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="classGrafo.html#a1a423f953109f4409a38a6772180c19e">nodes_</a>.count(<span class="keywordtype">id</span>) == 1; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="classGrafo.html#ae7b3449adda2943e7e8f2f8f1958858e">  137</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classGrafo.html#ae7b3449adda2943e7e8f2f8f1958858e">Grafo::node_count</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="classGrafo.html#a1a423f953109f4409a38a6772180c19e">nodes_</a>.size();</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="classGrafo.html#a92a8bb8fd0726c7410db69f9f1262f8a">  142</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classGrafo.html#a92a8bb8fd0726c7410db69f9f1262f8a">Grafo::edge_count</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="classGrafo.html#a7bcedc29188554b861c2c9054cc16162">edge_count_</a>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
+<div class="ttc" id="aclassGrafo_html_a16f3fbba0de2667dfba3b657cb7e95ff"><div class="ttname"><a href="classGrafo.html#a16f3fbba0de2667dfba3b657cb7e95ff">Grafo::~Grafo</a></div><div class="ttdeci">~Grafo()</div><div class="ttdoc">Destrutor padrão para Grafo.</div><div class="ttdef"><b>Definition:</b> <a href="grafo_8cpp_source.html#l00055">grafo.cpp:55</a></div></div>
+<div class="ttc" id="aclassGrafo_html_a1a423f953109f4409a38a6772180c19e"><div class="ttname"><a href="classGrafo.html#a1a423f953109f4409a38a6772180c19e">Grafo::nodes_</a></div><div class="ttdeci">std::unordered_map&lt; long long, MapNode &gt; nodes_</div><div class="ttdoc">Conjunto de nós do grafo, indexados pelo seu ID.</div><div class="ttdef"><b>Definition:</b> <a href="grafo_8h_source.html#l00057">grafo.h:57</a></div></div>
+<div class="ttc" id="aclassGrafo_html_a3378bde050226165c5d766af3c38e91d"><div class="ttname"><a href="classGrafo.html#a3378bde050226165c5d766af3c38e91d">Grafo::get_neighbors</a></div><div class="ttdeci">const std::vector&lt; Edge &gt; &amp; get_neighbors(long long node_id) const</div><div class="ttdoc">Retorna o vetor de arestas de saída de um nó.</div><div class="ttdef"><b>Definition:</b> <a href="grafo_8cpp_source.html#l00124">grafo.cpp:124</a></div></div>
+<div class="ttc" id="aclassGrafo_html_a46af0f886107cbaf8016ed456577a97a"><div class="ttname"><a href="classGrafo.html#a46af0f886107cbaf8016ed456577a97a">Grafo::haversine_distance</a></div><div class="ttdeci">double haversine_distance(const MapNode &amp;a, const MapNode &amp;b) const</div><div class="ttdoc">Calcula a distância haversine entre dois nós geográficos.</div><div class="ttdef"><b>Definition:</b> <a href="grafo_8cpp_source.html#l00017">grafo.cpp:17</a></div></div>
+<div class="ttc" id="aclassGrafo_html_a7bcedc29188554b861c2c9054cc16162"><div class="ttname"><a href="classGrafo.html#a7bcedc29188554b861c2c9054cc16162">Grafo::edge_count_</a></div><div class="ttdeci">int edge_count_</div><div class="ttdoc">Contador do número total de arestas no grafo.</div><div class="ttdef"><b>Definition:</b> <a href="grafo_8h_source.html#l00063">grafo.h:63</a></div></div>
+<div class="ttc" id="aclassGrafo_html_a86dd65f40956f7c3f2cbe1de7bd7086d"><div class="ttname"><a href="classGrafo.html#a86dd65f40956f7c3f2cbe1de7bd7086d">Grafo::add_edge</a></div><div class="ttdeci">void add_edge(long long from_id, long long to_id)</div><div class="ttdoc">Adiciona uma aresta bidirecional (TODO: FIX) entre dois nós.</div><div class="ttdef"><b>Definition:</b> <a href="grafo_8cpp_source.html#l00079">grafo.cpp:79</a></div></div>
+<div class="ttc" id="aclassGrafo_html_a92a8bb8fd0726c7410db69f9f1262f8a"><div class="ttname"><a href="classGrafo.html#a92a8bb8fd0726c7410db69f9f1262f8a">Grafo::edge_count</a></div><div class="ttdeci">int edge_count() const</div><div class="ttdoc">Retorna o número total de arestas no grafo.</div><div class="ttdef"><b>Definition:</b> <a href="grafo_8cpp_source.html#l00142">grafo.cpp:142</a></div></div>
+<div class="ttc" id="aclassGrafo_html_a9c211351a255fd9b24f1b56ae5e1b70b"><div class="ttname"><a href="classGrafo.html#a9c211351a255fd9b24f1b56ae5e1b70b">Grafo::edge_exists</a></div><div class="ttdeci">bool edge_exists(std::vector&lt; Edge &gt; haystack, Edge needle) const</div><div class="ttdoc">Verifica se uma aresta já existe em um vetor de arestas.</div><div class="ttdef"><b>Definition:</b> <a href="grafo_8cpp_source.html#l00039">grafo.cpp:39</a></div></div>
+<div class="ttc" id="aclassGrafo_html_ab810bbe26a98e9af6661ccddff66b03b"><div class="ttname"><a href="classGrafo.html#ab810bbe26a98e9af6661ccddff66b03b">Grafo::Grafo</a></div><div class="ttdeci">Grafo()</div><div class="ttdoc">Constrói um grafo vazio.</div><div class="ttdef"><b>Definition:</b> <a href="grafo_8cpp_source.html#l00050">grafo.cpp:50</a></div></div>
+<div class="ttc" id="aclassGrafo_html_accac155754052aec3bfc031fdabc0d16"><div class="ttname"><a href="classGrafo.html#accac155754052aec3bfc031fdabc0d16">Grafo::has_node</a></div><div class="ttdeci">bool has_node(long long id) const</div><div class="ttdoc">Verifica se um nó com o ID fornecido existe no grafo.</div><div class="ttdef"><b>Definition:</b> <a href="grafo_8cpp_source.html#l00132">grafo.cpp:132</a></div></div>
+<div class="ttc" id="aclassGrafo_html_ad6b6ed285598aebd9228c49b426553cf"><div class="ttname"><a href="classGrafo.html#ad6b6ed285598aebd9228c49b426553cf">Grafo::add_node</a></div><div class="ttdeci">void add_node(const MapNode &amp;node)</div><div class="ttdoc">Adiciona um nó ao grafo.</div><div class="ttdef"><b>Definition:</b> <a href="grafo_8cpp_source.html#l00071">grafo.cpp:71</a></div></div>
+<div class="ttc" id="aclassGrafo_html_ae7b3449adda2943e7e8f2f8f1958858e"><div class="ttname"><a href="classGrafo.html#ae7b3449adda2943e7e8f2f8f1958858e">Grafo::node_count</a></div><div class="ttdeci">int node_count() const</div><div class="ttdoc">Retorna o número de nós (vértices) no grafo.</div><div class="ttdef"><b>Definition:</b> <a href="grafo_8cpp_source.html#l00137">grafo.cpp:137</a></div></div>
+<div class="ttc" id="aclassGrafo_html_aebc0982784b491029ba9c6e8d3ecb8cc"><div class="ttname"><a href="classGrafo.html#aebc0982784b491029ba9c6e8d3ecb8cc">Grafo::get_node</a></div><div class="ttdeci">const MapNode &amp; get_node(long long id) const</div><div class="ttdoc">Retorna uma referência constante ao nó com o ID fornecido.</div><div class="ttdef"><b>Definition:</b> <a href="grafo_8cpp_source.html#l00116">grafo.cpp:116</a></div></div>
+<div class="ttc" id="aclassGrafo_html_af180cd9723e8ff448ab3ab3e9b0fd01a"><div class="ttname"><a href="classGrafo.html#af180cd9723e8ff448ab3ab3e9b0fd01a">Grafo::adjacency_</a></div><div class="ttdeci">std::unordered_map&lt; long long, std::vector&lt; Edge &gt; &gt; adjacency_</div><div class="ttdoc">Lista de adjacência: mapeia o ID de cada nó ao vetor de suas arestas de saída.</div><div class="ttdef"><b>Definition:</b> <a href="grafo_8h_source.html#l00060">grafo.h:60</a></div></div>
+<div class="ttc" id="aclassMapNode_html"><div class="ttname"><a href="classMapNode.html">MapNode</a></div><div class="ttdoc">Representa um nó do mapa, com um identificador único e uma posição geográfica.</div><div class="ttdef"><b>Definition:</b> <a href="map__node_8h_source.html#l00043">map_node.h:43</a></div></div>
+<div class="ttc" id="aclassMapNode_html_a7fca2c24c26d417425d3494727e99553"><div class="ttname"><a href="classMapNode.html#a7fca2c24c26d417425d3494727e99553">MapNode::posicao</a></div><div class="ttdeci">Coordenada posicao() const</div><div class="ttdoc">Retorna a posição geográfica do nó.</div><div class="ttdef"><b>Definition:</b> <a href="map__node_8cpp_source.html#l00039">map_node.cpp:39</a></div></div>
+<div class="ttc" id="aclassMapNode_html_a8b4cb7edc9c447df1071e52b89d4fc7b"><div class="ttname"><a href="classMapNode.html#a8b4cb7edc9c447df1071e52b89d4fc7b">MapNode::id</a></div><div class="ttdeci">long long int id() const</div><div class="ttdoc">Retorna o identificador do nó.</div><div class="ttdef"><b>Definition:</b> <a href="map__node_8cpp_source.html#l00044">map_node.cpp:44</a></div></div>
+<div class="ttc" id="agrafo_8h_html"><div class="ttname"><a href="grafo_8h.html">grafo.h</a></div><div class="ttdoc">Declaração das estruturas Edge e Grafo para representação de grafos de navegação.</div></div>
+<div class="ttc" id="astructCoordenada_html_a6ffd4b1ffd6a26c7a7e0b805556b964b"><div class="ttname"><a href="structCoordenada.html#a6ffd4b1ffd6a26c7a7e0b805556b964b">Coordenada::latitude_</a></div><div class="ttdeci">double latitude_</div><div class="ttdef"><b>Definition:</b> <a href="map__node_8h_source.html#l00026">map_node.h:26</a></div></div>
+<div class="ttc" id="astructCoordenada_html_aa41c97af6c7b747ad72b09f20ae556c7"><div class="ttname"><a href="structCoordenada.html#aa41c97af6c7b747ad72b09f20ae556c7">Coordenada::longitude_</a></div><div class="ttdeci">double longitude_</div><div class="ttdef"><b>Definition:</b> <a href="map__node_8h_source.html#l00027">map_node.h:27</a></div></div>
+<div class="ttc" id="astructEdge_html"><div class="ttname"><a href="structEdge.html">Edge</a></div><div class="ttdoc">Representa uma aresta direcionada no grafo.</div><div class="ttdef"><b>Definition:</b> <a href="grafo_8h_source.html#l00028">grafo.h:28</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">&#x202A;src</a></li><li class="navelem"><a class="el" href="grafo_8cpp.html">&#x202A;grafo.cpp</a></li>
+    <li class="footer">Gerado em Terça, 9 de Junho de 2026 03:25:05 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

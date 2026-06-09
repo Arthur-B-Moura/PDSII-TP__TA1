@@ -1,0 +1,8 @@
+<map id="include/pathfinder.h" name="include/pathfinder.h">
+<area shape="rect" id="node1" title="Declaração das estruturas PathResult e da classe PathFinder." alt="" coords="149,5,299,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="137,229,199,256"/>
+<area shape="rect" id="node3" title=" " alt="" coords="206,155,330,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,229,64,256"/>
+<area shape="rect" id="node5" href="$grafo_8h.html" title="Declaração das estruturas Edge e Grafo para representação de grafos de navegação." alt="" coords="141,80,209,107"/>
+<area shape="rect" id="node6" href="$map__node_8h.html" title="Declaração da classe MapNode, representando um nó do mapa com um identificador único e uma posição ge..." alt="" coords="27,155,130,181"/>
+</map>
