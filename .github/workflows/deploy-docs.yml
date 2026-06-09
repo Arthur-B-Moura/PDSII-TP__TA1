@@ -1,0 +1,29 @@
+name: Deploy Doxygen to GitHub Pages
+run-name: Gerando documentação com Doxygen e publicando no GitHub Pages 🚀
+
+on: [push]
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Doxygen
+        run: sudo apt-get install doxygen graphviz -y
+
+      - name: Generate Documentation
+        run: doxygen Doxyfile # Ensure Doxyfile exists in your root folder
+
+      - name: Fix Jekyll Underscores
+        run: touch html/.nojekyll # Prevents GitHub from ignoring folder names with underscores
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: html/html # The folder where Doxygen saves your HTML files
+          branch: gh-pages

@@ -48,7 +48,7 @@ struct Edge {
  * @brief   Grafo ponderado de nós geográficos com lista de adjacência.
  *
  * Modela uma rede de navegação onde cada vértice é um MapNode e cada aresta
- * carrega a distância haversine (em metros) entre os dois nós conectados.
+ * carrega a distância haversine (em quilômetros) entre os dois nós conectados.
  * A estrutura interna usa mapas de hash para acesso O(1) a nós e vizinhos.
  */
 class Grafo {
@@ -62,9 +62,9 @@ protected:
     /// @brief Contador do número total de arestas no grafo.
     int edge_count_;
 
-    /// ----------------------------------- ///
-    /// Métodos auxiliares para uso interno ///
-    /// ----------------------------------- ///
+    // ----------------------------------- //
+    // Métodos auxiliares para uso interno //
+    // ----------------------------------- //
 
     /**
      * @brief   Calcula a distância haversine entre dois nós geográficos.
@@ -90,9 +90,9 @@ protected:
     bool edge_exists(std::vector<Edge> haystack, Edge needle) const;
 
 public:
-    /// ---------------------- ///
-    /// Construtor e destrutor ///
-    /// ---------------------- ///
+    // ---------------------- //
+    // Construtor e destrutor //
+    // ---------------------- //
     
     /// @brief Constrói um grafo vazio.
     Grafo();
@@ -100,9 +100,9 @@ public:
     /// @brief Destrutor padrão para Grafo.
     ~Grafo();
 
-    /// --------------------------------------- ///
-    /// Mutadores - modificam o estado do grafo ///
-    /// --------------------------------------- ///
+    // --------------------------------------- //
+    // Mutadores - modificam o estado do grafo //
+    // --------------------------------------- //
     
     /**
      * @brief   Adiciona um nó ao grafo.
@@ -136,9 +136,9 @@ public:
      */
     void add_edge(long long from_id, std::vector<long long> ids_connected_to);
 
-    /// --------------------------------------- ///
-    /// Acessores - leitura do estado do grafo  ///
-    /// --------------------------------------- ///
+    // --------------------------------------- ///
+    // Acessores - leitura do estado do grafo  //
+    // --------------------------------------- //
     
     /**
      * @brief   Retorna uma referência constante ao nó com o ID fornecido.

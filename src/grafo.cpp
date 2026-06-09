@@ -10,9 +10,9 @@
 #include <iostream>
 
 
-/// ----------------------------------- ///
-/// Métodos auxiliares para uso interno ///
-/// ----------------------------------- ///
+// ----------------------------------- //
+// Métodos auxiliares para uso interno //
+// ----------------------------------- //
 
 double Grafo::haversine_distance(const MapNode& a, const MapNode& b) const {
     double distancia, aux, c_;
@@ -43,9 +43,9 @@ bool Grafo::edge_exists(std::vector<Edge> haystack, Edge needle) const {
     return false;
 }
 
-/// ---------------------- ///
-/// Construtor e destrutor ///
-/// ---------------------- /// 
+// ---------------------- //
+// Construtor e destrutor //
+// ---------------------- // 
 
 Grafo::Grafo() {
     this->edge_count_ = 0;
@@ -64,9 +64,9 @@ Grafo::~Grafo() {
 }
 
 
-/// --------------------------------------- ///
-/// Mutadores - modificam o estado do grafo ///
-/// --------------------------------------- ///
+// --------------------------------------- //
+// Mutadores - modificam o estado do grafo //
+// --------------------------------------- //
 
 void Grafo::add_node(const MapNode& node) {
     if (!this->has_node(node.id())) {
@@ -109,9 +109,9 @@ void Grafo::add_edge(long long from_id, std::vector<long long> ids_connected_to)
 }
 
 
-/// --------------------------------------- ///
-/// Acessores - leitura do estado do grafo  ///
-/// --------------------------------------- ///
+// --------------------------------------- //
+// Acessores - leitura do estado do grafo  //
+// --------------------------------------- //
 
 const MapNode& Grafo::get_node(long long id) const{
     if (!this->has_node(id)) {
