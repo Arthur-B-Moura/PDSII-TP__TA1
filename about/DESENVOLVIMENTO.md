@@ -23,9 +23,11 @@ A seguir segue a organização de tarefas para cada integrante do grupo. Note qu
 - Implementação de MapNode e Grafo
 - Implementação MapGenerator
 - Documentação
-- **Bernardo de Sousa Vieira:**
-    - Definição do contrato de PathFinder e Grafo
-    - Implementação de PathFinder e Map
-- **Heitor Augusto Oliveira Costa de Amorim:**
-    - Desenvolvimento de User Stories
-    - Implementação da seção de interação com usuário
+  
+**Bernardo de Sousa Vieira:**
+- Definição do contrato de PathFinder e Grafo
+- Implementação de PathFinder e Map
+
+**Heitor Augusto Oliveira Costa de Amorim:**
+- Desenvolvimento de User Stories
+- Implementação da seção de interação com usuário
