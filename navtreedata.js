@@ -26,7 +26,7 @@ var NAVTREE =
 [
   [ "\u202ATP_PDSII - Google Maps", "index.html", [
     [ "\u202ACLASS_INFO", "md_about_CLASS_INFO.html", null ],
-    [ "\u202AUntitled", "md_about_DESENVOLVIMENTO.html", [
+    [ "\u202ADetalhamento do desenvolvimento do projeto", "md_about_DESENVOLVIMENTO.html", [
       [ "\u202AUtilização básica", "index.html#autotoc_md3", [
         [ "\u202Aautotoc_md0", "index.html#autotoc_md0", null ],
         [ "\u202ASistema operacional", "index.html#autotoc_md4", null ],
