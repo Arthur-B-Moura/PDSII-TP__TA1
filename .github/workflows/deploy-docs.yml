@@ -1,7 +1,10 @@
 name: Deploy Doxygen to GitHub Pages
 run-name: Gerando documentação com Doxygen e publicando no GitHub Pages 🚀
 
-on: [push]
+on: 
+  push:
+    branches:
+      - main
 
 permissions:
   contents: write

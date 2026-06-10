@@ -20,8 +20,12 @@ O sistema apresentado conta com a implementação de um mecanismo _pathfinder_ p
 
 <h2>Seções da Documentação:</h2>
 
+Além desta página, o projeto inclui as seguintes seções de documentação:
+
+- [Vídeo da Execução do Projeto](https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1&pp=ygUIcmlja3JvbGygBwE%3D)
 - [Documentação Automática feita com Doxygen](https://arthur-b-moura.github.io/PDSII-TP__TA1/index.html)
-- [Detalhamento de Classes e User Stories](./about/README.md)
+- [Detalhamento de Classes e User Stories](./about/CLASS_INFO.md)
+- [Descrição do Desenvolvimento do Projeto](./about/DESENVOLVIMENTO.md)
 
 
 ---
@@ -94,7 +98,17 @@ cd PDSII-TP__TA1
 … e realizar a compilação a partir do *make*:
 
 ```bash
+make 
+```
+
+...ou *make run*
+
+```bash
 make run
 ```
 
 Isso irá gerar um executável `pdsii_maps.exe`, que conta com todas as funcionalidades do projeto.
+
+---
+
+## Execução
