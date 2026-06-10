@@ -1,14 +1,14 @@
-# Untitled
+# Detalhamento do desenvolvimento do projeto
 
 ## Ciclo de desenvolvimento
 
 O desenvolvimento do projeto seguiu, de forma geral, o seguinte fluxo:
 
-![CicloDev.png](./about/Imagens/CicloDev.png)
+![CicloDev.png](./Imagens/CicloDev.png)
 
 Percebe-se que a seção de desenvolvimento engloba uma multitude de pontos. De fato, ela abrange o maior tempo despendido no percurso do projeto. Seu fluxo por si só foi efetuado conforme o seguinte fluxograma:
 
-![FluxoDesenvovilmento.png](./about/Imagens/FluxoDesenvovilmento.png)
+![FluxoDesenvovilmento.png](./Imagens/FluxoDesenvovilmento.png)
 
 Note que para implementação de classes que dependam de interação entre outras classes, o script de testes deveria, também, verificar sua integração.
 
