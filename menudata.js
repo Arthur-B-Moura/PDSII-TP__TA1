@@ -23,14 +23,14 @@
  @licend  The above is the entire license notice for the JavaScript code in this file
 */
 var menudata={children:[
-{text:"\u202APágina principal",url:"index.html"},
+{text:"\u202APágina Principal",url:"index.html"},
 {text:"\u202APáginas relacionadas",url:"pages.html"},
 {text:"\u202AClasses",url:"annotated.html",children:[
-{text:"\u202ALista de componentes",url:"annotated.html"},
-{text:"\u202AÍndice dos componentes",url:"classes.html"},
-{text:"\u202AHierarquia de classes",url:"inherits.html"},
-{text:"\u202AComponentes membro",url:"functions.html",children:[
-{text:"\u202ATudo",url:"functions.html",children:[
+{text:"\u202ALista de Classes",url:"annotated.html"},
+{text:"\u202AÍndice dos Componentes",url:"classes.html"},
+{text:"\u202AHierarquia de Classes",url:"inherits.html"},
+{text:"\u202AMembros de classe",url:"functions.html",children:[
+{text:"\u202ATodos",url:"functions.html",children:[
 {text:"\u202Aa",url:"functions.html#index_a"},
 {text:"\u202Ab",url:"functions.html#index_b"},
 {text:"\u202Ac",url:"functions.html#index_c"},
@@ -68,11 +68,11 @@ var menudata={children:[
 {text:"\u202Au",url:"functions_func.html#index_u"},
 {text:"~",url:"functions_func.html#index__7E"}]},
 {text:"\u202AVariáveis",url:"functions_vars.html"}]}]},
-{text:"\u202AFicheiros",url:"files.html",children:[
-{text:"\u202ALista de ficheiros",url:"files.html"},
-{text:"\u202AMembros dos Ficheiros",url:"globals.html",children:[
-{text:"\u202ATudo",url:"globals.html"},
+{text:"\u202AArquivos",url:"files.html",children:[
+{text:"\u202ALista de Arquivos",url:"files.html"},
+{text:"\u202AMembros dos Arquivos",url:"globals.html",children:[
+{text:"\u202ATodos",url:"globals.html"},
 {text:"\u202AFunções",url:"globals_func.html"},
 {text:"\u202AVariáveis",url:"globals_vars.html"},
 {text:"\u202AEnumerações",url:"globals_enum.html"},
-{text:"\u202AMacros",url:"globals_defs.html"}]}]}]}
+{text:"\u202ADefinições e Macros",url:"globals_defs.html"}]}]}]}

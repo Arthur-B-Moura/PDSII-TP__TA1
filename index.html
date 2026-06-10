@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>&#x202A;TP_PDSII - Google Maps: &#x202A;Página principal</title>
+<title>&#x202A;TP_PDSII - Google Maps: &#x202A;Página Principal</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,6 +17,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="extra_style_sheet.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -38,7 +39,7 @@
 <!-- Gerado por Doxygen 1.9.1 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-var searchBox = new SearchBox("searchBox", "search",false,'Localizar','.html');
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
 /* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
@@ -46,7 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Localizar','.html');
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
-  initMenu('',true,false,'search.php','Localizar');
+  initMenu('',true,false,'search.php','Busca');
   $(document).ready(function() { init_search(); });
 });
 /* @license-end */</script>
@@ -87,8 +88,8 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="title">TP_PDSII - Google Maps Documentação</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> </p><div> <img src="&#x202A;https://capsule-render.vercel.app/api?type=waving&amp;height=100&amp;section=header&amp;reversal=false&amp;fontSize=70&amp;fontColor=FFFFFF&amp;fontAlign=50&amp;fontAlignY=50&amp;stroke=-&amp;descSize=20&amp;descAlign=50&amp;descAlignY=50&amp;theme=cobalt" alt="" style="100%" class="inline"/> </div><h3 class="DocNodeLTR"><a class="anchor" id="autotoc_md1"></a>
-autotoc_md1</h3>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> </p><div> <img src="&#x202A;https://capsule-render.vercel.app/api?type=waving&amp;height=100&amp;section=header&amp;reversal=false&amp;fontSize=70&amp;fontColor=FFFFFF&amp;fontAlign=50&amp;fontAlignY=50&amp;stroke=-&amp;descSize=20&amp;descAlign=50&amp;descAlignY=50&amp;theme=cobalt" alt="" style="100%" class="inline"/> </div><h3 class="DocNodeLTR"><a class="anchor" id="autotoc_md0"></a>
+autotoc_md0</h3>
 <h1 align="center" class="DocNodeLTR">Repositório para TP de PDSII - 2026/1</h1>
 <h3 class="DocNodeLTR">Integrantes do grupo:</h3>
 <ul class="DocNodeLTR">
@@ -100,18 +101,21 @@ autotoc_md1</h3>
 <p class="DocNodeLTR">O sistema apresentado conta com a implementação de um mecanismo <em>pathfinder</em> para navegação, inspirado por <em>Google Maps</em>. Com esse fim, o projeto inclui uma seção responsável por gerir os mapas providos, traduzindo-os para um formato inteligível pelo algoritmo <em>patfinder</em> A*, implementado na segunda seção. O programa, então, retorna uma série de instruções, contruindo um caminho do ponto demarcado como "início" até o "fim".</p>
 <hr  />
 <h2 class="DocNodeLTR">Seções da Documentação:</h2>
+<p class="DocNodeLTR">Além desta página, o projeto inclui as seguintes seções de documentação:</p>
 <ul class="DocNodeLTR">
+<li>&#x202A;<a href="&#x202A;https://www.youtube.com/watch?v=dQw4w9WgXcQ&amp;list=RDdQw4w9WgXcQ&amp;start_radio=1&amp;pp=ygUIcmlja3JvbGygBwE%3D">Vídeo da Execução do Projeto</a></li>
 <li>&#x202A;<a href="&#x202A;https://arthur-b-moura.github.io/PDSII-TP__TA1/index.html">Documentação Automática feita com Doxygen</a></li>
-<li>&#x202A;Detalhamento de Classes e User Stories</li>
+<li>&#x202A;<a class="el" href="md_about_CLASS_INFO.html">Detalhamento de Classes e User Stories</a></li>
+<li>&#x202A;<a class="el" href="md_about_DESENVOLVIMENTO.html">Descrição do Desenvolvimento do Projeto</a></li>
 </ul>
 <hr  />
-<h2 class="DocNodeLTR"><a class="anchor" id="autotoc_md4"></a>
+<h2 class="DocNodeLTR"><a class="anchor" id="autotoc_md3"></a>
 Utilização básica</h2>
 <p class="DocNodeLTR">A seguinte seção direciona os passos e requerimentos necessários para a execução da solução apresentada no projeto.</p>
-<h3 class="DocNodeLTR"><a class="anchor" id="autotoc_md5"></a>
+<h3 class="DocNodeLTR"><a class="anchor" id="autotoc_md4"></a>
 Sistema operacional</h3>
 <p class="DocNodeLTR">A execução dos scripts descrita considera uma máquina rodando <code>Ubuntu-22.04</code> . Pode ser esta por meio de um <em>boot</em> específico, ou a partir de máquina virtual, como <em>wsl</em>.</p>
-<h3 class="DocNodeLTR"><a class="anchor" id="autotoc_md6"></a>
+<h3 class="DocNodeLTR"><a class="anchor" id="autotoc_md5"></a>
 Dependências externas</h3>
 <p class="DocNodeLTR">Para compilar e executar o projeto, além dos arquivos nele implementado, é necessário que tenha instalado, em sua máquina, os seguintes itens:</p>
 <ul class="DocNodeLTR">
@@ -119,7 +123,7 @@ Dependências externas</h3>
 <li>&#x202A;Biblioteca libxml++</li>
 </ul>
 <p class="DocNodeLTR">A seguir, seguem as instruções para verificar tais instalações e, caso necessário, realizá-las.</p>
-<h4 class="DocNodeLTR"><a class="anchor" id="autotoc_md7"></a>
+<h4 class="DocNodeLTR"><a class="anchor" id="autotoc_md6"></a>
 Ferramentas de compilação (g++, make):</h4>
 <p class="DocNodeLTR">Ambas essas ferramentas podem ser instaladas pelo terminal, a partir do <em>build-essentials:</em></p>
 <div class="fragment"><div class="line">sudo apt update &amp;&amp; sudo apt install build-essentials</div>
@@ -129,7 +133,7 @@ Ferramentas de compilação (g++, make):</h4>
 <p class="DocNodeLTR">OBS: o projeto foi compilado em sua produção com <code>g++ 11.4.0</code> . O uso de outras versões do compilador pode acarretar em comportamento não esperado.</p>
 <p></p>
 </blockquote>
-<h4 class="DocNodeLTR"><a class="anchor" id="autotoc_md8"></a>
+<h4 class="DocNodeLTR"><a class="anchor" id="autotoc_md7"></a>
 Biblioteca libxml++</h4>
 <p class="DocNodeLTR">Essa biblioteca é responsável pela leitura dos arquivos de mapa em xml (por exemplo, os arquivos .osm). Sua instalação pode, também, ser feita por linha de comando:</p>
 <div class="fragment"><div class="line">sudo apt update &amp;&amp; sudo apt install libxml++2.6-dev</div>
@@ -139,22 +143,27 @@ Biblioteca libxml++</h4>
 <p class="DocNodeLTR">OBS: Note que o projeto utiliza a versão 2.6 dessa biblioteca. <b>É necessário que instale exatamente esta versão</b>, uma vez que versões superiores ou inferiores podem contar com diversas diferenças, inclusive impedindo a compilação.</p>
 <p></p>
 </blockquote>
-<h3 class="DocNodeLTR"><a class="anchor" id="autotoc_md9"></a>
+<h3 class="DocNodeLTR"><a class="anchor" id="autotoc_md8"></a>
 Download e compilação</h3>
 <p class="DocNodeLTR">Para utilizar os arquivos do projeto, navegue a um repositório de sua escolha e execute o seguinte comando para clonar projeto diretamente de seu repositório do GitHub:</p>
 <div class="fragment"><div class="line">git clone https://github.com/Arthur-B-Moura/PDSII-TP__TA1.git</div>
 </div><!-- fragment --><p class="DocNodeLTR">Em seguida, basta navegar até o <em>root</em> do projeto…</p>
 <div class="fragment"><div class="line">cd PDSII-TP__TA1</div>
 </div><!-- fragment --><p class="DocNodeLTR">… e realizar a compilação a partir do <em>make</em>:</p>
+<div class="fragment"><div class="line">make </div>
+</div><!-- fragment --><p class="DocNodeLTR">...ou <em>make run</em></p>
 <div class="fragment"><div class="line">make run</div>
-</div><!-- fragment --><p class="DocNodeLTR">Isso irá gerar um executável <code>pdsii_maps.exe</code>, que conta com todas as funcionalidades do projeto. </p>
+</div><!-- fragment --><p class="DocNodeLTR">Isso irá gerar um executável <code>pdsii_maps.exe</code>, que conta com todas as funcionalidades do projeto.</p>
+<hr  />
+<h2 class="DocNodeLTR"><a class="anchor" id="autotoc_md10"></a>
+Execução</h2>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Gerado em Terça, 9 de Junho de 2026 22:46:21 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Gerado em Quarta, 10 de Junho de 2026 23:10:19 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

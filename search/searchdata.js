@@ -2,13 +2,13 @@ var indexSectionsWithContent =
 {
   0: "abcdefghilmnoprstuw~",
   1: "ceglmpr",
-  2: "cgmpr",
+  2: "cdgmpr",
   3: "abdefghimnoprsu~",
   4: "acdefgilmnprst",
   5: "p",
   6: "inw",
   7: "s",
-  8: "c"
+  8: "cu"
 };
 
 var indexSectionNames =
@@ -26,14 +26,14 @@ var indexSectionNames =
 
 var indexSectionLabels =
 {
-  0: "Tudo",
+  0: "Todos",
   1: "Classes",
-  2: "Ficheiros",
+  2: "Arquivos",
   3: "Funções",
   4: "Variáveis",
   5: "Enumerações",
-  6: "Valores de enumerações",
-  7: "Macros",
+  6: "Enumeradores",
+  7: "Definições e Macros",
   8: "Páginas"
 };
 

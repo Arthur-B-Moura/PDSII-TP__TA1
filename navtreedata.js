@@ -26,33 +26,38 @@ var NAVTREE =
 [
   [ "\u202ATP_PDSII - Google Maps", "index.html", [
     [ "\u202ACLASS_INFO", "md_about_CLASS_INFO.html", null ],
-    [ "\u202AClasses", "annotated.html", [
-      [ "\u202AUtilização básica", "index.html#autotoc_md4", [
-        [ "\u202Aautotoc_md1", "index.html#autotoc_md1", null ],
-        [ "\u202ASistema operacional", "index.html#autotoc_md5", null ],
-        [ "\u202ADependências externas", "index.html#autotoc_md6", [
-          [ "\u202AFerramentas de compilação (g++, make):", "index.html#autotoc_md7", null ],
-          [ "\u202ABiblioteca libxml++", "index.html#autotoc_md8", null ]
+    [ "\u202AUntitled", "md_about_DESENVOLVIMENTO.html", [
+      [ "\u202AUtilização básica", "index.html#autotoc_md3", [
+        [ "\u202Aautotoc_md0", "index.html#autotoc_md0", null ],
+        [ "\u202ASistema operacional", "index.html#autotoc_md4", null ],
+        [ "\u202ADependências externas", "index.html#autotoc_md5", [
+          [ "\u202AFerramentas de compilação (g++, make):", "index.html#autotoc_md6", null ],
+          [ "\u202ABiblioteca libxml++", "index.html#autotoc_md7", null ]
         ] ],
-        [ "\u202ADownload e compilação", "index.html#autotoc_md9", null ]
+        [ "\u202ADownload e compilação", "index.html#autotoc_md8", null ]
       ] ],
-      [ "\u202ALista de componentes", "annotated.html", "annotated_dup" ],
-      [ "\u202AÍndice dos componentes", "classes.html", null ],
-      [ "\u202AHierarquia de classes", "hierarchy.html", "hierarchy" ],
-      [ "\u202AComponentes membro", "functions.html", [
-        [ "\u202ATudo", "functions.html", null ],
+      [ "\u202AExecução", "index.html#autotoc_md10", null ],
+      [ "\u202ACiclo de desenvolvimento", "md_about_DESENVOLVIMENTO.html#autotoc_md13", null ],
+      [ "\u202AAtribuição de tarefas", "md_about_DESENVOLVIMENTO.html#autotoc_md14", null ]
+    ] ],
+    [ "\u202AClasses", "annotated.html", [
+      [ "\u202ALista de Classes", "annotated.html", "annotated_dup" ],
+      [ "\u202AÍndice dos Componentes", "classes.html", null ],
+      [ "\u202AHierarquia de Classes", "hierarchy.html", "hierarchy" ],
+      [ "\u202AMembros de classe", "functions.html", [
+        [ "\u202ATodos", "functions.html", null ],
         [ "\u202AFunções", "functions_func.html", null ],
         [ "\u202AVariáveis", "functions_vars.html", null ]
       ] ]
     ] ],
-    [ "\u202AFicheiros", "files.html", [
-      [ "\u202ALista de ficheiros", "files.html", "files_dup" ],
-      [ "\u202AMembros dos Ficheiros", "globals.html", [
-        [ "\u202ATudo", "globals.html", null ],
+    [ "\u202AArquivos", "files.html", [
+      [ "\u202ALista de Arquivos", "files.html", "files_dup" ],
+      [ "\u202AMembros dos Arquivos", "globals.html", [
+        [ "\u202ATodos", "globals.html", null ],
         [ "\u202AFunções", "globals_func.html", null ],
         [ "\u202AVariáveis", "globals_vars.html", null ],
         [ "\u202AEnumerações", "globals_enum.html", null ],
-        [ "\u202AMacros", "globals_defs.html", null ]
+        [ "\u202ADefinições e Macros", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
