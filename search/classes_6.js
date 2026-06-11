@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rualugarbuffer_118',['RuaLugarBuffer',['../structRuaLugarBuffer.html',1,'']]]
+  ['rualugarbuffer_119',['RuaLugarBuffer',['../structRuaLugarBuffer.html',1,'']]]
 ];

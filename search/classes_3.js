@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lugarmap_111',['LugarMap',['../structLugarMap.html',1,'']]]
+  ['lugarmap_112',['LugarMap',['../structLugarMap.html',1,'']]]
 ];

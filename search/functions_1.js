@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['bearing_137',['bearing',['../classPathFinder.html#a5547e76f1fb0683e185cbf507f1e28fa',1,'PathFinder']]],
-  ['build_5ffrom_5fosm_138',['build_from_osm',['../classMapGenerator.html#a1bc7ac75b0b0a95d38cd152755401da1',1,'MapGenerator']]],
-  ['build_5finstructions_139',['build_instructions',['../classPathFinder.html#a9301d60011bffd291a20d70bed102096',1,'PathFinder']]]
+  ['bearing_138',['bearing',['../classPathFinder.html#a5547e76f1fb0683e185cbf507f1e28fa',1,'PathFinder']]],
+  ['build_5ffrom_5fosm_139',['build_from_osm',['../classMapGenerator.html#a1bc7ac75b0b0a95d38cd152755401da1',1,'MapGenerator']]],
+  ['build_5finstructions_140',['build_instructions',['../classPathFinder.html#a9301d60011bffd291a20d70bed102096',1,'PathFinder']]]
 ];
