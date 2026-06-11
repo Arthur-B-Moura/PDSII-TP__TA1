@@ -42,6 +42,21 @@ int main() {
         std::cout << "----------------------------------------" << std::endl;
         std::cout << "Escolha uma opção: ";
         
+        if (!(std::cin >> opcao)) {
+            // Se entrar aqui, significa que o usuário digitou algo que não é um número
+            std::cout << "Erro: Entrada inválida! Por favor, digite apenas números." << std::endl;
+
+            // Limpa o estado de erro do cin (Barricada)
+            std::cin.clear();
+
+            // Remove todo o texto "lixo" que ficou no buffer até o final da linha
+            std::cin.ignore(10000, '\n');
+    
+            // Define a opção como 0 para que o switch caia no 'default' ou apenas reinicie o loop
+            opcao = 0; 
+            continue; // Volta para o início do while para mostrar o menu novamente
+        }
+        
         // Captura a opção do usuário
         std::cin >> opcao;
 
@@ -132,7 +147,7 @@ int main() {
                         std::cout << "\n========================================" << std::endl;
                         std::cout << " ROTA ENCONTRADA COM SUCESSO!" << std::endl;
                         // total_distance contém a distância acumulada em metros
-                        std::cout << " Distância total estimada: " << resultado.total_distance << " metros." << std::endl;
+                        std::cout << " Distância total estimada: " << resultado.total_distance * 1000 << " metros." << std::endl;
                         std::cout << "========================================\n" << std::endl;
                     }else{
                         std::cout << "Erro: Não foi possível traçar um caminho entre esses pontos." << std::endl;
