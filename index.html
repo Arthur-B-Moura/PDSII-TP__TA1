@@ -107,6 +107,7 @@ autotoc_md0</h3>
 <li>&#x202A;<a href="&#x202A;https://arthur-b-moura.github.io/PDSII-TP__TA1/index.html">Documentação Automática feita com Doxygen</a></li>
 <li>&#x202A;<a class="el" href="md_about_CLASS_INFO.html">Detalhamento de Classes e User Stories</a></li>
 <li>&#x202A;<a class="el" href="md_about_DESENVOLVIMENTO.html">Descrição do Desenvolvimento do Projeto</a></li>
+<li>&#x202A;<a class="el" href="md_about_TESTES.html">Detalhamento e Execução dos Scripts de Teste</a></li>
 </ul>
 <hr  />
 <h2 class="DocNodeLTR"><a class="anchor" id="autotoc_md3"></a>
@@ -151,19 +152,28 @@ Download e compilação</h3>
 <div class="fragment"><div class="line">cd PDSII-TP__TA1</div>
 </div><!-- fragment --><p class="DocNodeLTR">… e realizar a compilação a partir do <em>make</em>:</p>
 <div class="fragment"><div class="line">make </div>
-</div><!-- fragment --><p class="DocNodeLTR">...ou <em>make run</em></p>
+</div><!-- fragment --><p class="DocNodeLTR">Isso irá gerar um executável <code>main.exe</code>, que conta com todas as funcionalidades do projeto.</p>
+<p class="DocNodeLTR">Alternativamente, pode rodar diretamente o comando asseguir, que irá, além de compilar o projeto, executá-lo.</p>
 <div class="fragment"><div class="line">make run</div>
-</div><!-- fragment --><p class="DocNodeLTR">Isso irá gerar um executável <code>pdsii_maps.exe</code>, que conta com todas as funcionalidades do projeto.</p>
-<hr  />
+</div><!-- fragment --><hr  />
 <h2 class="DocNodeLTR"><a class="anchor" id="autotoc_md10"></a>
 Execução</h2>
+<p class="DocNodeLTR">Caso tenha compilado o projeto a partir do comando <code>make</code> padrão, basta executá-lo a partir da root de seu diretório para rodar o programa:</p>
+<div class="fragment"><div class="line">./main.exe</div>
+</div><!-- fragment --><p class="DocNodeLTR">Ao executar o programa, será apresentado um menu com as opções de execução e geração de rota. Interaja com o menu a partir de input do teclado diretamente no terminal. O input de opções inválidas não será considerado.</p>
+<p class="DocNodeLTR">O projeto inclui, de forma padrão, dois arquivos de mapa, ambos presentes no diretório <code>maps/</code>:</p>
+<ul class="DocNodeLTR">
+<li>&#x202A;<code>map_liberdade.osm</code> --&gt; região aproximadamente dos bairros Liberdade, Indaiá e Jaraguá de Belo Horizonte</li>
+<li>&#x202A;<code>map.osm</code> --&gt; inclui a maior parte da região Pampulha, UFMG, parte do Centro, Ouro Preto, Liberdade, Jaraguá, etc. É um mapa de grande escala, e sua execução será lenta</li>
+</ul>
+<p class="DocNodeLTR">Caso deseje navegar por outras localidades, siga as instruções da <a class="el" href="md_about_INSERCAO_DE_MAPAS.html">seção sobre inserção de mapas</a>. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Gerado em Quinta, 11 de Junho de 2026 23:09:39 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Gerado em Quinta, 11 de Junho de 2026 23:49:09 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

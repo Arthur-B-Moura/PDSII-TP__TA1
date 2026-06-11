@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>&#x202A;TP_PDSII - Google Maps: &#x202A;Inserção de arquivos de mapas adicionais</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="extra_style_sheet.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">&#x202A;TP_PDSII - Google Maps
+   &#160;<span id="projectnumber">0</span>
+   </div>
+   <div id="projectbrief">&#x202A;Sistema de navegação a partir de mapa (osm) inspirado pelo Google Maps</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('md_about_INSERCAO_DE_MAPAS.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="PageDoc PageDocLTR-title"><div class="header">
+  <div class="headertitle">
+<div class="title">&#x202A;Inserção de arquivos de mapas adicionais </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p class="DocNodeLTR">Uma vez clonado o repositório do projeto, o usuário já contará com dois arquivos de mapa por padrão:</p>
+<ul class="DocNodeLTR">
+<li>&#x202A;<code>map_liberdade.osm</code> --&gt; região aproximadamente dos bairros Liberdade, Indaiá e Jaraguá de Belo Horizonte</li>
+<li>&#x202A;<code>map.osm</code> --&gt; inclui a maior parte da região Pampulha, UFMG, parte do Centro, Ouro Preto, Liberdade, Jaraguá, etc. É um mapa de grande escala, e sua execução será lenta</li>
+</ul>
+<p class="DocNodeLTR">Contudo, é possível adicionar outras localidades para navegar. Essa seção irá descrever como realizar esse processo.</p>
+<h1 class="DocNodeLTR"><a class="anchor" id="autotoc_md24"></a>
+Entendendo o arquivo .osm</h1>
+<p class="DocNodeLTR">Nessa aplicação atual do projeto, aceita-se apenas arquivos-mapa do tipo <code>.osm</code>. Implementações futuras aceitarão, também, outros tipos de arquivo, incluindo arquivos de tipo próprio gerado específicamente para o projeto. Atualmente, esse não é o caso.</p>
+<p class="DocNodeLTR">Arquivos osm são <code>xml</code> que descrevem ruas, estruturas e cruzamentos presentes em um certo intervalo de coordenadas geográficas. Eles são gerados como parte do um projeto Open Source e aberto à colaboração: <em>Open Street <a class="el" href="classMap.html" title="&#x202A;Mapa geográfico estendido com metadados e dicionário de estruturas.">Map</a></em>. Esse projeto funciona de forma similar à wikipedia, permitindo que usuários externos realizem alterações sobre seu banco de dados, inserindo ou modificando itens relevantes com o intuito de melhorar o mapa.</p>
+<p class="DocNodeLTR">O projeto de Google Maps desenvolvido para o TP realiza o parsing de arquivos osm, retirando de sua extensa estrutura apenas os ítens relevantes para o objeto de tipo Mapa utilizado.</p>
+<h1 class="DocNodeLTR"><a class="anchor" id="autotoc_md25"></a>
+Gerando um .osm</h1>
+<p class="DocNodeLTR">Para gerar um arquivo de mapa, é necessário acessar o <a href="&#x202A;https://www.openstreetmap.org">website do projeto OSM</a>.</p>
+<p class="DocNodeLTR">Em seguida, deverá navegar até a região de interesse. Note que os arquivos gerados são grandes, de forma que regiões extensas ocasionarão em resultados de execução lenta. Regiões muito extensas (ex: caso tente mapear Belo Horizonte inteira) sequer poderão ser geradas pelo projeto OSM.</p>
+<p class="DocNodeLTR">Uma vez posicionada a visualização do mapa sobre a região de interesse, deve selecionar a opção "Export" da interface, até que seja efetuado o download automático de um arquivo <code>.osm</code>. É recomendado que altere o nome padrão deste arquivo para evitar sobrescrita, mas não é obrigatório.</p>
+<h1 class="DocNodeLTR"><a class="anchor" id="autotoc_md26"></a>
+Utilizando o arquivo</h1>
+<p class="DocNodeLTR">Para navegar na área mapeada pelo arquivo gerado, basta movê-lo para o diretório <code>./maps</code> do repositório deste projeto. Tenha conhecimento do nome com que ele foi salvo para poder se referenciar a ele durante a execução do código.</p>
+<p class="DocNodeLTR">Note que não é obrigatório mover o arquivo para o diretório <code>./maps</code>, apenas recomendado, uma vez que o programa utiliza de path com referência ao diretório de execução do main.exe para acessar o arquivo de mapa. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Gerado em Quinta, 11 de Junho de 2026 23:49:09 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

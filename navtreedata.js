@@ -49,6 +49,18 @@ var NAVTREE =
       [ "\u202ACiclo de desenvolvimento", "md_about_DESENVOLVIMENTO.html#autotoc_md21", null ],
       [ "\u202AAtribuição de tarefas", "md_about_DESENVOLVIMENTO.html#autotoc_md22", null ]
     ] ],
+    [ "\u202AInserção de arquivos de mapas adicionais", "md_about_INSERCAO_DE_MAPAS.html", [
+      [ "\u202AEntendendo o arquivo .osm", "md_about_INSERCAO_DE_MAPAS.html#autotoc_md24", null ],
+      [ "\u202AGerando um .osm", "md_about_INSERCAO_DE_MAPAS.html#autotoc_md25", null ],
+      [ "\u202AUtilizando o arquivo", "md_about_INSERCAO_DE_MAPAS.html#autotoc_md26", null ]
+    ] ],
+    [ "\u202ATestes das classes implementadas", "md_about_TESTES.html", [
+      [ "\u202AEstrutura de arquivos", "md_about_TESTES.html#autotoc_md28", null ],
+      [ "\u202ADependências", "md_about_TESTES.html#autotoc_md29", null ],
+      [ "\u202ACompilação", "md_about_TESTES.html#autotoc_md30", null ],
+      [ "\u202AExecução", "md_about_TESTES.html#autotoc_md31", null ],
+      [ "\u202AExemplos de saída", "md_about_TESTES.html#autotoc_md32", null ]
+    ] ],
     [ "\u202AClasses", "annotated.html", [
       [ "\u202ALista de Classes", "annotated.html", "annotated_dup" ],
       [ "\u202AÍndice dos Componentes", "classes.html", null ],
