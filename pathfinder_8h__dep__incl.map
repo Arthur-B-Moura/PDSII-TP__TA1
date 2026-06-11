@@ -1,5 +1,4 @@
 <map id="include/pathfinder.h" name="include/pathfinder.h">
-<area shape="rect" id="node1" title="Declaração das estruturas PathResult e da classe PathFinder." alt="" coords="55,5,205,32"/>
-<area shape="rect" id="node2" href="$main_8cpp.html" title=" " alt="" coords="5,80,111,107"/>
-<area shape="rect" id="node3" href="$pathfinder_8cpp.html" title=" " alt="" coords="135,80,272,107"/>
+<area shape="rect" id="node1" title="Declaração das estruturas PathResult e da classe PathFinder." alt="" coords="5,5,156,32"/>
+<area shape="rect" id="node2" href="$pathfinder_8cpp.html" title=" " alt="" coords="12,80,149,107"/>
 </map>

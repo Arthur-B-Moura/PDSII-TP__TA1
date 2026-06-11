@@ -1,13 +1,13 @@
 <map id="include/map_node.h" name="include/map_node.h">
-<area shape="rect" id="node1" title="Declaração da classe MapNode, representando um nó do mapa com um identificador único e uma posição ge..." alt="" coords="31,5,184,32"/>
-<area shape="rect" id="node2" href="$main_8cpp.html" title=" " alt="" coords="190,304,295,331"/>
-<area shape="rect" id="node3" href="$map__node_8cpp.html" title="Implementação da classe MapNode e de sua dependência, Coordenada." alt="" coords="191,80,331,107"/>
-<area shape="rect" id="node4" href="$grafo_8h.html" title="Declaração das estruturas Edge e Grafo para representação de grafos de navegação." alt="" coords="48,80,167,107"/>
-<area shape="rect" id="node5" href="$grafo_8cpp.html" title="Implementação da classe Grafo." alt="" coords="54,155,161,181"/>
-<area shape="rect" id="node6" href="$map_8h.html" title="Declaração das estruturas LugarMap e da classe Map." alt="" coords="361,155,476,181"/>
-<area shape="rect" id="node10" href="$pathfinder_8h.html" title="Declaração das estruturas PathResult e da classe PathFinder." alt="" coords="186,155,336,181"/>
-<area shape="rect" id="node7" href="$map_8cpp.html" title=" " alt="" coords="280,229,381,256"/>
-<area shape="rect" id="node8" href="$map__generator_8h.html" title=" " alt="" coords="456,229,639,256"/>
-<area shape="rect" id="node9" href="$map__generator_8cpp.html" title="Implementação do MapGenerator e do parser SAX interno (MapGenSaxParser) utilizados para construção de..." alt="" coords="462,304,633,331"/>
-<area shape="rect" id="node11" href="$pathfinder_8cpp.html" title=" " alt="" coords="67,229,204,256"/>
+<area shape="rect" id="node1" title="Declaração da classe MapNode, representando um nó do mapa com um identificador único e uma posição ge..." alt="" coords="75,5,228,32"/>
+<area shape="rect" id="node2" href="$map__node_8cpp.html" title="Implementação da classe MapNode e de sua dependência, Coordenada." alt="" coords="5,80,145,107"/>
+<area shape="rect" id="node3" href="$grafo_8h.html" title="Declaração das estruturas Edge e Grafo para representação de grafos de navegação." alt="" coords="169,80,288,107"/>
+<area shape="rect" id="node4" href="$grafo_8cpp.html" title="Implementação da classe Grafo." alt="" coords="41,155,147,181"/>
+<area shape="rect" id="node5" href="$map_8h.html" title="Declaração das estruturas LugarMap e da classe Map." alt="" coords="171,155,286,181"/>
+<area shape="rect" id="node10" href="$pathfinder_8h.html" title="Declaração das estruturas PathResult e da classe PathFinder." alt="" coords="407,155,557,181"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title=" " alt="" coords="87,304,192,331"/>
+<area shape="rect" id="node7" href="$map_8cpp.html" title=" " alt="" coords="130,229,231,256"/>
+<area shape="rect" id="node8" href="$map__generator_8h.html" title=" " alt="" coords="256,229,439,256"/>
+<area shape="rect" id="node9" href="$map__generator_8cpp.html" title="Implementação do MapGenerator e do parser SAX interno (MapGenSaxParser) utilizados para construção de..." alt="" coords="262,304,433,331"/>
+<area shape="rect" id="node11" href="$pathfinder_8cpp.html" title=" " alt="" coords="463,229,600,256"/>
 </map>
