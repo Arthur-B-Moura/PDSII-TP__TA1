@@ -4,5 +4,6 @@ var searchData=
   ['add_5fnode_1',['add_node',['../classGrafo.html#ad6b6ed285598aebd9228c49b426553cf',1,'Grafo']]],
   ['adiciona_5fdescricao_2',['adiciona_descricao',['../classMap.html#a60a538e59b6328bc55a0856938572ca3',1,'Map']]],
   ['adjacency_5f_3',['adjacency_',['../classGrafo.html#af180cd9723e8ff448ab3ab3e9b0fd01a',1,'Grafo']]],
-  ['altera_5fnome_4',['altera_nome',['../classMap.html#acbbe5333b15e76fb948fe03a566c07cb',1,'Map']]]
+  ['altera_5fnome_4',['altera_nome',['../classMap.html#acbbe5333b15e76fb948fe03a566c07cb',1,'Map']]],
+  ['arquivo_5fexiste_5flegivel_5',['arquivo_existe_legivel',['../classMapGenerator.html#ade38c8943a9f22b56f5746236e0077f2',1,'MapGenerator']]]
 ];

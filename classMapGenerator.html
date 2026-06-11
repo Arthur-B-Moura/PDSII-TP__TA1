@@ -140,6 +140,12 @@ Membros Privados</h2></td></tr>
 <tr class="memitem:a1bc7ac75b0b0a95d38cd152755401da1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMap.html">Map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapGenerator.html#a1bc7ac75b0b0a95d38cd152755401da1">build_from_osm</a> ()</td></tr>
 <tr class="memdesc:a1bc7ac75b0b0a95d38cd152755401da1"><td class="mdescLeft">&#160;</td><td class="mdescRight">&#x202A;Executa o parsing SAX do arquivo .osm e retorna o mapa resultante.  <a href="classMapGenerator.html#a1bc7ac75b0b0a95d38cd152755401da1">Mais...</a><br /></td></tr>
 <tr class="separator:a1bc7ac75b0b0a95d38cd152755401da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1c10606708a5f30731146975c489ecc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapGenerator.html#ae1c10606708a5f30731146975c489ecc">nome_arquivo_valido</a> (const std::string &amp;path)</td></tr>
+<tr class="memdesc:ae1c10606708a5f30731146975c489ecc"><td class="mdescLeft">&#160;</td><td class="mdescRight">&#x202A;Verifica se o nome (caminho) do arquivo é válido para processamento.  <a href="classMapGenerator.html#ae1c10606708a5f30731146975c489ecc">Mais...</a><br /></td></tr>
+<tr class="separator:ae1c10606708a5f30731146975c489ecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade38c8943a9f22b56f5746236e0077f2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapGenerator.html#ade38c8943a9f22b56f5746236e0077f2">arquivo_existe_legivel</a> (const std::string &amp;path)</td></tr>
+<tr class="memdesc:ade38c8943a9f22b56f5746236e0077f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">&#x202A;Verifica se o arquivo existe e pode ser lido.  <a href="classMapGenerator.html#ade38c8943a9f22b56f5746236e0077f2">Mais...</a><br /></td></tr>
+<tr class="separator:ade38c8943a9f22b56f5746236e0077f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Atributos Privados</h2></td></tr>
@@ -169,21 +175,36 @@ Atributos Privados</h2></td></tr>
 </div><div class="memdoc">
 
 <p>&#x202A;Constrói o <a class="el" href="classMapGenerator.html">MapGenerator</a> e inicia a leitura do arquivo .osm indicado. </p>
+<p class="DocNodeLTR">TODO: Detectar tipo do arquivo (suporte futuro a .csv e .json, .mapa, etc.) e delegar para o parser. Por enquanto, suporte apenas para .osm.</p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path_to_file</td><td>&#x202A;Caminho para o arquivo .osm a ser lido.</td></tr>
+    <tr><td class="paramname">path_to_file</td><td>&#x202A;Caminho para o arquivo .osm a ser lido. </td></tr>
   </table>
   </dd>
 </dl>
-<p class="DocNodeLTR">TODO: Validar existência e permissão de leitura do arquivo TODO: Detectar tipo do arquivo (suporte futuro a .csv e .json) </p>
+<dl class="exception"><dt>Exceções</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>&#x202A;Se o nome do arquivo for inválido ou caso haja problemas de leitura.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>&#x202A;<a class="el" href="classMapGenerator.html">MapGenerator</a> inicializado com o mapa construído a partir do arquivo. </dd></dl>
 
-<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00324">324</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    : <a class="code" href="classMapGenerator.html#addf2986511a617e9a8fbe019fb45d91f">filename_</a>(path_to_file) {</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <a class="code" href="classMapGenerator.html#ab25c97b19279e83fe70c128060001f07">mapa_</a> = <a class="code" href="classMapGenerator.html#a1bc7ac75b0b0a95d38cd152755401da1">build_from_osm</a>();</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;}</div>
-<div class="ttc" id="aclassMapGenerator_html_a1bc7ac75b0b0a95d38cd152755401da1"><div class="ttname"><a href="classMapGenerator.html#a1bc7ac75b0b0a95d38cd152755401da1">MapGenerator::build_from_osm</a></div><div class="ttdeci">Map build_from_osm()</div><div class="ttdoc">Executa o parsing SAX do arquivo .osm e retorna o mapa resultante.</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00337">map_generator.cpp:337</a></div></div>
+<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00336">336</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    : <a class="code" href="classMapGenerator.html#addf2986511a617e9a8fbe019fb45d91f">filename_</a>(path_to_file) {</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classMapGenerator.html#ae1c10606708a5f30731146975c489ecc">nome_arquivo_valido</a>(<a class="code" href="classMapGenerator.html#addf2986511a617e9a8fbe019fb45d91f">filename_</a>)) {</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Nome de arquivo &quot;</span> + <a class="code" href="classMapGenerator.html#addf2986511a617e9a8fbe019fb45d91f">filename_</a> + <span class="stringliteral">&quot; inválido.&quot;</span>);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    }</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classMapGenerator.html#ade38c8943a9f22b56f5746236e0077f2">arquivo_existe_legivel</a>(<a class="code" href="classMapGenerator.html#addf2986511a617e9a8fbe019fb45d91f">filename_</a>)) {</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Arquivo &quot;</span> + <a class="code" href="classMapGenerator.html#addf2986511a617e9a8fbe019fb45d91f">filename_</a> + <span class="stringliteral">&quot; não existe ou não pode ser lido.&quot;</span>);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    }</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <a class="code" href="classMapGenerator.html#ab25c97b19279e83fe70c128060001f07">mapa_</a> = <a class="code" href="classMapGenerator.html#a1bc7ac75b0b0a95d38cd152755401da1">build_from_osm</a>();</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;}</div>
+<div class="ttc" id="aclassMapGenerator_html_a1bc7ac75b0b0a95d38cd152755401da1"><div class="ttname"><a href="classMapGenerator.html#a1bc7ac75b0b0a95d38cd152755401da1">MapGenerator::build_from_osm</a></div><div class="ttdeci">Map build_from_osm()</div><div class="ttdoc">Executa o parsing SAX do arquivo .osm e retorna o mapa resultante.</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00355">map_generator.cpp:355</a></div></div>
 <div class="ttc" id="aclassMapGenerator_html_ab25c97b19279e83fe70c128060001f07"><div class="ttname"><a href="classMapGenerator.html#ab25c97b19279e83fe70c128060001f07">MapGenerator::mapa_</a></div><div class="ttdeci">Map mapa_</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8h_source.html#l00014">map_generator.h:14</a></div></div>
 <div class="ttc" id="aclassMapGenerator_html_addf2986511a617e9a8fbe019fb45d91f"><div class="ttname"><a href="classMapGenerator.html#addf2986511a617e9a8fbe019fb45d91f">MapGenerator::filename_</a></div><div class="ttdeci">std::string filename_</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8h_source.html#l00011">map_generator.h:11</a></div></div>
+<div class="ttc" id="aclassMapGenerator_html_ade38c8943a9f22b56f5746236e0077f2"><div class="ttname"><a href="classMapGenerator.html#ade38c8943a9f22b56f5746236e0077f2">MapGenerator::arquivo_existe_legivel</a></div><div class="ttdeci">bool arquivo_existe_legivel(const std::string &amp;path)</div><div class="ttdoc">Verifica se o arquivo existe e pode ser lido.</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00426">map_generator.cpp:426</a></div></div>
+<div class="ttc" id="aclassMapGenerator_html_ae1c10606708a5f30731146975c489ecc"><div class="ttname"><a href="classMapGenerator.html#ae1c10606708a5f30731146975c489ecc">MapGenerator::nome_arquivo_valido</a></div><div class="ttdeci">bool nome_arquivo_valido(const std::string &amp;path)</div><div class="ttdoc">Verifica se o nome (caminho) do arquivo é válido para processamento.</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00385">map_generator.cpp:385</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -205,12 +226,53 @@ Atributos Privados</h2></td></tr>
 <p>&#x202A;Destrutor padrão <a class="el" href="classMapGenerator.html">MapGenerator</a> <br  />
  </p>
 
-<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00372">372</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;{}</div>
+<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00449">449</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Funções membros</h2>
+<a id="ade38c8943a9f22b56f5746236e0077f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade38c8943a9f22b56f5746236e0077f2">&#9670;&nbsp;</a></span>arquivo_existe_legivel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MapGenerator::arquivo_existe_legivel </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>&#x202A;Verifica se o arquivo existe e pode ser lido. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>&#x202A;Caminho do arquivo a ser verificado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>&#x202A;true se o arquivo existe e é legível, false caso contrário. </dd></dl>
+
+<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00426">426</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                                                               {</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    std::ifstream file(path);</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="keywordflow">return</span> file.good();</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a1bc7ac75b0b0a95d38cd152755401da1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1bc7ac75b0b0a95d38cd152755401da1">&#9670;&nbsp;</a></span>build_from_osm()</h2>
 
@@ -238,27 +300,27 @@ Atributos Privados</h2></td></tr>
 <p class="DocNodeLTR">Em caso de erro, registra a exceção em stderr e retorna um mapa vazio com o nome "empty_map".</p>
 <dl class="section return"><dt>Retorna</dt><dd>&#x202A;<a class="el" href="classMap.html" title="&#x202A;Mapa geográfico estendido com metadados e dicionário de estruturas.">Map</a> construído a partir do arquivo, ou <a class="el" href="classMap.html" title="&#x202A;Mapa geográfico estendido com metadados e dicionário de estruturas.">Map</a>("empty_map") em caso de falha. </dd></dl>
 
-<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00337">337</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                                 {</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <a class="code" href="classMapGenSaxParser.html">MapGenSaxParser</a> parser;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        parser.parse_file(<a class="code" href="classMapGenerator.html#a2f1716f5e66a5e76c11db230db2196dd">filename</a>());</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordflow">return</span> parser.<a class="code" href="classMapGenSaxParser.html#a2e807ecb2914ad03f483c1f248b6a2da">mapa_</a>;</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    }</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keywordflow">catch</span> (<span class="keyword">const</span> xmlpp::exception&amp; ex) {</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;[MapGenerator] Exceção libxml++: &quot;</span> &lt;&lt; ex.what() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    }</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; ex) {</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;[MapGenerator] Exceção padrão: &quot;</span>  &lt;&lt; ex.what() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    }</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;[MapGenerator] Exceção desconhecida durante parsing OSM.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    }</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classMap.html">Map</a>(<span class="stringliteral">&quot;empty_map&quot;</span>);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;}</div>
-<div class="ttc" id="aclassMapGenSaxParser_html"><div class="ttname"><a href="classMapGenSaxParser.html">MapGenSaxParser</a></div><div class="ttdoc">Parser SAX especializado para arquivos .osm (OpenStreetMap XML).</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00102">map_generator.cpp:102</a></div></div>
-<div class="ttc" id="aclassMapGenSaxParser_html_a2e807ecb2914ad03f483c1f248b6a2da"><div class="ttname"><a href="classMapGenSaxParser.html#a2e807ecb2914ad03f483c1f248b6a2da">MapGenSaxParser::mapa_</a></div><div class="ttdeci">Map mapa_</div><div class="ttdoc">Mapa construído incrementalmente durante o parsing.</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00305">map_generator.cpp:305</a></div></div>
-<div class="ttc" id="aclassMapGenerator_html_a2f1716f5e66a5e76c11db230db2196dd"><div class="ttname"><a href="classMapGenerator.html#a2f1716f5e66a5e76c11db230db2196dd">MapGenerator::filename</a></div><div class="ttdeci">const std::string filename()</div><div class="ttdoc">Retorna o caminho do arquivo .osm associado a este gerador.</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00359">map_generator.cpp:359</a></div></div>
+<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00355">355</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                                 {</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <a class="code" href="classMapGenSaxParser.html">MapGenSaxParser</a> parser;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        parser.parse_file(<a class="code" href="classMapGenerator.html#a2f1716f5e66a5e76c11db230db2196dd">filename</a>());</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="keywordflow">return</span> parser.<a class="code" href="classMapGenSaxParser.html#a2e807ecb2914ad03f483c1f248b6a2da">mapa_</a>;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    }</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="keywordflow">catch</span> (<span class="keyword">const</span> xmlpp::exception&amp; ex) {</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;[MapGenerator] Exceção libxml++: &quot;</span> &lt;&lt; ex.what() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    }</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; ex) {</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;[MapGenerator] Exceção padrão: &quot;</span>  &lt;&lt; ex.what() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    }</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;[MapGenerator] Exceção desconhecida durante parsing OSM.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    }</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classMap.html">Map</a>(<span class="stringliteral">&quot;empty_map&quot;</span>);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;}</div>
+<div class="ttc" id="aclassMapGenSaxParser_html"><div class="ttname"><a href="classMapGenSaxParser.html">MapGenSaxParser</a></div><div class="ttdoc">Parser SAX especializado para arquivos .osm (OpenStreetMap XML).</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00101">map_generator.cpp:101</a></div></div>
+<div class="ttc" id="aclassMapGenSaxParser_html_a2e807ecb2914ad03f483c1f248b6a2da"><div class="ttname"><a href="classMapGenSaxParser.html#a2e807ecb2914ad03f483c1f248b6a2da">MapGenSaxParser::mapa_</a></div><div class="ttdeci">Map mapa_</div><div class="ttdoc">Mapa construído incrementalmente durante o parsing.</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00312">map_generator.cpp:312</a></div></div>
+<div class="ttc" id="aclassMapGenerator_html_a2f1716f5e66a5e76c11db230db2196dd"><div class="ttname"><a href="classMapGenerator.html#a2f1716f5e66a5e76c11db230db2196dd">MapGenerator::filename</a></div><div class="ttdeci">const std::string filename()</div><div class="ttdoc">Retorna o caminho do arquivo .osm associado a este gerador.</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00436">map_generator.cpp:436</a></div></div>
 <div class="ttc" id="aclassMap_html"><div class="ttname"><a href="classMap.html">Map</a></div><div class="ttdoc">Mapa geográfico estendido com metadados e dicionário de estruturas.</div><div class="ttdef"><b>Definition:</b> <a href="map_8h_source.html#l00055">map.h:55</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -281,10 +343,10 @@ Atributos Privados</h2></td></tr>
 <p>&#x202A;Retorna o caminho do arquivo .osm associado a este gerador. </p>
 <dl class="section return"><dt>Retorna</dt><dd>&#x202A;Caminho do arquivo como string. </dd></dl>
 
-<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00359">359</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                                       {</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="classMapGenerator.html#addf2986511a617e9a8fbe019fb45d91f">filename_</a>;</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;}</div>
+<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00436">436</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                                       {</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="classMapGenerator.html#addf2986511a617e9a8fbe019fb45d91f">filename_</a>;</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -306,10 +368,83 @@ Atributos Privados</h2></td></tr>
 <p>&#x202A;Retorna referência ao mapa construído pelo gerador. </p>
 <dl class="section return"><dt>Retorna</dt><dd>&#x202A;Referência para o objeto <a class="el" href="classMap.html" title="&#x202A;Mapa geográfico estendido com metadados e dicionário de estruturas.">Map</a> interno. </dd></dl>
 
-<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00367">367</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                           {</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="classMapGenerator.html#ab25c97b19279e83fe70c128060001f07">mapa_</a>;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;}</div>
+<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00444">444</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                           {</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="classMapGenerator.html#ab25c97b19279e83fe70c128060001f07">mapa_</a>;</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae1c10606708a5f30731146975c489ecc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1c10606708a5f30731146975c489ecc">&#9670;&nbsp;</a></span>nome_arquivo_valido()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MapGenerator::nome_arquivo_valido </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>&#x202A;Verifica se o nome (caminho) do arquivo é válido para processamento. </p>
+<p class="DocNodeLTR">O nome não pode ser vazio, deve terminar com ".osm" e o nome base (sem extensão) deve conter apenas caracteres alfanuméricos, underscores, hífens ou pontos.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>&#x202A;Caminho do arquivo a ser verificado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>&#x202A;true se o nome do arquivo for considerado válido, false caso contrário. </dd></dl>
+<dl class="section note DocNodeLTR"><dt>Observação</dt><dd>&#x202A;Esta função é case-sensitive e não aceita extensões alternativas (ex: ".OSM"). </dd></dl>
+
+<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00385">385</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                                                            {</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keywordflow">if</span> (path.empty()) {</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    }</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <span class="comment">// O nome do arquivo não pode ser só a extensão (ex: &quot;.osm&quot;)</span></div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keyword">const</span> std::string ext = <span class="stringliteral">&quot;.osm&quot;</span>;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keywordflow">if</span> (path.size() &lt;= ext.size()) {</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    }</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="comment">// Extrai apenas o nome do arquivo (sem o caminho)</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    std::string <a class="code" href="classMapGenerator.html#a2f1716f5e66a5e76c11db230db2196dd">filename</a> = path;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordtype">size_t</span> sep = path.find_last_of(<span class="stringliteral">&quot;/\\&quot;</span>);</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="keywordflow">if</span> (sep != std::string::npos) {</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <a class="code" href="classMapGenerator.html#a2f1716f5e66a5e76c11db230db2196dd">filename</a> = path.substr(sep + 1);</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    }</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="keywordtype">bool</span> termina_com_osm = <a class="code" href="classMapGenerator.html#a2f1716f5e66a5e76c11db230db2196dd">filename</a>.compare(<a class="code" href="classMapGenerator.html#a2f1716f5e66a5e76c11db230db2196dd">filename</a>.size() - ext.size(), ext.size(), ext) == 0;</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160; </div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keywordflow">if</span> (!termina_com_osm) {</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    }</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160; </div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    <span class="comment">// Verifica se o nome base (sem extensão) contém apenas caracteres válidos</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    std::string basename = <a class="code" href="classMapGenerator.html#a2f1716f5e66a5e76c11db230db2196dd">filename</a>.substr(0, <a class="code" href="classMapGenerator.html#a2f1716f5e66a5e76c11db230db2196dd">filename</a>.size() - ext.size());</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">char</span> c : basename) {</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <span class="keywordflow">if</span> (!std::isalnum(<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(c)) &amp;&amp;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            c != <span class="charliteral">&#39;_&#39;</span> &amp;&amp; c != <span class="charliteral">&#39;-&#39;</span> &amp;&amp; c != <span class="charliteral">&#39;.&#39;</span>) {</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        }</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    }</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -372,7 +507,7 @@ Atributos Privados</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classMapGenerator.html">&#x202A;MapGenerator</a></li>
-    <li class="footer">Gerado em Quinta, 11 de Junho de 2026 22:29:48 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Gerado em Quinta, 11 de Junho de 2026 22:39:37 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

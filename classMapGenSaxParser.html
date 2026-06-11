@@ -139,8 +139,10 @@ $(document).ready(function(){initNavTree('classMapGenSaxParser.html',''); initRe
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Membros Públicos</h2></td></tr>
 <tr class="memitem:a85b14f186fbd64f0e6e06fe4faf5584f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapGenSaxParser.html#a85b14f186fbd64f0e6e06fe4faf5584f">MapGenSaxParser</a> ()</td></tr>
+<tr class="memdesc:a85b14f186fbd64f0e6e06fe4faf5584f"><td class="mdescLeft">&#160;</td><td class="mdescRight">&#x202A;Construtor padrão do <a class="el" href="classMapGenSaxParser.html" title="&#x202A;Parser SAX especializado para arquivos .osm (OpenStreetMap XML).">MapGenSaxParser</a>, inicializa o parser XML.  <a href="classMapGenSaxParser.html#a85b14f186fbd64f0e6e06fe4faf5584f">Mais...</a><br /></td></tr>
 <tr class="separator:a85b14f186fbd64f0e6e06fe4faf5584f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e1b0423fad257ff38e4e2038843a392"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapGenSaxParser.html#a8e1b0423fad257ff38e4e2038843a392">~MapGenSaxParser</a> ()</td></tr>
+<tr class="memdesc:a8e1b0423fad257ff38e4e2038843a392"><td class="mdescLeft">&#160;</td><td class="mdescRight">&#x202A;Destrutor padrão do <a class="el" href="classMapGenSaxParser.html" title="&#x202A;Parser SAX especializado para arquivos .osm (OpenStreetMap XML).">MapGenSaxParser</a>.  <a href="classMapGenSaxParser.html#a8e1b0423fad257ff38e4e2038843a392">Mais...</a><br /></td></tr>
 <tr class="separator:a8e1b0423fad257ff38e4e2038843a392"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -182,6 +184,7 @@ Membros Privados</h2></td></tr>
 <tr class="memdesc:a6418f26212a948e02f80fb55fb393926"><td class="mdescLeft">&#160;</td><td class="mdescRight">&#x202A;Extrai metadados relevantes dos elementos &lt;way&gt; e &lt;tag&gt; filhos.  <a href="classMapGenSaxParser.html#a6418f26212a948e02f80fb55fb393926">Mais...</a><br /></td></tr>
 <tr class="separator:a6418f26212a948e02f80fb55fb393926"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb5641aa825c36c2f03a43a1bcc51828"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapGenSaxParser.html#acb5641aa825c36c2f03a43a1bcc51828">store_lugar_way</a> ()</td></tr>
+<tr class="memdesc:acb5641aa825c36c2f03a43a1bcc51828"><td class="mdescLeft">&#160;</td><td class="mdescRight">&#x202A;Insere o lugar representado pelo way atual no mapa, usando os dados acumulados em temp_lugar_ e connected_nodes_.  <a href="classMapGenSaxParser.html#acb5641aa825c36c2f03a43a1bcc51828">Mais...</a><br /></td></tr>
 <tr class="separator:acb5641aa825c36c2f03a43a1bcc51828"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8414ca402e3536d4fa9008ac8c89ffda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapGenSaxParser.html#a8414ca402e3536d4fa9008ac8c89ffda">store_edge</a> ()</td></tr>
 <tr class="memdesc:a8414ca402e3536d4fa9008ac8c89ffda"><td class="mdescLeft">&#160;</td><td class="mdescRight">&#x202A;Cria arestas no grafo conectando todos os nós referenciados pelo way atual e limpa o buffer de nós conectados.  <a href="classMapGenSaxParser.html#a8414ca402e3536d4fa9008ac8c89ffda">Mais...</a><br /></td></tr>
@@ -190,6 +193,7 @@ Membros Privados</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Atributos Privados</h2></td></tr>
 <tr class="memitem:a3bf91da59488d5b5cd3a018bee9e7ad3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="map__generator_8cpp.html#a99f78dec5b5884642b44f101ef1d2460">ParseState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapGenSaxParser.html#a3bf91da59488d5b5cd3a018bee9e7ad3">state_</a> = <a class="el" href="map__generator_8cpp.html#a99f78dec5b5884642b44f101ef1d2460aa5daf7f2ebbba4975d61dab1c40188c7">ParseState::IDLE</a></td></tr>
+<tr class="memdesc:a3bf91da59488d5b5cd3a018bee9e7ad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">&#x202A;Controle de estados de leitura do parser.  <a href="classMapGenSaxParser.html#a3bf91da59488d5b5cd3a018bee9e7ad3">Mais...</a><br /></td></tr>
 <tr class="separator:a3bf91da59488d5b5cd3a018bee9e7ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abee228341123c5918823bafa6741b96c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; long long int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapGenSaxParser.html#abee228341123c5918823bafa6741b96c">connected_nodes_</a> = {}</td></tr>
 <tr class="memdesc:abee228341123c5918823bafa6741b96c"><td class="mdescLeft">&#160;</td><td class="mdescRight">&#x202A;Nós referenciados pelo &lt;way&gt; atual, usados para criação de arestas.  <a href="classMapGenSaxParser.html#abee228341123c5918823bafa6741b96c">Mais...</a><br /></td></tr>
@@ -208,7 +212,7 @@ Atributos Privados</h2></td></tr>
 <dl class="section note DocNodeLTR"><dt>Observação</dt><dd>&#x202A;Esta classe é de uso exclusivamente interno ao <a class="el" href="classMapGenerator.html">MapGenerator</a> e não é exposta pelo cabeçalho público.</dd></dl>
 <p class="DocNodeLTR">TODO: Remover auto-conexão de nó ao seu próprio vetor de adjacência TODO: Adicionar atributos adicionais de aresta (tipo de rua, sentido, etc.) </p>
 
-<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00102">102</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00101">101</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
 </div><h2 class="groupheader">Construtores e Destrutores</h2>
 <a id="a85b14f186fbd64f0e6e06fe4faf5584f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a85b14f186fbd64f0e6e06fe4faf5584f">&#9670;&nbsp;</a></span>MapGenSaxParser()</h2>
@@ -233,8 +237,10 @@ Atributos Privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00307">307</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;: xmlpp::SaxParser() {}</div>
+<p>&#x202A;Construtor padrão do <a class="el" href="classMapGenSaxParser.html" title="&#x202A;Parser SAX especializado para arquivos .osm (OpenStreetMap XML).">MapGenSaxParser</a>, inicializa o parser XML. </p>
+
+<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00315">315</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;: xmlpp::SaxParser() {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -261,8 +267,10 @@ Atributos Privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00308">308</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;{}</div>
+<p>&#x202A;Destrutor padrão do <a class="el" href="classMapGenSaxParser.html" title="&#x202A;Parser SAX especializado para arquivos .osm (OpenStreetMap XML).">MapGenSaxParser</a>. </p>
+
+<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00318">318</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -300,18 +308,18 @@ Atributos Privados</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00275">275</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                                                              {</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="keywordflow">if</span> (name == <span class="stringliteral">&quot;way&quot;</span> &amp;&amp; <a class="code" href="classMapGenSaxParser.html#a3bf91da59488d5b5cd3a018bee9e7ad3">state_</a> == <a class="code" href="map__generator_8cpp.html#a99f78dec5b5884642b44f101ef1d2460abeb410f25fbf2fdde0e664a4b6cb6f42">ParseState::WAY</a>) {</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                <a class="code" href="classMapGenSaxParser.html#acb5641aa825c36c2f03a43a1bcc51828">store_lugar_way</a>();</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                <a class="code" href="classMapGenSaxParser.html#a8414ca402e3536d4fa9008ac8c89ffda">store_edge</a>();</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                <a class="code" href="classMapGenSaxParser.html#a76a48743ee6fcd9478c790b914f39223">update_state</a>(<span class="stringliteral">&quot;idle&quot;</span>);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            }</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        }</div>
-<div class="ttc" id="aclassMapGenSaxParser_html_a3bf91da59488d5b5cd3a018bee9e7ad3"><div class="ttname"><a href="classMapGenSaxParser.html#a3bf91da59488d5b5cd3a018bee9e7ad3">MapGenSaxParser::state_</a></div><div class="ttdeci">ParseState state_</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00108">map_generator.cpp:108</a></div></div>
+<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00282">282</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                                                          {</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="keywordflow">if</span> (name == <span class="stringliteral">&quot;way&quot;</span> &amp;&amp; <a class="code" href="classMapGenSaxParser.html#a3bf91da59488d5b5cd3a018bee9e7ad3">state_</a> == <a class="code" href="map__generator_8cpp.html#a99f78dec5b5884642b44f101ef1d2460abeb410f25fbf2fdde0e664a4b6cb6f42">ParseState::WAY</a>) {</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <a class="code" href="classMapGenSaxParser.html#acb5641aa825c36c2f03a43a1bcc51828">store_lugar_way</a>();</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <a class="code" href="classMapGenSaxParser.html#a8414ca402e3536d4fa9008ac8c89ffda">store_edge</a>();</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <a class="code" href="classMapGenSaxParser.html#a76a48743ee6fcd9478c790b914f39223">update_state</a>(<span class="stringliteral">&quot;idle&quot;</span>);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        }</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    }</div>
+<div class="ttc" id="aclassMapGenSaxParser_html_a3bf91da59488d5b5cd3a018bee9e7ad3"><div class="ttname"><a href="classMapGenSaxParser.html#a3bf91da59488d5b5cd3a018bee9e7ad3">MapGenSaxParser::state_</a></div><div class="ttdeci">ParseState state_</div><div class="ttdoc">Controle de estados de leitura do parser.</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00108">map_generator.cpp:108</a></div></div>
 <div class="ttc" id="aclassMapGenSaxParser_html_a76a48743ee6fcd9478c790b914f39223"><div class="ttname"><a href="classMapGenSaxParser.html#a76a48743ee6fcd9478c790b914f39223">MapGenSaxParser::update_state</a></div><div class="ttdeci">void update_state(const Glib::ustring &amp;name)</div><div class="ttdoc">Atualiza o estado do parser com base no nome do elemento XML aberto.</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00127">map_generator.cpp:127</a></div></div>
-<div class="ttc" id="aclassMapGenSaxParser_html_a8414ca402e3536d4fa9008ac8c89ffda"><div class="ttname"><a href="classMapGenSaxParser.html#a8414ca402e3536d4fa9008ac8c89ffda">MapGenSaxParser::store_edge</a></div><div class="ttdeci">void store_edge()</div><div class="ttdoc">Cria arestas no grafo conectando todos os nós referenciados pelo way atual e limpa o buffer de nós co...</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00241">map_generator.cpp:241</a></div></div>
-<div class="ttc" id="aclassMapGenSaxParser_html_acb5641aa825c36c2f03a43a1bcc51828"><div class="ttname"><a href="classMapGenSaxParser.html#acb5641aa825c36c2f03a43a1bcc51828">MapGenSaxParser::store_lugar_way</a></div><div class="ttdeci">void store_lugar_way()</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00220">map_generator.cpp:220</a></div></div>
+<div class="ttc" id="aclassMapGenSaxParser_html_a8414ca402e3536d4fa9008ac8c89ffda"><div class="ttname"><a href="classMapGenSaxParser.html#a8414ca402e3536d4fa9008ac8c89ffda">MapGenSaxParser::store_edge</a></div><div class="ttdeci">void store_edge()</div><div class="ttdoc">Cria arestas no grafo conectando todos os nós referenciados pelo way atual e limpa o buffer de nós co...</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00248">map_generator.cpp:248</a></div></div>
+<div class="ttc" id="aclassMapGenSaxParser_html_acb5641aa825c36c2f03a43a1bcc51828"><div class="ttname"><a href="classMapGenSaxParser.html#acb5641aa825c36c2f03a43a1bcc51828">MapGenSaxParser::store_lugar_way</a></div><div class="ttdeci">void store_lugar_way()</div><div class="ttdoc">Insere o lugar representado pelo way atual no mapa, usando os dados acumulados em temp_lugar_ e conne...</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00227">map_generator.cpp:227</a></div></div>
 <div class="ttc" id="amap__generator_8cpp_html_a99f78dec5b5884642b44f101ef1d2460abeb410f25fbf2fdde0e664a4b6cb6f42"><div class="ttname"><a href="map__generator_8cpp.html#a99f78dec5b5884642b44f101ef1d2460abeb410f25fbf2fdde0e664a4b6cb6f42">ParseState::WAY</a></div><div class="ttdeci">@ WAY</div><div class="ttdoc">Dentro de um elemento &lt;way&gt;</div></div>
 </div><!-- fragment -->
 </div>
@@ -348,10 +356,10 @@ Atributos Privados</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00287">287</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                                                           {</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            std::cerr &lt;&lt; <span class="stringliteral">&quot;[MapGenSaxParser] Erro: &quot;</span> &lt;&lt; message &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        }</div>
+<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00294">294</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                                                       {</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;[MapGenSaxParser] Erro: &quot;</span> &lt;&lt; message &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -399,13 +407,13 @@ Atributos Privados</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00261">261</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                                                                                                 {</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            <a class="code" href="classMapGenSaxParser.html#a76a48743ee6fcd9478c790b914f39223">update_state</a>(name);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classMapGenSaxParser.html#a3bf91da59488d5b5cd3a018bee9e7ad3">state_</a> == <a class="code" href="map__generator_8cpp.html#a99f78dec5b5884642b44f101ef1d2460a0cc25b606fe928a0c9a58f7f209c4495">ParseState::NODE</a>) <a class="code" href="classMapGenSaxParser.html#ae2298f98b1d66622820877ff818e0180">store_node</a>(attributes);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classMapGenSaxParser.html#a3bf91da59488d5b5cd3a018bee9e7ad3">state_</a> == <a class="code" href="map__generator_8cpp.html#a99f78dec5b5884642b44f101ef1d2460abeb410f25fbf2fdde0e664a4b6cb6f42">ParseState::WAY</a>)  <a class="code" href="classMapGenSaxParser.html#a73359cf7ee3540f9e58ca372e403ae99">parse_way</a>(name, attributes);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        }</div>
+<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00268">268</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                                                                                             {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <a class="code" href="classMapGenSaxParser.html#a76a48743ee6fcd9478c790b914f39223">update_state</a>(name);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classMapGenSaxParser.html#a3bf91da59488d5b5cd3a018bee9e7ad3">state_</a> == <a class="code" href="map__generator_8cpp.html#a99f78dec5b5884642b44f101ef1d2460a0cc25b606fe928a0c9a58f7f209c4495">ParseState::NODE</a>) <a class="code" href="classMapGenSaxParser.html#ae2298f98b1d66622820877ff818e0180">store_node</a>(attributes);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classMapGenSaxParser.html#a3bf91da59488d5b5cd3a018bee9e7ad3">state_</a> == <a class="code" href="map__generator_8cpp.html#a99f78dec5b5884642b44f101ef1d2460abeb410f25fbf2fdde0e664a4b6cb6f42">ParseState::WAY</a>)  <a class="code" href="classMapGenSaxParser.html#a73359cf7ee3540f9e58ca372e403ae99">parse_way</a>(name, attributes);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
 <div class="ttc" id="aclassMapGenSaxParser_html_a73359cf7ee3540f9e58ca372e403ae99"><div class="ttname"><a href="classMapGenSaxParser.html#a73359cf7ee3540f9e58ca372e403ae99">MapGenSaxParser::parse_way</a></div><div class="ttdeci">void parse_way(const Glib::ustring &amp;name, const AttributeList &amp;attributes)</div><div class="ttdoc">Realiza o processamento de sub-elementos de um &lt;way&gt;.</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00171">map_generator.cpp:171</a></div></div>
 <div class="ttc" id="aclassMapGenSaxParser_html_ae2298f98b1d66622820877ff818e0180"><div class="ttname"><a href="classMapGenSaxParser.html#ae2298f98b1d66622820877ff818e0180">MapGenSaxParser::store_node</a></div><div class="ttdeci">void store_node(const AttributeList &amp;attributes)</div><div class="ttdoc">Lê os atributos de um elemento &lt;node&gt; e insere o nó no mapa.</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00146">map_generator.cpp:146</a></div></div>
 <div class="ttc" id="amap__generator_8cpp_html_a99f78dec5b5884642b44f101ef1d2460a0cc25b606fe928a0c9a58f7f209c4495"><div class="ttname"><a href="map__generator_8cpp.html#a99f78dec5b5884642b44f101ef1d2460a0cc25b606fe928a0c9a58f7f209c4495">ParseState::NODE</a></div><div class="ttdeci">@ NODE</div><div class="ttdoc">Dentro de um elemento &lt;node&gt;</div></div>
@@ -444,10 +452,10 @@ Atributos Privados</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00295">295</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                                                             {</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            std::cerr &lt;&lt; <span class="stringliteral">&quot;[MapGenSaxParser] Aviso: &quot;</span> &lt;&lt; message &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        }</div>
+<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00302">302</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                                                         {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;[MapGenSaxParser] Aviso: &quot;</span> &lt;&lt; message &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -484,14 +492,14 @@ Atributos Privados</h2></td></tr>
 </dl>
 
 <p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00182">182</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                                                               {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; attr : attributes) {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                <span class="keywordflow">if</span> (attr.name == <span class="stringliteral">&quot;ref&quot;</span>) {</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                    this-&gt;<a class="code" href="classMapGenSaxParser.html#abee228341123c5918823bafa6741b96c">connected_nodes_</a>.push_back(std::stoll(attr.value.c_str()));</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                    <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                } </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            }</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                                                           {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; attr : attributes) {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keywordflow">if</span> (attr.name == <span class="stringliteral">&quot;ref&quot;</span>) {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                this-&gt;<a class="code" href="classMapGenSaxParser.html#abee228341123c5918823bafa6741b96c">connected_nodes_</a>.push_back(std::stoll(attr.value.c_str()));</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            } </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
 <div class="ttc" id="aclassMapGenSaxParser_html_abee228341123c5918823bafa6741b96c"><div class="ttname"><a href="classMapGenSaxParser.html#abee228341123c5918823bafa6741b96c">MapGenSaxParser::connected_nodes_</a></div><div class="ttdeci">std::vector&lt; long long int &gt; connected_nodes_</div><div class="ttdoc">Nós referenciados pelo &lt;way&gt; atual, usados para criação de arestas.</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00113">map_generator.cpp:113</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -530,25 +538,25 @@ Atributos Privados</h2></td></tr>
 </dl>
 
 <p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00199">199</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                                                               {</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <span class="keywordflow">if</span> (attributes.empty()) <span class="keywordflow">return</span>;</div>
+<div class="fragment"><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                                                           {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">if</span> (attributes.empty()) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="comment">// Atributo &quot;id&quot; identifica o início de um novo way</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="keywordflow">if</span> (attributes[0].name == <span class="stringliteral">&quot;id&quot;</span>) {</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                <a class="code" href="classMapGenSaxParser.html#a02408cec5e81899731b1ea150829d513">temp_lugar_</a>.<a class="code" href="structRuaLugarBuffer.html#aa5c06dfa12b7aaf64f9220d3c3e063c9">id</a> = std::stoll(attributes[0].value.c_str());</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="comment">// Atributo &quot;id&quot; identifica o início de um novo way</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">if</span> (attributes[0].name == <span class="stringliteral">&quot;id&quot;</span>) {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <a class="code" href="classMapGenSaxParser.html#a02408cec5e81899731b1ea150829d513">temp_lugar_</a>.<a class="code" href="structRuaLugarBuffer.html#aa5c06dfa12b7aaf64f9220d3c3e063c9">id</a> = std::stoll(attributes[0].value.c_str());</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        }</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="comment">// Atributo &quot;k&quot; indica uma tag OSM chave-valor</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">if</span> (attributes[0].name != <span class="stringliteral">&quot;k&quot;</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="comment">// Atributo &quot;k&quot; indica uma tag OSM chave-valor</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keywordflow">if</span> (attributes[0].name != <span class="stringliteral">&quot;k&quot;</span>) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            <span class="keywordflow">if</span>      (attributes[0].value == <span class="stringliteral">&quot;highway&quot;</span>) <a class="code" href="classMapGenSaxParser.html#a02408cec5e81899731b1ea150829d513">temp_lugar_</a>.<a class="code" href="structRuaLugarBuffer.html#a26c8d89173956775938ad99c79ef2b47">tag</a>  = <span class="stringliteral">&quot;Rua&quot;</span>;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (attributes[0].value == <span class="stringliteral">&quot;name&quot;</span>)    <a class="code" href="classMapGenSaxParser.html#a02408cec5e81899731b1ea150829d513">temp_lugar_</a>.<a class="code" href="structRuaLugarBuffer.html#a714a5f73c19061895fe7c4f790f04d60">nome</a> = attributes[1].value;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keywordflow">if</span>      (attributes[0].value == <span class="stringliteral">&quot;highway&quot;</span>) <a class="code" href="classMapGenSaxParser.html#a02408cec5e81899731b1ea150829d513">temp_lugar_</a>.<a class="code" href="structRuaLugarBuffer.html#a26c8d89173956775938ad99c79ef2b47">tag</a>  = <span class="stringliteral">&quot;Rua&quot;</span>;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (attributes[0].value == <span class="stringliteral">&quot;name&quot;</span>)    <a class="code" href="classMapGenSaxParser.html#a02408cec5e81899731b1ea150829d513">temp_lugar_</a>.<a class="code" href="structRuaLugarBuffer.html#a714a5f73c19061895fe7c4f790f04d60">nome</a> = attributes[1].value;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
 <div class="ttc" id="aclassMapGenSaxParser_html_a02408cec5e81899731b1ea150829d513"><div class="ttname"><a href="classMapGenSaxParser.html#a02408cec5e81899731b1ea150829d513">MapGenSaxParser::temp_lugar_</a></div><div class="ttdeci">RuaLugarBuffer temp_lugar_</div><div class="ttdoc">Buffer de dados do &lt;way&gt; (RuaLugar, Estrutura) em processamento.</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00116">map_generator.cpp:116</a></div></div>
-<div class="ttc" id="astructRuaLugarBuffer_html_a26c8d89173956775938ad99c79ef2b47"><div class="ttname"><a href="structRuaLugarBuffer.html#a26c8d89173956775938ad99c79ef2b47">RuaLugarBuffer::tag</a></div><div class="ttdeci">std::string tag</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00062">map_generator.cpp:62</a></div></div>
-<div class="ttc" id="astructRuaLugarBuffer_html_a714a5f73c19061895fe7c4f790f04d60"><div class="ttname"><a href="structRuaLugarBuffer.html#a714a5f73c19061895fe7c4f790f04d60">RuaLugarBuffer::nome</a></div><div class="ttdeci">std::string nome</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00063">map_generator.cpp:63</a></div></div>
-<div class="ttc" id="astructRuaLugarBuffer_html_aa5c06dfa12b7aaf64f9220d3c3e063c9"><div class="ttname"><a href="structRuaLugarBuffer.html#aa5c06dfa12b7aaf64f9220d3c3e063c9">RuaLugarBuffer::id</a></div><div class="ttdeci">long long int id</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00061">map_generator.cpp:61</a></div></div>
+<div class="ttc" id="astructRuaLugarBuffer_html_a26c8d89173956775938ad99c79ef2b47"><div class="ttname"><a href="structRuaLugarBuffer.html#a26c8d89173956775938ad99c79ef2b47">RuaLugarBuffer::tag</a></div><div class="ttdeci">std::string tag</div><div class="ttdoc">Identificador do way, usado como ID do lugar no mapa.</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00061">map_generator.cpp:61</a></div></div>
+<div class="ttc" id="astructRuaLugarBuffer_html_a714a5f73c19061895fe7c4f790f04d60"><div class="ttname"><a href="structRuaLugarBuffer.html#a714a5f73c19061895fe7c4f790f04d60">RuaLugarBuffer::nome</a></div><div class="ttdeci">std::string nome</div><div class="ttdoc">Tipo do lugar (ex: &quot;Rua&quot;, &quot;Avenida&quot;, &quot;Hospital&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00062">map_generator.cpp:62</a></div></div>
+<div class="ttc" id="astructRuaLugarBuffer_html_aa5c06dfa12b7aaf64f9220d3c3e063c9"><div class="ttname"><a href="structRuaLugarBuffer.html#aa5c06dfa12b7aaf64f9220d3c3e063c9">RuaLugarBuffer::id</a></div><div class="ttdeci">long long int id</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00060">map_generator.cpp:60</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -597,10 +605,10 @@ Atributos Privados</h2></td></tr>
 </dl>
 
 <p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00171">171</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                                                                                 {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordflow">if</span>      (name == <span class="stringliteral">&quot;nd&quot;</span>)                     <a class="code" href="classMapGenSaxParser.html#a07c70f775c7d4afd62285def4fbfe306">parse_edge_nodes</a>(attributes);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (name == <span class="stringliteral">&quot;tag&quot;</span> || name == <span class="stringliteral">&quot;way&quot;</span>)   <a class="code" href="classMapGenSaxParser.html#a6418f26212a948e02f80fb55fb393926">parse_tags_lugar</a>(attributes);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                                                                             {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">if</span>      (name == <span class="stringliteral">&quot;nd&quot;</span>)                     <a class="code" href="classMapGenSaxParser.html#a07c70f775c7d4afd62285def4fbfe306">parse_edge_nodes</a>(attributes);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (name == <span class="stringliteral">&quot;tag&quot;</span> || name == <span class="stringliteral">&quot;way&quot;</span>)   <a class="code" href="classMapGenSaxParser.html#a6418f26212a948e02f80fb55fb393926">parse_tags_lugar</a>(attributes);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
 <div class="ttc" id="aclassMapGenSaxParser_html_a07c70f775c7d4afd62285def4fbfe306"><div class="ttname"><a href="classMapGenSaxParser.html#a07c70f775c7d4afd62285def4fbfe306">MapGenSaxParser::parse_edge_nodes</a></div><div class="ttdeci">void parse_edge_nodes(const AttributeList &amp;attributes)</div><div class="ttdoc">Coleta o atributo &quot;ref&quot; de um elemento &lt;nd&gt;, adicionando o id do nó referenciado à lista de nós conec...</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00182">map_generator.cpp:182</a></div></div>
 <div class="ttc" id="aclassMapGenSaxParser_html_a6418f26212a948e02f80fb55fb393926"><div class="ttname"><a href="classMapGenSaxParser.html#a6418f26212a948e02f80fb55fb393926">MapGenSaxParser::parse_tags_lugar</a></div><div class="ttdeci">void parse_tags_lugar(const AttributeList &amp;attributes)</div><div class="ttdoc">Extrai metadados relevantes dos elementos &lt;way&gt; e &lt;tag&gt; filhos.</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00199">map_generator.cpp:199</a></div></div>
 </div><!-- fragment -->
@@ -632,15 +640,15 @@ Atributos Privados</h2></td></tr>
 <p>&#x202A;Cria arestas no grafo conectando todos os nós referenciados pelo way atual e limpa o buffer de nós conectados. </p>
 <p class="DocNodeLTR">TODO: Remover a auto-conexão de cada nó ao seu próprio vetor </p>
 
-<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00241">241</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                          {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <span class="keywordtype">id</span> : this-&gt;<a class="code" href="classMapGenSaxParser.html#abee228341123c5918823bafa6741b96c">connected_nodes_</a>) {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                this-&gt;<a class="code" href="classMapGenSaxParser.html#a2e807ecb2914ad03f483c1f248b6a2da">mapa_</a>.<a class="code" href="classGrafo.html#a86dd65f40956f7c3f2cbe1de7bd7086d">add_edge</a>(<span class="keywordtype">id</span>, this-&gt;connected_nodes_);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            }</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            this-&gt;connected_nodes_.clear();</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        }</div>
+<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00248">248</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                      {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <span class="keywordtype">id</span> : this-&gt;<a class="code" href="classMapGenSaxParser.html#abee228341123c5918823bafa6741b96c">connected_nodes_</a>) {</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            this-&gt;<a class="code" href="classMapGenSaxParser.html#a2e807ecb2914ad03f483c1f248b6a2da">mapa_</a>.<a class="code" href="classGrafo.html#a86dd65f40956f7c3f2cbe1de7bd7086d">add_edge</a>(<span class="keywordtype">id</span>, this-&gt;connected_nodes_);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        }</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        this-&gt;connected_nodes_.clear();</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    }</div>
 <div class="ttc" id="aclassGrafo_html_a86dd65f40956f7c3f2cbe1de7bd7086d"><div class="ttname"><a href="classGrafo.html#a86dd65f40956f7c3f2cbe1de7bd7086d">Grafo::add_edge</a></div><div class="ttdeci">void add_edge(long long from_id, long long to_id)</div><div class="ttdoc">Adiciona uma aresta bidirecional (TODO: FIX) entre dois nós.</div><div class="ttdef"><b>Definition:</b> <a href="grafo_8cpp_source.html#l00079">grafo.cpp:79</a></div></div>
-<div class="ttc" id="aclassMapGenSaxParser_html_a2e807ecb2914ad03f483c1f248b6a2da"><div class="ttname"><a href="classMapGenSaxParser.html#a2e807ecb2914ad03f483c1f248b6a2da">MapGenSaxParser::mapa_</a></div><div class="ttdeci">Map mapa_</div><div class="ttdoc">Mapa construído incrementalmente durante o parsing.</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00305">map_generator.cpp:305</a></div></div>
+<div class="ttc" id="aclassMapGenSaxParser_html_a2e807ecb2914ad03f483c1f248b6a2da"><div class="ttname"><a href="classMapGenSaxParser.html#a2e807ecb2914ad03f483c1f248b6a2da">MapGenSaxParser::mapa_</a></div><div class="ttdeci">Map mapa_</div><div class="ttdoc">Mapa construído incrementalmente durante o parsing.</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00312">map_generator.cpp:312</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -667,24 +675,27 @@ Atributos Privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00220">220</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                               {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classMapGenSaxParser.html#a02408cec5e81899731b1ea150829d513">temp_lugar_</a>.<a class="code" href="structRuaLugarBuffer.html#a26c8d89173956775938ad99c79ef2b47">tag</a> != <span class="stringliteral">&quot;Rua&quot;</span>) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            this-&gt;<a class="code" href="classMapGenSaxParser.html#a2e807ecb2914ad03f483c1f248b6a2da">mapa_</a>.<a class="code" href="classMap.html#a3745f2ab9878145fc30c69ea4932b20d">insere_lugar</a>(this-&gt;<a class="code" href="classMapGenSaxParser.html#a02408cec5e81899731b1ea150829d513">temp_lugar_</a>.<a class="code" href="structRuaLugarBuffer.html#aa5c06dfa12b7aaf64f9220d3c3e063c9">id</a>, </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                                     <a class="code" href="structLugarMap.html">LugarMap</a>{</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                                        this-&gt;temp_lugar_.tag,</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                                        this-&gt;temp_lugar_.nome,</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                                        this-&gt;connected_nodes_,</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                                        std::vector&lt;long long&gt;(this-&gt;connected_nodes_.size(), 0)</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                                        }</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                                    );</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            this-&gt;<a class="code" href="classMapGenSaxParser.html#a02408cec5e81899731b1ea150829d513">temp_lugar_</a> = <a class="code" href="structRuaLugarBuffer.html">RuaLugarBuffer</a>{};                      </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        }</div>
+<p>&#x202A;Insere o lugar representado pelo way atual no mapa, usando os dados acumulados em temp_lugar_ e connected_nodes_. </p>
+<p class="DocNodeLTR">TODO: Adicionar outros tipos de estrutura. No momento, apenas ruas, avenidas e similares são inseridos como lugares no mapa. </p>
+
+<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00227">227</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                           {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classMapGenSaxParser.html#a02408cec5e81899731b1ea150829d513">temp_lugar_</a>.<a class="code" href="structRuaLugarBuffer.html#a26c8d89173956775938ad99c79ef2b47">tag</a> != <span class="stringliteral">&quot;Rua&quot;</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        this-&gt;<a class="code" href="classMapGenSaxParser.html#a2e807ecb2914ad03f483c1f248b6a2da">mapa_</a>.<a class="code" href="classMap.html#a3745f2ab9878145fc30c69ea4932b20d">insere_lugar</a>(this-&gt;<a class="code" href="classMapGenSaxParser.html#a02408cec5e81899731b1ea150829d513">temp_lugar_</a>.<a class="code" href="structRuaLugarBuffer.html#aa5c06dfa12b7aaf64f9220d3c3e063c9">id</a>, </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                                    <a class="code" href="structLugarMap.html">LugarMap</a>{</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                                    this-&gt;temp_lugar_.tag,</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                                    this-&gt;temp_lugar_.nome,</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                                    this-&gt;connected_nodes_,</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                                    std::vector&lt;long long&gt;(this-&gt;connected_nodes_.size(), 0)</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                                    }</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                                );</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        this-&gt;<a class="code" href="classMapGenSaxParser.html#a02408cec5e81899731b1ea150829d513">temp_lugar_</a> = <a class="code" href="structRuaLugarBuffer.html">RuaLugarBuffer</a>{};                      </div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    }</div>
 <div class="ttc" id="aclassMap_html_a3745f2ab9878145fc30c69ea4932b20d"><div class="ttname"><a href="classMap.html#a3745f2ab9878145fc30c69ea4932b20d">Map::insere_lugar</a></div><div class="ttdeci">void insere_lugar(long long id, LugarMap lugar)</div><div class="ttdoc">Insere ou substitui uma estrutura geográfica no dicionário.</div><div class="ttdef"><b>Definition:</b> <a href="map_8cpp_source.html#l00026">map.cpp:26</a></div></div>
 <div class="ttc" id="astructLugarMap_html"><div class="ttname"><a href="structLugarMap.html">LugarMap</a></div><div class="ttdoc">Representa uma unidade espacial do mapa (lugar, construção ou via).</div><div class="ttdef"><b>Definition:</b> <a href="map_8h_source.html#l00029">map.h:29</a></div></div>
-<div class="ttc" id="astructRuaLugarBuffer_html"><div class="ttname"><a href="structRuaLugarBuffer.html">RuaLugarBuffer</a></div><div class="ttdoc">Estrutura temporária para acumulação de dados de um &quot;way&quot; OSM durante o parsing SAX,...</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00060">map_generator.cpp:60</a></div></div>
+<div class="ttc" id="astructRuaLugarBuffer_html"><div class="ttname"><a href="structRuaLugarBuffer.html">RuaLugarBuffer</a></div><div class="ttdoc">Estrutura temporária para acumulação de dados de um &quot;way&quot; OSM durante o parsing SAX,...</div><div class="ttdef"><b>Definition:</b> <a href="map__generator_8cpp_source.html#l00059">map_generator.cpp:59</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -722,18 +733,18 @@ Atributos Privados</h2></td></tr>
 </dl>
 
 <p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00146">146</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                                                         {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> id_;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <a class="code" href="structCoordenada.html">Coordenada</a>    coord_;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; attr : attributes) {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <span class="keywordflow">if</span> (attr.name == <span class="stringliteral">&quot;id&quot;</span>)  id_               = std::stoll(attr.value.c_str());</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                <span class="keywordflow">if</span> (attr.name == <span class="stringliteral">&quot;lat&quot;</span>) coord_.<a class="code" href="structCoordenada.html#a6ffd4b1ffd6a26c7a7e0b805556b964b">latitude_</a>  = std::stod(attr.value.c_str());</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                <span class="keywordflow">if</span> (attr.name == <span class="stringliteral">&quot;lon&quot;</span>) coord_.<a class="code" href="structCoordenada.html#aa41c97af6c7b747ad72b09f20ae556c7">longitude_</a> = std::stod(attr.value.c_str());</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            }</div>
+<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                                                     {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> id_;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <a class="code" href="structCoordenada.html">Coordenada</a>    coord_;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; attr : attributes) {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <span class="keywordflow">if</span> (attr.name == <span class="stringliteral">&quot;id&quot;</span>)  id_               = std::stoll(attr.value.c_str());</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <span class="keywordflow">if</span> (attr.name == <span class="stringliteral">&quot;lat&quot;</span>) coord_.<a class="code" href="structCoordenada.html#a6ffd4b1ffd6a26c7a7e0b805556b964b">latitude_</a>  = std::stod(attr.value.c_str());</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="keywordflow">if</span> (attr.name == <span class="stringliteral">&quot;lon&quot;</span>) coord_.<a class="code" href="structCoordenada.html#aa41c97af6c7b747ad72b09f20ae556c7">longitude_</a> = std::stod(attr.value.c_str());</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        }</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <a class="code" href="classMapGenSaxParser.html#a2e807ecb2914ad03f483c1f248b6a2da">mapa_</a>.<a class="code" href="classGrafo.html#ad6b6ed285598aebd9228c49b426553cf">add_node</a>(<a class="code" href="classMapNode.html">MapNode</a>(id_, coord_));</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        }   </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <a class="code" href="classMapGenSaxParser.html#a2e807ecb2914ad03f483c1f248b6a2da">mapa_</a>.<a class="code" href="classGrafo.html#ad6b6ed285598aebd9228c49b426553cf">add_node</a>(<a class="code" href="classMapNode.html">MapNode</a>(id_, coord_));</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }   </div>
 <div class="ttc" id="aclassGrafo_html_ad6b6ed285598aebd9228c49b426553cf"><div class="ttname"><a href="classGrafo.html#ad6b6ed285598aebd9228c49b426553cf">Grafo::add_node</a></div><div class="ttdeci">void add_node(const MapNode &amp;node)</div><div class="ttdoc">Adiciona um nó ao grafo.</div><div class="ttdef"><b>Definition:</b> <a href="grafo_8cpp_source.html#l00071">grafo.cpp:71</a></div></div>
 <div class="ttc" id="aclassMapNode_html"><div class="ttname"><a href="classMapNode.html">MapNode</a></div><div class="ttdoc">Representa um nó do mapa, com um identificador único e uma posição geográfica.</div><div class="ttdef"><b>Definition:</b> <a href="map__node_8h_source.html#l00043">map_node.h:43</a></div></div>
 <div class="ttc" id="astructCoordenada_html"><div class="ttname"><a href="structCoordenada.html">Coordenada</a></div><div class="ttdoc">Representa uma coordenada geográfica, com latitude e longitude.</div><div class="ttdef"><b>Definition:</b> <a href="map__node_8h_source.html#l00025">map_node.h:25</a></div></div>
@@ -775,13 +786,13 @@ Atributos Privados</h2></td></tr>
 </dl>
 
 <p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00127">127</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                                   {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordflow">if</span>      (name == <span class="stringliteral">&quot;way&quot;</span>)  <a class="code" href="classMapGenSaxParser.html#a3bf91da59488d5b5cd3a018bee9e7ad3">state_</a> = <a class="code" href="map__generator_8cpp.html#a99f78dec5b5884642b44f101ef1d2460abeb410f25fbf2fdde0e664a4b6cb6f42">ParseState::WAY</a>;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (name == <span class="stringliteral">&quot;node&quot;</span>) <a class="code" href="classMapGenSaxParser.html#a3bf91da59488d5b5cd3a018bee9e7ad3">state_</a> = <a class="code" href="map__generator_8cpp.html#a99f78dec5b5884642b44f101ef1d2460a0cc25b606fe928a0c9a58f7f209c4495">ParseState::NODE</a>;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classMapGenSaxParser.html#a3bf91da59488d5b5cd3a018bee9e7ad3">state_</a> != <a class="code" href="map__generator_8cpp.html#a99f78dec5b5884642b44f101ef1d2460abeb410f25fbf2fdde0e664a4b6cb6f42">ParseState::WAY</a>)</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <a class="code" href="classMapGenSaxParser.html#a3bf91da59488d5b5cd3a018bee9e7ad3">state_</a> = <a class="code" href="map__generator_8cpp.html#a99f78dec5b5884642b44f101ef1d2460aa5daf7f2ebbba4975d61dab1c40188c7">ParseState::IDLE</a>;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="comment">// Elementos filhos de &lt;way&gt; (ex: &lt;nd&gt;, &lt;tag&gt;) não resetam o estado WAY</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                               {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">if</span>      (name == <span class="stringliteral">&quot;way&quot;</span>)  <a class="code" href="classMapGenSaxParser.html#a3bf91da59488d5b5cd3a018bee9e7ad3">state_</a> = <a class="code" href="map__generator_8cpp.html#a99f78dec5b5884642b44f101ef1d2460abeb410f25fbf2fdde0e664a4b6cb6f42">ParseState::WAY</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (name == <span class="stringliteral">&quot;node&quot;</span>) <a class="code" href="classMapGenSaxParser.html#a3bf91da59488d5b5cd3a018bee9e7ad3">state_</a> = <a class="code" href="map__generator_8cpp.html#a99f78dec5b5884642b44f101ef1d2460a0cc25b606fe928a0c9a58f7f209c4495">ParseState::NODE</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classMapGenSaxParser.html#a3bf91da59488d5b5cd3a018bee9e7ad3">state_</a> != <a class="code" href="map__generator_8cpp.html#a99f78dec5b5884642b44f101ef1d2460abeb410f25fbf2fdde0e664a4b6cb6f42">ParseState::WAY</a>)</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="classMapGenSaxParser.html#a3bf91da59488d5b5cd3a018bee9e7ad3">state_</a> = <a class="code" href="map__generator_8cpp.html#a99f78dec5b5884642b44f101ef1d2460aa5daf7f2ebbba4975d61dab1c40188c7">ParseState::IDLE</a>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="comment">// Elementos filhos de &lt;way&gt; (ex: &lt;nd&gt;, &lt;tag&gt;) não resetam o estado WAY</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
 <div class="ttc" id="amap__generator_8cpp_html_a99f78dec5b5884642b44f101ef1d2460aa5daf7f2ebbba4975d61dab1c40188c7"><div class="ttname"><a href="map__generator_8cpp.html#a99f78dec5b5884642b44f101ef1d2460aa5daf7f2ebbba4975d61dab1c40188c7">ParseState::IDLE</a></div><div class="ttdeci">@ IDLE</div><div class="ttdoc">Nenhum elemento relevante em processamento.</div></div>
 </div><!-- fragment -->
 </div>
@@ -827,7 +838,7 @@ Atributos Privados</h2></td></tr>
 
 <p>&#x202A;Mapa construído incrementalmente durante o parsing. </p>
 
-<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00305">305</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
+<p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00312">312</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
 
 </div>
 </div>
@@ -850,6 +861,8 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>&#x202A;Controle de estados de leitura do parser. </p>
 
 <p class="definition">Definição na linha <a class="el" href="map__generator_8cpp_source.html#l00108">108</a> do arquivo <a class="el" href="map__generator_8cpp_source.html">map_generator.cpp</a>.</p>
 
@@ -890,7 +903,7 @@ Atributos Privados</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classMapGenSaxParser.html">&#x202A;MapGenSaxParser</a></li>
-    <li class="footer">Gerado em Quinta, 11 de Junho de 2026 22:29:48 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Gerado em Quinta, 11 de Junho de 2026 22:39:37 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
