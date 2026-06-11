@@ -1,4 +1,6 @@
-<h1>User Stories</h1>
+<h1>Detalhamento de Classes e User Stories</h1>
+
+<h2>User Stories</h2>
 
 - Como usuário, eu quero pesquisar um destino, para que eu possa encontrar o lugar para onde quero ir.
 - Como usuário, eu quero selecionar um ponto de partida e um destino, para que eu possa traçar uma rota.
@@ -10,7 +12,7 @@
 
 ---
 
-<h1>Detalhamento de Classes</h1>
+<h2>Detalhamento de Classes</h2>
 
 
 <h3>Grafo</h3>
