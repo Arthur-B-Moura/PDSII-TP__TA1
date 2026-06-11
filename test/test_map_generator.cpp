@@ -8,9 +8,9 @@
 #include <iostream>
 
 
-// TEST_CASE("Basic intialization") {
-//     MapGenerator m("./maps/map_liberdade.osm");
-// };
+TEST_CASE("Basic intialization") {
+    MapGenerator m("./maps/map_liberdade.osm");
+};
 
 TEST_CASE("Test map generation from OSM file") {
     MapGenerator m("./maps/map_liberdade.osm");
