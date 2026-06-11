@@ -4,6 +4,9 @@
 #include <unordered_map>
 #include "map.h"
 #include "map_generator.h"
+#include "pathfinder.h"
+#include "map_node.h"
+#include "grafo.h"
 
 int main() {
     // Inicialização e carregamento do mapa
@@ -20,8 +23,8 @@ int main() {
     const auto& estruturas = mapa.dict_estruturas();
 
     // Declaração de variáveis para os inputs do usuário
-    std::string endereco_partida = "Não definido";
-    std::string endereco_destino = "Não definido";
+    std::string ponto_partida = "Não definido";
+    std::string ponto_destino = "Não definido";
     int opcao = 0;
 
     // Loop do menu principal
@@ -29,11 +32,11 @@ int main() {
         std::cout << "\n========================================" << std::endl;
         std::cout << "         SISTEMA DE NAVEGAÇÃO           " << std::endl;
         std::cout << "========================================" << std::endl;
-        std::cout << " Partida: " << endereco_partida << std::endl;
-        std::cout << " Destino: " << endereco_destino << std::endl;
+        std::cout << " Partida: " << ponto_partida << std::endl;
+        std::cout << " Destino: " << ponto_destino << std::endl;
         std::cout << "----------------------------------------" << std::endl;
-        std::cout << "[1] Adicionar/trocar endereço de partida" << std::endl;
-        std::cout << "[2] Adicionar/trocar endereço de destino" << std::endl;
+        std::cout << "[1] Adicionar/trocar ponto de partida" << std::endl;
+        std::cout << "[2] Adicionar/trocar ponto de destino" << std::endl;
         std::cout << "[3] Iniciar viagem" << std::endl;
         std::cout << "[4] Cancelar viagem e fechar o sistema" << std::endl;
         std::cout << "----------------------------------------" << std::endl;
@@ -47,31 +50,98 @@ int main() {
 
         // Avalia a opção selecionada e a execute de acordo
         switch (opcao) {
-            case 1:
-                std::cout << "Digite o novo endereço de partida: ";
+            case 1:{
+                std::cout << "Digite o novo ponto de partida (Insira um ponto inválido para apagar o ponto de partida atual): ";
 
-                // Captura a entrada do usuário para o endereço de partida
-                std::getline(std::cin, endereco_partida);
+                // Captura a entrada do usuário para o ponto de partida
+                std::getline(std::cin, ponto_partida);
 
-                // Procura pelo endereço no dicionário de estruturas e valida a entrada
-                
+                bool encontrado = false;
+
+                // Procura pelo ponto no dicionário de estruturas e valida a entrada
+                for (auto const& [id, lugar] : estruturas){
+                    if (lugar.nome == ponto_partida){
+                        std::cout << "Ponto de partida definido: " << lugar.nome << std::endl;
+                        encontrado = true;
+                        break;
+                    }
+                }
+                if (!encontrado) {
+                    std::cout << "Ponto de partida não encontrado, tente novamente!" << std::endl;
+                    ponto_partida = "Não definido";
+                }
                 break;
+            }
+            case 2:{
+                std::cout << "Digite o novo ponto de destino: ";
 
-            case 2:
-                std::cout << "Digite o novo endereço de destino: ";
+                // Captura a entrada do usuário para o ponto de destino
+                std::getline(std::cin, ponto_destino);
 
-                // Captura a entrada do usuário para o endereço de destino
-                std::getline(std::cin, endereco_destino);
+                bool encontrado = false;
 
-                // Procura pelo endereço no dicionário de estruturas e valida a entrada
-
+                // Procura pelo ponto no dicionário de estruturas e valida a entrada
+                for (auto const& [id, lugar] : estruturas){
+                    if (lugar.nome == ponto_destino){
+                        std::cout << "Ponto de destino definido: " << lugar.nome << std::endl;
+                        encontrado = true;
+                        if (ponto_partida == ponto_destino) {
+                            std::cout << "Ponto de partida e destino são iguais! Por favor, escolha um destino diferente." << std::endl;
+                            ponto_destino = "Não definido";
+                            break;
+                        }
+                        break;
+                    }
+                }
+                if (!encontrado) {
+                    std::cout << "Ponto de destino não encontrado, tente novamente!" << std::endl;
+                    ponto_destino = "Não definido";
+                }
                 break;
+            }
 
-            case 3:
+            case 3:{
+                if (ponto_partida == "Não definido" || ponto_destino == "Não definido") {
+                    std::cout << "Por favor, defina tanto o ponto de partida quanto o ponto de destino antes de iniciar a viagem!" << std::endl;
+                    break;
+                }
+
                 std::cout << "Calculando rota e iniciando viagem..." << std::endl;
-                // Aqui entrará o algoritmo A*
-                break;
+                
+                // Localiza os IDs dos nós de início e fim
+                long long id_partida = -1;
+                long long id_destino = -1;
 
+                for (auto const& [id_estrutura, lugar] : estruturas) {
+                    // Verifica se o nome corresponde e se a estrutura possui nós associados
+                    if (lugar.nome == ponto_partida && !lugar.nodes_id_ref.empty()){
+                        id_partida = lugar.nodes_id_ref.at(0);
+                    }
+                    if (lugar.nome == ponto_destino && !lugar.nodes_id_ref.empty()){
+                        id_destino = lugar.nodes_id_ref.at(0);
+                    }
+                }
+
+                // Só prossegue se ambos os IDs dos nós foram encontrados no grafo
+                if (id_partida != -1 && id_destino != -1) {
+                    PathFinder pf(mapa);
+                    // O algoritmo A* retorna um objeto PathResult [3]
+                    PathResult resultado = pf.find_path(id_partida, id_destino);
+
+                    if (resultado.found) {
+                        std::cout << "\n========================================" << std::endl;
+                        std::cout << " ROTA ENCONTRADA COM SUCESSO!" << std::endl;
+                        // total_distance contém a distância acumulada em metros
+                        std::cout << " Distância total estimada: " << resultado.total_distance << " metros." << std::endl;
+                        std::cout << "========================================\n" << std::endl;
+                    }else{
+                        std::cout << "Erro: Não foi possível traçar um caminho entre esses pontos." << std::endl;
+                    }
+                }else{
+                    std::cout << "Erro: Um ou ambos os endereços não possuem pontos de acesso válidos." << std::endl;
+                }
+                break;
+            }
             case 4:
                 // Encerra o sistema
                 std::cout << "Viagem cancelada. Encerrando o sistema." << std::endl;
