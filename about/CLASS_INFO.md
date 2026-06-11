@@ -1,6 +1,6 @@
-<h1>Detalhamento de Classes e User Stories</h1>
+# Detalhamento de Classes e User Stories
 
-<h2>User Stories</h2>
+## User Stories
 
 - Como usuário, eu quero pesquisar um destino, para que eu possa encontrar o lugar para onde quero ir.
 - Como usuário, eu quero selecionar um ponto de partida e um destino, para que eu possa traçar uma rota.
@@ -12,10 +12,10 @@
 
 ---
 
-<h2>Detalhamento de Classes</h2>
+## Detalhamento de Classes</h2>
 
 
-<h3>Grafo</h3>
+### Grafo
 
 Implementação da estrutura de dados "grafo".
 
@@ -23,7 +23,7 @@ Implementação da estrutura de dados "grafo".
   <img src="https://raw.githubusercontent.com/Arthur-B-Moura/PDSII-TP__TA1/main/about/CartoesCRC/Grafo.png" width="500" alt="Cartão CRC Grafo">
 </p>
 
-<h3>Map Node</h3>
+### MapNode</h3>
 
 Essa classe é responsável por gerir os nós das "intersecções", isso é, dos cruzamentos, que compõe o grafo e o layout da cidade. Ela inclui estimativas de latitude e longitude que podem ser utilizadas para calcular distância em termos globais, além de auxiliar numa possível representação gráfica modular do mapa.
 
@@ -31,7 +31,7 @@ Essa classe é responsável por gerir os nós das "intersecções", isso é, dos
   <img src="https://raw.githubusercontent.com/Arthur-B-Moura/PDSII-TP__TA1/main/about/CartoesCRC/MapNode.png" width="500" alt="Cartão CRC MapNode">
 </p>
 
-<h3>Map</h3>
+### Map
 
 Representação de fato do mapa trabalhado. Herdeira de Grafo, uma vez que utiliza todas as suas funcionalidades para permitir realização de operações lógicas de navegação, mas trás adições específicas à implementação de um mapa (no sentido cartográfico) no programa.
 
@@ -39,7 +39,7 @@ Representação de fato do mapa trabalhado. Herdeira de Grafo, uma vez que utili
   <img src="https://raw.githubusercontent.com/Arthur-B-Moura/PDSII-TP__TA1/main/about/CartoesCRC/Map.png" width="500" alt="Cartão CRC Map">
 </p>
 
-<h3>Map Generator</h3>
+### MapGenerator 
 
 Essa classe é responsável por converter descrições de mapa de arquivos .csv ou .json em objetos Mapa que possam ser interpretados pelo programa. Sua implementação permite que templates de mapa sejam armazenados em arquivos de texto, possibilitando, inclusive, o compartilhamento de arquivos-mapa entre usuários.
 
@@ -47,8 +47,7 @@ Essa classe é responsável por converter descrições de mapa de arquivos .csv 
   <img src="https://raw.githubusercontent.com/Arthur-B-Moura/PDSII-TP__TA1/main/about/CartoesCRC/MapGenerator.png" width="500" alt="Cartão CRC Map Generator">
 </p>
 
-<h3>Pathfinder</h3>
-
+### PathFinder
 Implementação do algoritmo pathfinder A* dentro do contexto de grafo desenvolvido. O algoritmo irá navegar de um ponto origem a um ponto destino, e deverá ser capaz de retornar uma lista de nós intermediários que constituam o caminho traçado.
 
 <p align="center">
