@@ -12,6 +12,12 @@ TEST_CASE("Basic intialization") {
     MapGenerator m("./maps/map_liberdade.osm");
 };
 
+TEST_CASE("Tratamento de exceções") {
+    REQUIRE_THROWS(MapGenerator("")); // Nome vazio
+    REQUIRE_THROWS(MapGenerator("invalid_file.txt")); // Extensão inválida
+    REQUIRE_THROWS(MapGenerator("nonexistent.osm")); // Arquivo inexistente
+}
+
 TEST_CASE("Test map generation from OSM file") {
     MapGenerator m("./maps/map_liberdade.osm");
     Map mapa = m.get_mapa();

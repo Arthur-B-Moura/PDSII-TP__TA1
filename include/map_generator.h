@@ -15,6 +15,10 @@ private:
 
     Map build_from_osm();
 
+    bool nome_arquivo_valido(const std::string& path);
+
+    bool arquivo_existe_legivel(const std::string& path);
+
     // Map build_from_json();
 public:
     MapGenerator(std::string path_to_file);

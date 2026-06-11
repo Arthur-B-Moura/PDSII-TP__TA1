@@ -14,7 +14,7 @@ test_pathfinder : build/pathfinder.o build/map_generator.o build/map.o build/gra
 	$(CXX) $(CXXFLAGS) -g test/test_pathfinder.cpp build/*.o $(LDFLAGS) $(shell pkg-config --cflags --libs libxml++-2.6) -I include/ -o diagnosis.exe
 
 test_map_generator : build/map_generator.o build/map_node.o build/grafo.o build/map.o 
-	$(CXX) $(CXXFLAGS) -g test/test_map_generator.cpp build/*.o $(LDFLAGS) $(shell pkg-config --cflags --libs libxml++-2.6) -I include/ -o diagnosis.exe
+	$(CXX) $(CXXFLAGS) -g test/test_map_generator.cpp build/grafo.o build/map_generator.o build/map.o build/map_node.o $(LDFLAGS) $(shell pkg-config --cflags --libs libxml++-2.6) -I include/ -o diagnosis.exe
 
 test_grafo : build/grafo.o build/map_node.o
 	$(CXX) $(CXXFLAGS) -g test/test_grafo.cpp build/grafo.o build/map_node.o $(LDFLAGS) -I include/ -o diagnosis.exe
