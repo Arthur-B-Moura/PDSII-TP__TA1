@@ -26,6 +26,7 @@ Além desta página, o projeto inclui as seguintes seções de documentação:
 - [Documentação Automática feita com Doxygen](https://arthur-b-moura.github.io/PDSII-TP__TA1/index.html)
 - [Detalhamento de Classes e User Stories](./about/CLASS_INFO.md)
 - [Descrição do Desenvolvimento do Projeto](./about/DESENVOLVIMENTO.md)
+- [Detalhamento e Execução dos Scripts de Teste](./about/TESTES.md)
 
 
 ---
@@ -101,14 +102,29 @@ cd PDSII-TP__TA1
 make 
 ```
 
-...ou *make run*
+Isso irá gerar um executável `main.exe`, que conta com todas as funcionalidades do projeto.
+
+Alternativamente, pode rodar diretamente o comando asseguir, que irá, além de compilar o projeto, executá-lo.
 
 ```bash
 make run
 ```
 
-Isso irá gerar um executável `pdsii_maps.exe`, que conta com todas as funcionalidades do projeto.
-
 ---
 
 ## Execução
+
+Caso tenha compilado o projeto a partir do comando `make` padrão, basta executá-lo a partir da root de seu diretório para rodar o programa:
+
+```bash
+./main.exe
+```
+
+Ao executar o programa, será apresentado um menu com as opções de execução e geração de rota. Interaja com o menu a partir de input do teclado diretamente no terminal. O input de opções inválidas não será considerado.
+
+O projeto inclui, de forma padrão, dois arquivos de mapa, ambos presentes no diretório `maps/`:
+
+- `map_liberdade.osm` --> região aproximadamente dos bairros Liberdade, Indaiá e Jaraguá de Belo Horizonte
+- `map.osm` --> inclui a maior parte da região Pampulha, UFMG, parte do Centro, Ouro Preto, Liberdade, Jaraguá, etc. É um mapa de grande escala, e sua execução será lenta
+
+Caso deseje navegar por outras localidades, siga as instruções da [seção sobre inserção de mapas](./about/INSERCAO_DE_MAPAS.md).
