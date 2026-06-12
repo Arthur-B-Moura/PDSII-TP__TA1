@@ -88,15 +88,15 @@ $(document).ready(function(){initNavTree('md_about_DESENVOLVIMENTO.html',''); in
 <div class="title">&#x202A;Detalhamento do desenvolvimento do projeto </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1 class="DocNodeLTR"><a class="anchor" id="autotoc_md21"></a>
+<div class="textblock"><h1 class="DocNodeLTR"><a class="anchor" id="autotoc_md23"></a>
 Ciclo de desenvolvimento</h1>
 <p class="DocNodeLTR">O desenvolvimento do projeto seguiu, de forma geral, o seguinte fluxo:</p>
-<p><img src="&#x202A;./Imagens/CicloDev.png" alt="CicloDev.png" class="inline"/></p>
+<p><img src="&#x202A;https://github.com/Arthur-B-Moura/PDSII-TP__TA1/blob/f8a24b4312c544651954d1341ba29ec462e97f22/about/Imagens/CicloDev.png" alt="CicloDev.png" class="inline"/></p>
 <p class="DocNodeLTR">Percebe-se que a seção de desenvolvimento engloba uma multitude de pontos. De fato, ela abrange o maior tempo despendido no percurso do projeto. Seu fluxo por si só foi efetuado conforme o seguinte fluxograma:</p>
-<p><img src="&#x202A;./Imagens/FluxoDesenvovilmento.png" alt="FluxoDesenvovilmento.png" class="inline"/></p>
+<p><img src="&#x202A;https://github.com/Arthur-B-Moura/PDSII-TP__TA1/blob/f8a24b4312c544651954d1341ba29ec462e97f22/about/Imagens/FluxoDesenvovilmento.png" alt="FluxoDesenvovilmento.png" class="inline"/></p>
 <p class="DocNodeLTR">Note que para implementação de classes que dependam de interação entre outras classes, o script de testes deveria, também, verificar sua integração.</p>
 <p class="DocNodeLTR">Durante o desenvolvimento, evitou-se ao máximo a modificação de arquivos de contrato. Contudo, devido à inexperiência dos integrantes da equipe, isso veio a acontecer em alguns momentos — em especial, nos momentos iniciais do desenvolvimento do projeto. Devido à ordem de implementação e desenvolvimento, contudo, estas mudanças não acarretaram em conflitos durante o processo.</p>
-<h1 class="DocNodeLTR"><a class="anchor" id="autotoc_md22"></a>
+<h1 class="DocNodeLTR"><a class="anchor" id="autotoc_md24"></a>
 Atribuição de tarefas</h1>
 <p class="DocNodeLTR">A seguir segue a organização de tarefas para cada integrante do grupo. Note que algumas tarefas, como o desenvolvimento dos Cartões CRC, não estão inclusas. Isso se dá pois elas foram executadas por todos os elementos.</p>
 <p class="DocNodeLTR"><b>Arthur Bertolini Moura:</b></p>
@@ -111,15 +111,28 @@ Atribuição de tarefas</h1>
 </ul>
 <p class="DocNodeLTR"><b>Heitor Augusto Oliveira Costa de Amorim:</b></p><ul class="DocNodeLTR">
 <li>&#x202A;Desenvolvimento de User Stories</li>
-<li>&#x202A;Implementação da seção de interação com usuário </li>
+<li>&#x202A;Implementação da seção de interação com usuário</li>
 </ul>
+<h2 class="DocNodeLTR"><a class="anchor" id="autotoc_md25"></a>
+Cronograma, Planejado x Alcançado e desafios encontrados</h2>
+<p class="DocNodeLTR">Algum tempo após a entrega dos User Stories e Cartões CRC, estabeleceu-se um cronograma geral de desenvolvimento. Este cronograma contava com um período de cerca de 1 semana para implementação das classes essenciais (<a class="el" href="classMapNode.html" title="&#x202A;Representa um nó do mapa, com um identificador único e uma posição geográfica.">MapNode</a>, <a class="el" href="classGrafo.html" title="&#x202A;Grafo ponderado de nós geográficos com lista de adjacência.">Grafo</a>, <a class="el" href="classMap.html" title="&#x202A;Mapa geográfico estendido com metadados e dicionário de estruturas.">Map</a>), seguido de um período de 1 semana para desenvolvimento conseguinte do <a class="el" href="classMapGenerator.html">MapGenerator</a> e <a class="el" href="classPathFinder.html" title="&#x202A;Mecanismo de busca de caminho sobre um Grafo usando o algoritmo A*.">PathFinder</a> e, em seguida, por um período de 2 semanas para implementação da interface com usuário, documentação e aperfeiçoamento das implementações. Esse cronograma foi otimista e imaturo, e pouquíssimo de sua estrutura foi de fato seguida, por diversos motivos (provas e trabalhos de outras matérias, assuntos pessoais, participação de integrantes do grupo em competições, etc).</p>
+<p class="DocNodeLTR">Dentre os atrasos enfrentados, muitos surgiram devido a alguns desafios de desenvolvimento encontrados. A implementação de <a class="el" href="classMapGenerator.html">MapGenerator</a>, em específico, extendeu-se muito mais do que inicialmente esperado, demora oriunda de problemas relacionados à leitura de arquivos osm (arquivos xml de dezenas de milhares de linhas). Foi necessário pesquisar alternativas, nesse caso, a biblioteca <code>libxml++</code>, e aprender a implementar, compilar e, no geral, lidar com essa solução, tudo isso antes sequer de dar início à seção de desenvolvimento que fora inicialmente contemplada.</p>
+<p class="DocNodeLTR">Na implementação da interface de interação com o usuário, a partir da realização de diversos experimentos em tempo de execução, foram identificados inúmeros pequenos problemas, que houverão de ser posteriormente ajustados, às vezes com soluções que envolviam algoritmos e funções não estudadas.</p>
+<p class="DocNodeLTR">Além destes, outro grande contribuidor para atraso foi o sistema de testes escolhido. No momento de sua escolha, o assunto ainda não havia sido abordado em aula, de forma que essa decisão veio de pesquisas externas. Encontrar um framework adequado, por si só, já demandou um tempo que não havia sido considerado no planejamento inicial. De fato, tudo relacionado a esses testes excedeu o tempo inicial planejado, uma vez que o cronograma sequer incluía a execução de testes.</p>
+<p class="DocNodeLTR">Como resultado, nem todas as <b>funcionalidades</b> inicialmente pensadas puderam ser implementadas dentro do prazo. Em específico, não foi implementado:</p><ul class="DocNodeLTR">
+<li>&#x202A;Distinção de sentidos de ruas (todas as ruas são vistas como sentido duplo)</li>
+<li>&#x202A;Leitura de arquivos de formatos distitos (aceita-se apenas arquivos .osm)</li>
+<li>&#x202A;Geração de arquivos-mapa de formato próprio (relacionado ao ponto anterior)</li>
+</ul>
+<p class="DocNodeLTR">O restante, considerado implementações básicas, foi todo implementado.</p>
+<p class="DocNodeLTR">Além disso, espera-se que ao menos um integrante do grupo de continuidade ao projeto futuramente, após terminado o ciclo do TP, para tanto implementar o restante dessas funcionalidades, quanto aprimimorar a seção do projeto que já fora implementada. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Gerado em Sexta, 12 de Junho de 2026 00:53:06 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Gerado em Sexta, 12 de Junho de 2026 01:00:47 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

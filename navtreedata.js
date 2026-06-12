@@ -26,40 +26,44 @@ var NAVTREE =
 [
   [ "\u202ATP_PDSII - Google Maps", "index.html", [
     [ "\u202ADetalhamento de Classes e User Stories", "md_about_CLASS_INFO.html", [
-      [ "\u202AUtilização básica", "index.html#autotoc_md3", [
+      [ "\u202AEstrutura do repositório", "index.html#autotoc_md3", null ],
+      [ "\u202AUtilização básica", "index.html#autotoc_md4", [
         [ "\u202Aautotoc_md0", "index.html#autotoc_md0", null ],
-        [ "\u202ASistema operacional", "index.html#autotoc_md4", null ],
-        [ "\u202ADependências externas", "index.html#autotoc_md5", [
-          [ "\u202AFerramentas de compilação (g++, make):", "index.html#autotoc_md6", null ],
-          [ "\u202ABiblioteca libxml++", "index.html#autotoc_md7", null ]
+        [ "\u202ASistema operacional", "index.html#autotoc_md5", null ],
+        [ "\u202ADependências externas", "index.html#autotoc_md6", [
+          [ "\u202AFerramentas de compilação (g++, make):", "index.html#autotoc_md7", null ],
+          [ "\u202ABiblioteca libxml++", "index.html#autotoc_md8", null ]
         ] ],
-        [ "\u202ADownload e compilação", "index.html#autotoc_md8", null ]
+        [ "\u202ADownload e compilação", "index.html#autotoc_md9", null ]
       ] ],
-      [ "\u202AExecução", "index.html#autotoc_md10", null ],
-      [ "\u202AUser Stories", "md_about_CLASS_INFO.html#autotoc_md12", null ],
-      [ "\u202ADetalhamento de Classes</h2>", "md_about_CLASS_INFO.html#autotoc_md14", [
-        [ "\u202AGrafo", "md_about_CLASS_INFO.html#autotoc_md15", null ],
-        [ "\u202AMapNode</h3>", "md_about_CLASS_INFO.html#autotoc_md16", null ],
-        [ "\u202AMap", "md_about_CLASS_INFO.html#autotoc_md17", null ],
-        [ "\u202AMapGenerator", "md_about_CLASS_INFO.html#autotoc_md18", null ],
-        [ "\u202APathFinder", "md_about_CLASS_INFO.html#autotoc_md19", null ]
+      [ "\u202AExecução", "index.html#autotoc_md11", null ],
+      [ "\u202ATratamento de exceções", "index.html#autotoc_md12", null ],
+      [ "\u202AUser Stories", "md_about_CLASS_INFO.html#autotoc_md14", null ],
+      [ "\u202ADetalhamento de Classes</h2>", "md_about_CLASS_INFO.html#autotoc_md16", [
+        [ "\u202AGrafo", "md_about_CLASS_INFO.html#autotoc_md17", null ],
+        [ "\u202AMapNode</h3>", "md_about_CLASS_INFO.html#autotoc_md18", null ],
+        [ "\u202AMap", "md_about_CLASS_INFO.html#autotoc_md19", null ],
+        [ "\u202AMapGenerator", "md_about_CLASS_INFO.html#autotoc_md20", null ],
+        [ "\u202APathFinder", "md_about_CLASS_INFO.html#autotoc_md21", null ]
       ] ]
     ] ],
     [ "\u202ADetalhamento do desenvolvimento do projeto", "md_about_DESENVOLVIMENTO.html", [
-      [ "\u202ACiclo de desenvolvimento", "md_about_DESENVOLVIMENTO.html#autotoc_md21", null ],
-      [ "\u202AAtribuição de tarefas", "md_about_DESENVOLVIMENTO.html#autotoc_md22", null ]
+      [ "\u202ACiclo de desenvolvimento", "md_about_DESENVOLVIMENTO.html#autotoc_md23", null ],
+      [ "\u202AAtribuição de tarefas", "md_about_DESENVOLVIMENTO.html#autotoc_md24", [
+        [ "\u202ACronograma, Planejado x Alcançado e desafios encontrados", "md_about_DESENVOLVIMENTO.html#autotoc_md25", null ]
+      ] ]
     ] ],
     [ "\u202AInserção de arquivos de mapas adicionais", "md_about_INSERCAO_DE_MAPAS.html", [
-      [ "\u202AEntendendo o arquivo .osm", "md_about_INSERCAO_DE_MAPAS.html#autotoc_md24", null ],
-      [ "\u202AGerando um .osm", "md_about_INSERCAO_DE_MAPAS.html#autotoc_md25", null ],
-      [ "\u202AUtilizando o arquivo", "md_about_INSERCAO_DE_MAPAS.html#autotoc_md26", null ]
+      [ "\u202AEntendendo o arquivo .osm", "md_about_INSERCAO_DE_MAPAS.html#autotoc_md27", null ],
+      [ "\u202AGerando um .osm", "md_about_INSERCAO_DE_MAPAS.html#autotoc_md28", null ],
+      [ "\u202AUtilizando o arquivo", "md_about_INSERCAO_DE_MAPAS.html#autotoc_md29", null ]
     ] ],
     [ "\u202ATestes das classes implementadas", "md_about_TESTES.html", [
-      [ "\u202AEstrutura de arquivos", "md_about_TESTES.html#autotoc_md28", null ],
-      [ "\u202ADependências", "md_about_TESTES.html#autotoc_md29", null ],
-      [ "\u202ACompilação", "md_about_TESTES.html#autotoc_md30", null ],
-      [ "\u202AExecução", "md_about_TESTES.html#autotoc_md31", null ],
-      [ "\u202AExemplos de saída", "md_about_TESTES.html#autotoc_md32", null ]
+      [ "\u202AEstrutura de arquivos", "md_about_TESTES.html#autotoc_md31", null ],
+      [ "\u202ADependências", "md_about_TESTES.html#autotoc_md32", null ],
+      [ "\u202ACompilação", "md_about_TESTES.html#autotoc_md33", null ],
+      [ "\u202AExecução", "md_about_TESTES.html#autotoc_md34", null ],
+      [ "\u202AExemplos de saída", "md_about_TESTES.html#autotoc_md35", null ]
     ] ],
     [ "\u202AClasses", "annotated.html", [
       [ "\u202ALista de Classes", "annotated.html", "annotated_dup" ],

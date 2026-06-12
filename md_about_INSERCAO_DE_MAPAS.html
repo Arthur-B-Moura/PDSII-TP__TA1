@@ -94,27 +94,29 @@ $(document).ready(function(){initNavTree('md_about_INSERCAO_DE_MAPAS.html',''); 
 <li>&#x202A;<code>map.osm</code> --&gt; inclui a maior parte da região Pampulha, UFMG, parte do Centro, Ouro Preto, Liberdade, Jaraguá, etc. É um mapa de grande escala, e sua execução será lenta</li>
 </ul>
 <p class="DocNodeLTR">Contudo, é possível adicionar outras localidades para navegar. Essa seção irá descrever como realizar esse processo.</p>
-<h1 class="DocNodeLTR"><a class="anchor" id="autotoc_md24"></a>
+<h1 class="DocNodeLTR"><a class="anchor" id="autotoc_md27"></a>
 Entendendo o arquivo .osm</h1>
 <p class="DocNodeLTR">Nessa aplicação atual do projeto, aceita-se apenas arquivos-mapa do tipo <code>.osm</code>. Implementações futuras aceitarão, também, outros tipos de arquivo, incluindo arquivos de tipo próprio gerado específicamente para o projeto. Atualmente, esse não é o caso.</p>
 <p class="DocNodeLTR">Arquivos osm são <code>xml</code> que descrevem ruas, estruturas e cruzamentos presentes em um certo intervalo de coordenadas geográficas. Eles são gerados como parte do um projeto Open Source e aberto à colaboração: <em>Open Street <a class="el" href="classMap.html" title="&#x202A;Mapa geográfico estendido com metadados e dicionário de estruturas.">Map</a></em>. Esse projeto funciona de forma similar à wikipedia, permitindo que usuários externos realizem alterações sobre seu banco de dados, inserindo ou modificando itens relevantes com o intuito de melhorar o mapa.</p>
 <p class="DocNodeLTR">O projeto de Google Maps desenvolvido para o TP realiza o parsing de arquivos osm, retirando de sua extensa estrutura apenas os ítens relevantes para o objeto de tipo Mapa utilizado.</p>
-<h1 class="DocNodeLTR"><a class="anchor" id="autotoc_md25"></a>
+<h1 class="DocNodeLTR"><a class="anchor" id="autotoc_md28"></a>
 Gerando um .osm</h1>
 <p class="DocNodeLTR">Para gerar um arquivo de mapa, é necessário acessar o <a href="&#x202A;https://www.openstreetmap.org">website do projeto OSM</a>.</p>
 <p class="DocNodeLTR">Em seguida, deverá navegar até a região de interesse. Note que os arquivos gerados são grandes, de forma que regiões extensas ocasionarão em resultados de execução lenta. Regiões muito extensas (ex: caso tente mapear Belo Horizonte inteira) sequer poderão ser geradas pelo projeto OSM.</p>
 <p class="DocNodeLTR">Uma vez posicionada a visualização do mapa sobre a região de interesse, deve selecionar a opção "Export" da interface, até que seja efetuado o download automático de um arquivo <code>.osm</code>. É recomendado que altere o nome padrão deste arquivo para evitar sobrescrita, mas não é obrigatório.</p>
-<h1 class="DocNodeLTR"><a class="anchor" id="autotoc_md26"></a>
+<h1 class="DocNodeLTR"><a class="anchor" id="autotoc_md29"></a>
 Utilizando o arquivo</h1>
 <p class="DocNodeLTR">Para navegar na área mapeada pelo arquivo gerado, basta movê-lo para o diretório <code>./maps</code> do repositório deste projeto. Tenha conhecimento do nome com que ele foi salvo para poder se referenciar a ele durante a execução do código.</p>
-<p class="DocNodeLTR">Note que não é obrigatório mover o arquivo para o diretório <code>./maps</code>, apenas recomendado, uma vez que o programa utiliza de path com referência ao diretório de execução do main.exe para acessar o arquivo de mapa. </p>
+<blockquote class="doxtable DocNodeLTR">
+<p class="DocNodeLTR">OBS: Note que não é obrigatório mover o arquivo para o diretório <code>./maps</code>, apenas recomendado, uma vez que o programa utiliza de path com referência ao diretório de execução do main.exe para acessar o arquivo de mapa. </p>
+</blockquote>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Gerado em Sexta, 12 de Junho de 2026 00:53:06 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Gerado em Sexta, 12 de Junho de 2026 01:00:47 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

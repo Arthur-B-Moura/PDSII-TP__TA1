@@ -108,15 +108,63 @@ autotoc_md0</h3>
 <li>&#x202A;<a class="el" href="md_about_CLASS_INFO.html">Detalhamento de Classes e User Stories</a></li>
 <li>&#x202A;<a class="el" href="md_about_DESENVOLVIMENTO.html">Descrição do Desenvolvimento do Projeto</a></li>
 <li>&#x202A;<a class="el" href="md_about_TESTES.html">Detalhamento e Execução dos Scripts de Teste</a></li>
+<li>&#x202A;<a class="el" href="md_about_INSERCAO_DE_MAPAS.html">Instruções para Inclusão de Outros Mapas</a></li>
 </ul>
 <hr  />
 <h2 class="DocNodeLTR"><a class="anchor" id="autotoc_md3"></a>
+Estrutura do repositório</h2>
+<div class="fragment"><div class="line">.</div>
+<div class="line">├── Doxyfile</div>
+<div class="line">├── Makefile</div>
+<div class="line">├── README.md</div>
+<div class="line">├── about</div>
+<div class="line">│   ├── CLASS_INFO.md</div>
+<div class="line">│   ├── CartoesCRC</div>
+<div class="line">│   │   ├── Grafo.png</div>
+<div class="line">│   │   ├── Map.png</div>
+<div class="line">│   │   ├── MapGenerator.png</div>
+<div class="line">│   │   ├── MapNode.png</div>
+<div class="line">│   │   └── Pathfinder.png</div>
+<div class="line">│   ├── DESENVOLVIMENTO.md</div>
+<div class="line">│   ├── INSERCAO_DE_MAPAS.md</div>
+<div class="line">│   ├── Imagens</div>
+<div class="line">│   │   ├── CicloDev.png</div>
+<div class="line">│   │   └── FluxoDesenvovilmento.png</div>
+<div class="line">│   └── TESTES.md</div>
+<div class="line">├── build</div>
+<div class="line">├── html</div>
+<div class="line">│   └── extra_style_sheet.css</div>
+<div class="line">├── include</div>
+<div class="line">│   ├── grafo.h</div>
+<div class="line">│   ├── map.h</div>
+<div class="line">│   ├── map_generator.h</div>
+<div class="line">│   ├── map_node.h</div>
+<div class="line">│   └── pathfinder.h</div>
+<div class="line">├── maps</div>
+<div class="line">│   ├── map.osm</div>
+<div class="line">│   ├── map.osm:Zone.Identifier</div>
+<div class="line">│   ├── map_liberdade.osm</div>
+<div class="line">│   └── map_liberdade.osm:Zone.Identifier</div>
+<div class="line">├── src</div>
+<div class="line">│   ├── grafo.cpp</div>
+<div class="line">│   ├── main.cpp</div>
+<div class="line">│   ├── map.cpp</div>
+<div class="line">│   ├── map_generator.cpp</div>
+<div class="line">│   ├── map_node.cpp</div>
+<div class="line">│   └── pathfinder.cpp</div>
+<div class="line">└── test</div>
+<div class="line">    ├── test_grafo.cpp</div>
+<div class="line">    ├── test_map.cpp</div>
+<div class="line">    ├── test_map_generator.cpp</div>
+<div class="line">    ├── test_map_node.cpp</div>
+<div class="line">    └── test_pathfinder.cpp</div>
+</div><!-- fragment --><h2 class="DocNodeLTR"><a class="anchor" id="autotoc_md4"></a>
 Utilização básica</h2>
 <p class="DocNodeLTR">A seguinte seção direciona os passos e requerimentos necessários para a execução da solução apresentada no projeto.</p>
-<h3 class="DocNodeLTR"><a class="anchor" id="autotoc_md4"></a>
+<h3 class="DocNodeLTR"><a class="anchor" id="autotoc_md5"></a>
 Sistema operacional</h3>
 <p class="DocNodeLTR">A execução dos scripts descrita considera uma máquina rodando <code>Ubuntu-22.04</code> . Pode ser esta por meio de um <em>boot</em> específico, ou a partir de máquina virtual, como <em>wsl</em>.</p>
-<h3 class="DocNodeLTR"><a class="anchor" id="autotoc_md5"></a>
+<h3 class="DocNodeLTR"><a class="anchor" id="autotoc_md6"></a>
 Dependências externas</h3>
 <p class="DocNodeLTR">Para compilar e executar o projeto, além dos arquivos nele implementado, é necessário que tenha instalado, em sua máquina, os seguintes itens:</p>
 <ul class="DocNodeLTR">
@@ -124,7 +172,7 @@ Dependências externas</h3>
 <li>&#x202A;Biblioteca libxml++</li>
 </ul>
 <p class="DocNodeLTR">A seguir, seguem as instruções para verificar tais instalações e, caso necessário, realizá-las.</p>
-<h4 class="DocNodeLTR"><a class="anchor" id="autotoc_md6"></a>
+<h4 class="DocNodeLTR"><a class="anchor" id="autotoc_md7"></a>
 Ferramentas de compilação (g++, make):</h4>
 <p class="DocNodeLTR">Ambas essas ferramentas podem ser instaladas pelo terminal, a partir do <em>build-essentials:</em></p>
 <div class="fragment"><div class="line">sudo apt update &amp;&amp; sudo apt install build-essentials</div>
@@ -134,7 +182,7 @@ Ferramentas de compilação (g++, make):</h4>
 <p class="DocNodeLTR">OBS: o projeto foi compilado em sua produção com <code>g++ 11.4.0</code> . O uso de outras versões do compilador pode acarretar em comportamento não esperado.</p>
 <p></p>
 </blockquote>
-<h4 class="DocNodeLTR"><a class="anchor" id="autotoc_md7"></a>
+<h4 class="DocNodeLTR"><a class="anchor" id="autotoc_md8"></a>
 Biblioteca libxml++</h4>
 <p class="DocNodeLTR">Essa biblioteca é responsável pela leitura dos arquivos de mapa em xml (por exemplo, os arquivos .osm). Sua instalação pode, também, ser feita por linha de comando:</p>
 <div class="fragment"><div class="line">sudo apt update &amp;&amp; sudo apt install libxml++2.6-dev</div>
@@ -144,7 +192,7 @@ Biblioteca libxml++</h4>
 <p class="DocNodeLTR">OBS: Note que o projeto utiliza a versão 2.6 dessa biblioteca. <b>É necessário que instale exatamente esta versão</b>, uma vez que versões superiores ou inferiores podem contar com diversas diferenças, inclusive impedindo a compilação.</p>
 <p></p>
 </blockquote>
-<h3 class="DocNodeLTR"><a class="anchor" id="autotoc_md8"></a>
+<h3 class="DocNodeLTR"><a class="anchor" id="autotoc_md9"></a>
 Download e compilação</h3>
 <p class="DocNodeLTR">Para utilizar os arquivos do projeto, navegue a um repositório de sua escolha e execute o seguinte comando para clonar projeto diretamente de seu repositório do GitHub:</p>
 <div class="fragment"><div class="line">git clone https://github.com/Arthur-B-Moura/PDSII-TP__TA1.git</div>
@@ -153,10 +201,10 @@ Download e compilação</h3>
 </div><!-- fragment --><p class="DocNodeLTR">… e realizar a compilação a partir do <em>make</em>:</p>
 <div class="fragment"><div class="line">make </div>
 </div><!-- fragment --><p class="DocNodeLTR">Isso irá gerar um executável <code>main.exe</code>, que conta com todas as funcionalidades do projeto.</p>
-<p class="DocNodeLTR">Alternativamente, pode rodar diretamente o comando asseguir, que irá, além de compilar o projeto, executá-lo.</p>
+<p class="DocNodeLTR">Alternativamente, o usuário pode rodar diretamente o comando a seguir, que irá, além de compilar o projeto, executá-lo.</p>
 <div class="fragment"><div class="line">make run</div>
 </div><!-- fragment --><hr  />
-<h2 class="DocNodeLTR"><a class="anchor" id="autotoc_md10"></a>
+<h2 class="DocNodeLTR"><a class="anchor" id="autotoc_md11"></a>
 Execução</h2>
 <p class="DocNodeLTR">Caso tenha compilado o projeto a partir do comando <code>make</code> padrão, basta executá-lo a partir da root de seu diretório para rodar o programa:</p>
 <div class="fragment"><div class="line">./main.exe</div>
@@ -166,14 +214,17 @@ Execução</h2>
 <li>&#x202A;<code>map_liberdade.osm</code> --&gt; região aproximadamente dos bairros Liberdade, Indaiá e Jaraguá de Belo Horizonte</li>
 <li>&#x202A;<code>map.osm</code> --&gt; inclui a maior parte da região Pampulha, UFMG, parte do Centro, Ouro Preto, Liberdade, Jaraguá, etc. É um mapa de grande escala, e sua execução será lenta</li>
 </ul>
-<p class="DocNodeLTR">Caso deseje navegar por outras localidades, siga as instruções da <a class="el" href="md_about_INSERCAO_DE_MAPAS.html">seção sobre inserção de mapas</a>. </p>
+<p class="DocNodeLTR">Caso deseje navegar por outras localidades, siga as instruções da <a class="el" href="md_about_INSERCAO_DE_MAPAS.html">seção sobre inserção de mapas</a>.</p>
+<h2 class="DocNodeLTR"><a class="anchor" id="autotoc_md12"></a>
+Tratamento de exceções</h2>
+<p class="DocNodeLTR">Optou-se por utilizar exceções-padrão <code>std</code> nos diversos pontos do projeto. No geral, o tratamento de excessões ocorreu de forma a não permitir que valores incorretos fossem inseridos (isto é, com um loop que seria apenas terminado uma vez que o input correto fosse inserido). A exceção principal disto está no em erros de parsing do arquivo-mapa. Nesse caso, uma mesagem de erro é imprimida ao <code>std::cerr</code>, e um objeto-mapa vazio é retornado, efetivamente forçando o usuário a selecionar outro arquivo. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Gerado em Sexta, 12 de Junho de 2026 00:53:06 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Gerado em Sexta, 12 de Junho de 2026 01:00:47 para &#x202A;TP_PDSII - Google Maps por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
