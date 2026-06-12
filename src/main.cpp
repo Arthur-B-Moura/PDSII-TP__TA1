@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
+#include <limits>
 #include "map.h"
 #include "map_generator.h"
 #include "pathfinder.h"
@@ -42,24 +43,17 @@ int main() {
         std::cout << "----------------------------------------" << std::endl;
         std::cout << "Escolha uma opção: ";
         
-        if (!(std::cin >> opcao)) {
-            // Se entrar aqui, significa que o usuário digitou algo que não é um número
-            std::cout << "Erro: Entrada inválida! Por favor, digite apenas números." << std::endl;
-
-            // Limpa o estado de erro do cin (Barricada)
-            std::cin.clear();
-
-            // Remove todo o texto "lixo" que ficou no buffer até o final da linha
-            std::cin.ignore(10000, '\n');
-    
-            // Define a opção como 0 para que o switch caia no 'default' ou apenas reinicie o loop
-            opcao = 0; 
-            continue; // Volta para o início do while para mostrar o menu novamente
-        }
-        
         // Captura a opção do usuário
-        std::cin >> opcao;
+        if (!(std::cin >> opcao)) {
+            std::cout << "\nErro: Entrada inválida! Digite apenas números." << std::endl;
 
+            // Barricada: limpa o estado de erro do cin
+            std::cin.clear();
+            // std::numeric_limits<std::streamsize>::max() é o tamanho máximo possível do buffer
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+            continue; // Reinicia o menu
+}
         // Limpa o buffer de entrada para evitar problemas com getline
         std::cin.ignore(1000, '\n');
 
@@ -149,12 +143,47 @@ int main() {
                         // total_distance contém a distância acumulada em metros
                         std::cout << " Distância total estimada: " << resultado.total_distance * 1000 << " metros." << std::endl;
                         std::cout << "========================================\n" << std::endl;
+
+                        // Gera o vetor de instruções a serem seguidas
+                        std::vector<std::string> instrucoes = pf.build_instructions(resultado);
+                        
+                        // Looping para a exibição das instruções
+                        int escolha;
+                        size_t i;
+                        for(i = 0; i < instrucoes.size(); i++){
+                            std::cout << instrucoes[i] << std::endl;
+
+                            std::cout << "Escolha [0] para cancelar a viagem ou [1] caso tenha concluído a última etapa do percurso e queira continuar: " << std::endl;
+                            // Tenta caputrar escolha
+                            if(!(std::cin >> escolha)) {
+                                // Trata caso de não número
+                                std::cin.clear();
+                                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                                std::cout << "Erro: Entrada inválida! Digite apenas 0 ou 1." << std::endl;
+                                i--; continue; // Repete a instrução atual
+                            }
+                            if(escolha == 0){
+                                std::cout << "Muito bem, viagem cancelada.\n" << std::endl;
+                                break;
+                            }else if(escolha == 1){
+                                std::cout << "Perfeito, continuando.\n" << std::endl;
+                            }else{
+                                std::cout << "Erro: entrada inválida! Digite apenas 0 ou 1." << std::endl;
+                            }
+
+
+                        }
+
+                        // Reseta ponto_partida e ponto_destino para uma próxima viagem
+                        ponto_destino = "Não definido";
+                        ponto_partida = "Não definido";
                     }else{
                         std::cout << "Erro: Não foi possível traçar um caminho entre esses pontos." << std::endl;
                     }
                 }else{
                     std::cout << "Erro: Um ou ambos os endereços não possuem pontos de acesso válidos." << std::endl;
                 }
+
                 break;
             }
             case 4:
