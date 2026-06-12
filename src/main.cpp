@@ -166,9 +166,14 @@ int main() {
                                 std::cout << "Muito bem, viagem cancelada.\n" << std::endl;
                                 break;
                             }else if(escolha == 1){
-                                std::cout << "Perfeito, continuando.\n" << std::endl;
+                                if(i == instrucoes.size() - 1){
+                                    std::cout << "Viagem encerrada!.\n" << std::endl;
+                                }else{
+                                    std::cout << "Perfeito, continuando.\n" << std::endl;
+                                }
                             }else{
                                 std::cout << "Erro: entrada inválida! Digite apenas 0 ou 1." << std::endl;
+                                i--;
                             }
 
 
