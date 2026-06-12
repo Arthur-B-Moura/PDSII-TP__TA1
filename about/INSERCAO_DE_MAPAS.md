@@ -27,4 +27,4 @@ Uma vez posicionada a visualização do mapa sobre a região de interesse, deve 
 
 Para navegar na área mapeada pelo arquivo gerado, basta movê-lo para o diretório `./maps` do repositório deste projeto. Tenha conhecimento do nome com que ele foi salvo para poder se referenciar a ele durante a execução do código.
 
-Note que não é obrigatório mover o arquivo para o diretório `./maps`, apenas recomendado, uma vez que o programa utiliza de path com referência ao diretório de execução do main.exe para acessar o arquivo de mapa.
+> OBS: Note que não é obrigatório mover o arquivo para o diretório `./maps`, apenas recomendado, uma vez que o programa utiliza de path com referência ao diretório de execução do main.exe para acessar o arquivo de mapa.

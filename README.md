@@ -27,9 +27,59 @@ Além desta página, o projeto inclui as seguintes seções de documentação:
 - [Detalhamento de Classes e User Stories](./about/CLASS_INFO.md)
 - [Descrição do Desenvolvimento do Projeto](./about/DESENVOLVIMENTO.md)
 - [Detalhamento e Execução dos Scripts de Teste](./about/TESTES.md)
-
+- [Instruções para Inclusão de Outros Mapas](./about/INSERCAO_DE_MAPAS.md)
 
 ---
+
+## Estrutura do repositório
+
+```
+.
+├── Doxyfile
+├── Makefile
+├── README.md
+├── about
+│   ├── CLASS_INFO.md
+│   ├── CartoesCRC
+│   │   ├── Grafo.png
+│   │   ├── Map.png
+│   │   ├── MapGenerator.png
+│   │   ├── MapNode.png
+│   │   └── Pathfinder.png
+│   ├── DESENVOLVIMENTO.md
+│   ├── INSERCAO_DE_MAPAS.md
+│   ├── Imagens
+│   │   ├── CicloDev.png
+│   │   └── FluxoDesenvovilmento.png
+│   └── TESTES.md
+├── build
+├── html
+│   └── extra_style_sheet.css
+├── include
+│   ├── grafo.h
+│   ├── map.h
+│   ├── map_generator.h
+│   ├── map_node.h
+│   └── pathfinder.h
+├── maps
+│   ├── map.osm
+│   ├── map.osm:Zone.Identifier
+│   ├── map_liberdade.osm
+│   └── map_liberdade.osm:Zone.Identifier
+├── src
+│   ├── grafo.cpp
+│   ├── main.cpp
+│   ├── map.cpp
+│   ├── map_generator.cpp
+│   ├── map_node.cpp
+│   └── pathfinder.cpp
+└── test
+    ├── test_grafo.cpp
+    ├── test_map.cpp
+    ├── test_map_generator.cpp
+    ├── test_map_node.cpp
+    └── test_pathfinder.cpp
+```
 
 ## Utilização básica
 
@@ -104,7 +154,7 @@ make
 
 Isso irá gerar um executável `main.exe`, que conta com todas as funcionalidades do projeto.
 
-Alternativamente, pode rodar diretamente o comando asseguir, que irá, além de compilar o projeto, executá-lo.
+Alternativamente, o usuário pode rodar diretamente o comando a seguir, que irá, além de compilar o projeto, executá-lo.
 
 ```bash
 make run
@@ -128,3 +178,7 @@ O projeto inclui, de forma padrão, dois arquivos de mapa, ambos presentes no di
 - `map.osm` --> inclui a maior parte da região Pampulha, UFMG, parte do Centro, Ouro Preto, Liberdade, Jaraguá, etc. É um mapa de grande escala, e sua execução será lenta
 
 Caso deseje navegar por outras localidades, siga as instruções da [seção sobre inserção de mapas](./about/INSERCAO_DE_MAPAS.md).
+
+## Tratamento de exceções
+
+Optou-se por utilizar exceções-padrão `std` nos diversos pontos do projeto. No geral, o tratamento de excessões ocorreu de forma a não permitir que valores incorretos fossem inseridos (isto é, com um loop que seria apenas terminado uma vez que o input correto fosse inserido). A exceção principal disto está no em erros de parsing do arquivo-mapa. Nesse caso, uma mesagem de erro é imprimida ao `std::cerr`, e um objeto-mapa vazio é retornado, efetivamente forçando o usuário a selecionar outro arquivo.

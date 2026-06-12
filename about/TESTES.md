@@ -1,6 +1,6 @@
 # Testes das classes implementadas
 
-Como parte do processo de desenvolvimento, tomou-se pela montagem de scripts específicos exclusivos para testar a implementação de cada uma das classes e métodos, utilizando a biblioteca catch2. Essa seção irá abordar estes scripts, detalhando como executá-los e exemplificando algumas de suas aplicações.
+Como parte do processo de desenvolvimento, tomou-se pela montagem de scripts específicos exclusivos para testar a implementação de cada uma das classes e métodos, utilizando o framework catch2. Essa seção irá abordar estes scripts, detalhando como executá-los e exemplificando algumas de suas aplicações.
 
 ## Estrutura de arquivos
 
@@ -15,7 +15,7 @@ test/
 
 ## Dependências
 
-Além das dependências essencias do projeto, a compilação dos scripts de teste demanda a biblioteca catch2. Para instalá-la basta executar o comando a seguir.
+Além das dependências essencias do projeto, a compilação dos scripts de teste demanda o framework catch2. Para instalá-lo basta executar o comando a seguir.
 
 ```bash
 sudo apt update && sudo apt install catch2
