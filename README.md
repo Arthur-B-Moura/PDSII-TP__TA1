@@ -22,7 +22,7 @@ O sistema apresentado conta com a implementação de um mecanismo _pathfinder_ p
 
 Além desta página, o projeto inclui as seguintes seções de documentação:
 
-- [Vídeo da Execução do Projeto]([https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1&pp=ygUIcmlja3JvbGygBwE%3D](https://youtu.be/XTVSJ3BJGlI))
+- [Vídeo da Execução do Projeto](https://www.youtube.com/watch?v=XTVSJ3BJGlI)
 - [Documentação Automática feita com Doxygen](https://arthur-b-moura.github.io/PDSII-TP__TA1/index.html)
 - [Detalhamento de Classes e User Stories](./about/CLASS_INFO.md)
 - [Descrição do Desenvolvimento do Projeto](./about/DESENVOLVIMENTO.md)
